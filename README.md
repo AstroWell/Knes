@@ -1,4 +1,4 @@
 # Knes
-Mod for KSP
+European Parts Mod for KSP
 
 Knes is a mod for Kerbal Space Program, it includes various parts.
