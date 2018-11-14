@@ -1,7 +1,7 @@
 
-	Interkosmos - Science Parts for KSP
+	Knes
 
-	Interkosmos is a mod for Kerbal Space Program, it includes various Science parts.
+	Knes is a mod for Kerbal Space Program.
 
 	Mod Made by Stéphane Colombain @Well
 	
