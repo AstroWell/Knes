@@ -1,26 +1,26 @@
-ship = Ariane 5 - SatCom
+ship = Ariane 5 - Dual Payload
 version = 1.6.1
-description = 
+description = Select Hermes (root Part) and press E to Launch without Roll, Ariane 5 with Hermes on top is not supposed to make a roll.
 type = VAB
-size = 8.12893009,33.4612846,4.41023254
+size = 8.12892914,34.35355,4.41023254
 steamPublishedFileId = 0
-persistentId = 4277141655
+persistentId = 3955971471
 rot = 0,0,0,0
 missionFlag = Knes/Agencies/Knes
 vesselType = Debris
 PART
 {
-	part = Knes.Command.Cortex_4291334072
+	part = Knes.Command.Cortex_4294158992
 	partName = Part
-	persistentId = 2622361091
-	pos = 0.0160714388,27.3468933,0.317485929
+	persistentId = 3671728947
+	pos = 0.245127037,27.6877728,0.316669941
 	attPos = 0,0,0
-	attPos0 = 0.0160714388,27.3468933,0.317485929
+	attPos0 = 0.245127037,27.6877728,0.316669941
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
-	symMethod = Mirror
+	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
 	istg = -1
@@ -33,10 +33,10 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Aero.Fairing.375_4291334006
-	link = Knes.Engine.EPS_4291313712
-	attN = top,Knes.Aero.Fairing.375_4291334006_0|0.25|0
-	attN = bottom,Knes.Engine.EPS_4291313712_0|-0.25|0
+	link = Knes.Aero.Fairing.375_4294289882
+	link = Knes.Engine.EPS_4294263024
+	attN = top,Knes.Aero.Fairing.375_4294289882_0|0.25|0
+	attN = bottom,Knes.Engine.EPS_4294263024_0|-0.25|0
 	EVENTS
 	{
 	}
@@ -195,32 +195,34 @@ PART
 }
 PART
 {
-	part = Knes.Aero.Fairing.375_4291334006
+	part = Knes.Aero.Fairing.375_4294289882
 	partName = Part
-	persistentId = 2354252695
-	pos = 0.0160714388,27.6868935,0.317485929
+	persistentId = 2723001453
+	pos = 0.245127037,28.0377731,0.316669941
 	attPos = 0,0,0
-	attPos0 = 0,-0.850000381,0
+	attPos0 = 0,0.350000381,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Heaviest
+	symMethod = Radial
+	autostrutMode = Off
 	rigidAttachment = False
-	istg = 1
+	istg = 5
 	resPri = 0
 	dstg = 1
 	sidx = 0
-	sqor = 1
+	sqor = 5
 	sepI = -1
 	attm = 0
-	modCost = 1533.57178
-	modMass = 1.36317503
+	modCost = 1230.47607
+	modMass = 1.23047614
 	modSize = 0,0,0
-	link = Knes.Structural.Kylda_4291333970
-	attN = top,Knes.Structural.Kylda_4291333970_0|0.1|0
-	attN = bottom,Knes.Command.Cortex_4291334072_0|-0.09|0
+	link = Knes.Decoupler.G1250_4294289826
+	link = Knes.MultiPayload.Adapter.Sylda.AR5.375_4294289276
+	attN = bottom,Knes.Command.Cortex_4294158992_0|-0.1|0
+	attN = Payload,Knes.Decoupler.G1250_4294289826_0|0.87473|0
+	attN = DualPayload,Knes.MultiPayload.Adapter.Sylda.AR5.375_4294289276_0|3.96|0
 	EVENTS
 	{
 	}
@@ -236,7 +238,7 @@ PART
 		isEnabled = True
 		interstageCraftID = 0
 		nArcs = 2
-		ejectionForce = 500
+		ejectionForce = 525
 		useClamshell = True
 		stagingEnabled = True
 		fsm = st_idle
@@ -263,22 +265,27 @@ PART
 		}
 		XSECTION
 		{
-			h = 5.77417946
-			r = 1.60843289
+			h = 6.09958076
+			r = 1.875
 		}
 		XSECTION
 		{
-			h = 6.80147171
-			r = 1.27786803
+			h = 7.37366867
+			r = 1.62233019
 		}
 		XSECTION
 		{
-			h = 7.55219078
-			r = 0.838108242
+			h = 8.3908844
+			r = 1.18987393
 		}
 		XSECTION
 		{
-			h = 7.97364616
+			h = 8.93310928
+			r = 0.75851351
+		}
+		XSECTION
+		{
+			h = 9.30851364
 			r = 0.375
 		}
 		UPGRADESAPPLIED
@@ -300,60 +307,45 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = ModuleJettison
+		isEnabled = True
+		activejettisonName = Adapter
+		isJettisoned = False
+		shroudHideOverride = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			JettisonAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 }
 PART
 {
-	part = Knes.Structural.Kylda_4291333970
+	part = Knes.Decoupler.G1250_4294289826
 	partName = Part
-	persistentId = 1149149545
-	pos = 0.0160714388,28.5368938,0.317485929
+	persistentId = 828627898
+	pos = 0.245127037,28.9750023,0.316669941
 	attPos = 0,0,0
-	attPos0 = 0,-0.6875,0
+	attPos0 = 0,0.937229156,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Heaviest
+	symMethod = Radial
+	autostrutMode = Off
 	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 2
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = Knes.Decoupler.G1250_4291333938
-	attN = top,Knes.Decoupler.G1250_4291333938_0|0.625|0
-	attN = bottom,Knes.Aero.Fairing.375_4291334006_0|-0.75|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-}
-PART
-{
-	part = Knes.Decoupler.G1250_4291333938
-	partName = Part
-	persistentId = 1910174581
-	pos = 0.0160714388,29.2243938,0.317485929
-	attPos = 0,0,0
-	attPos0 = 0,-0.24978447,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Heaviest
-	rigidAttachment = True
 	istg = 0
 	resPri = 0
 	dstg = 3
@@ -364,9 +356,9 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = ionEngine_4291333880
-	attN = top,ionEngine_4291333880_0|0.0625|0
-	attN = bottom,Knes.Structural.Kylda_4291333970_0|-0.0625|0
+	link = HECS2.ProbeCore_4294289768
+	attN = top,HECS2.ProbeCore_4294289768_0|0.0625|0
+	attN = bottom,Knes.Aero.Fairing.375_4294289882_0|-0.0625|0
 	EVENTS
 	{
 	}
@@ -432,119 +424,12 @@ PART
 }
 PART
 {
-	part = ionEngine_4291333880
+	part = HECS2.ProbeCore_4294289768
 	partName = Part
-	persistentId = 2994621022
-	pos = 0.0160714388,29.4741783,0.317485929
+	persistentId = 2942836143
+	pos = 0.245127037,29.5375023,0.316669941
 	attPos = 0,0,0
-	attPos0 = 0,-0.508556366,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = 1
-	sqor = 0
-	sepI = 0
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = xenonTankLarge_4291333826
-	attN = top,xenonTankLarge_4291333826_0|0.2135562|0
-	attN = bottom,Knes.Decoupler.G1250_4291333938_0|-0.1872844|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleAnimateThrottle
-		isEnabled = True
-		animState = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = xenonTankLarge_4291333826
-	partName = Part
-	persistentId = 3620550278
-	pos = 0.0160714388,29.9827347,0.317485929
-	attPos = 0,0,0
-	attPos0 = 0,-0.590000153,0
+	attPos0 = 0,0.5625,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -562,449 +447,17 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = RelayAntenna5_4291333786
-	link = RelayAntenna5_4291333756
-	link = xenonTankLarge_4291333726
-	attN = top,xenonTankLarge_4291333726_0|0.295|0
-	attN = bottom,ionEngine_4291333880_0|-0.295|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	RESOURCE
-	{
-		name = XenonGas
-		amount = 5700
-		maxAmount = 5700
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = RelayAntenna5_4291333786
-	partName = Part
-	persistentId = 62933137
-	pos = -0.14404285,30.2727795,0.0401598215
-	attPos = 0.141740799,0.0778064728,0.245502263
-	attPos0 = -0.301855087,0.212238312,-0.522828281
-	rot = 0.612372518,-0.612372398,0.353553474,-0.353553385
-	attRot = 0,-0.707106709,0,0.707106709
-	attRot0 = -0.612372518,0.612372398,-0.353553414,0.353553355
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = RelayAntenna5_4291333756
-	srfN = srfAttach,xenonTankLarge_4291333826
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTripLogger
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		Log
-		{
-			flight = 0
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = RelayAntenna5_4291333756
-	partName = Part
-	persistentId = 1929943786
-	pos = 0.176185727,30.2727795,0.0401598215
-	attPos = -0.141740799,0.0778064728,0.245502263
-	attPos0 = 0.301855087,0.212238312,-0.522828281
-	rot = 0.612372518,0.612372398,-0.353553444,-0.353553385
-	attRot = 0,-0.707106709,0,0.707106709
-	attRot0 = 0.612372518,0.612372398,-0.353553444,-0.353553385
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = RelayAntenna5_4291333786
-	srfN = srfAttach,xenonTankLarge_4291333826
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTripLogger
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		Log
-		{
-			flight = 0
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = xenonTankLarge_4291333726
-	partName = Part
-	persistentId = 1445784449
-	pos = 0.0160714388,30.5727348,0.317485929
-	attPos = 0,0,0
-	attPos0 = 0,-0.795000076,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = HighGainAntenna_4291333686
-	link = HighGainAntenna_4291333522
-	link = HECS2.ProbeCore_4291333358
-	attN = top,HECS2.ProbeCore_4291333358_0|0.295|0
-	attN = bottom,xenonTankLarge_4291333826_0|-0.295|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	RESOURCE
-	{
-		name = XenonGas
-		amount = 5700
-		maxAmount = 5700
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = HighGainAntenna_4291333686
-	partName = Part
-	persistentId = 3679191124
-	pos = 0.621434569,30.2722206,0.317485929
-	attPos = 0,-0.0647497177,-1.92972038E-09
-	attPos0 = 0.605363071,-0.23576355,3.60823833E-08
-	rot = -0.707106829,-0.707106769,-1.8966081E-07,-1.68587391E-07
-	attRot = 0,-0.707106709,0,-0.707106709
-	attRot0 = -0.707106829,-0.707106769,-1.8966081E-07,-1.68587391E-07
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = HighGainAntenna_4291333522
-	srfN = srfAttach,xenonTankLarge_4291333726
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDeployableAntenna
-		isEnabled = True
-		currentRotation = (6.12323492E-17, -1, 6.12323492E-17, 1.33158053E-07)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 1
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			RetractAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = HighGainAntenna_4291333522
-	partName = Part
-	persistentId = 2386760959
-	pos = -0.589291692,30.2722206,0.317485929
-	attPos = 0,-0.0647497177,-1.92972038E-09
-	attPos0 = -0.605363071,-0.23576355,3.60823833E-08
-	rot = 0.707106829,-0.707106709,-1.89660824E-07,1.68587377E-07
-	attRot = 0,-0.707106709,0,-0.707106709
-	attRot0 = 0.707106829,-0.707106709,-1.89660824E-07,1.68587377E-07
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = HighGainAntenna_4291333686
-	srfN = srfAttach,xenonTankLarge_4291333726
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDeployableAntenna
-		isEnabled = True
-		currentRotation = (6.12323492E-17, -1, 6.12323492E-17, 1.33158053E-07)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 1
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			RetractAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = HECS2.ProbeCore_4291333358
-	partName = Part
-	persistentId = 3232762336
-	pos = 0.0160714388,31.3677349,0.317485929
-	attPos = 0,0,0
-	attPos0 = 0.0910658538,28.0937901,-0.0440157652
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = HECS2.ProbeCore_4291333292
-	attN = top,HECS2.ProbeCore_4291333292_0|0.5|0
-	attN = bottom,xenonTankLarge_4291333726_0|-0.5|0
+	link = InfraredTelescope_4294289702
+	link = solarPanels5_4294289644
+	link = solarPanels5_4294289616
+	link = solarPanels5_4294289588
+	link = solarPanels5_4294289560
+	link = solarPanels5_4294289532
+	link = solarPanels5_4294289504
+	link = HighGainAntenna5_4294289476
+	link = HighGainAntenna5_4294289376
+	attN = top,InfraredTelescope_4294289702_0|0.5|0
+	attN = bottom,Knes.Decoupler.G1250_4294289826_0|-0.5|0
 	EVENTS
 	{
 	}
@@ -1192,12 +645,12 @@ PART
 }
 PART
 {
-	part = HECS2.ProbeCore_4291333292
+	part = InfraredTelescope_4294289702
 	partName = Part
-	persistentId = 4115138946
-	pos = 0.0160714388,32.3677368,0.317485929
+	persistentId = 2411953050
+	pos = 0.245127037,30.1775017,0.316669941
 	attPos = 0,0,0
-	attPos0 = 0,1,0
+	attPos0 = 0,0.63999939,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -1215,226 +668,7 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = InfraredTelescope_4291333226
-	link = LgRadialSolarPanel_4291333168
-	link = LgRadialSolarPanel_4291333116
-	link = LgRadialSolarPanel_4291333064
-	link = LgRadialSolarPanel_4291333012
-	link = LgRadialSolarPanel_4291332960
-	link = LgRadialSolarPanel_4291332908
-	attN = top,InfraredTelescope_4291333226_0|0.5|0
-	attN = bottom,HECS2.ProbeCore_4291333358_0|-0.5|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleCommand
-		isEnabled = True
-		hibernation = False
-		hibernateOnWarp = False
-		activeControlPointName = _default
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			MakeReferenceToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			HibernateToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleReactionWheel
-		isEnabled = True
-		actuatorModeCycle = 0
-		authorityLimiter = 100
-		stateString = Active
-		stagingEnabled = True
-		WheelState = Active
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			CycleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Activate
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Deactivate
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Toggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleSAS
-		isEnabled = True
-		standaloneToggle = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleKerbNetAccess
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OpenKerbNetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceContainer
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			CollectAllAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTripLogger
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		Log
-		{
-			flight = 0
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 1000
-		maxAmount = 1000
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = InfraredTelescope_4291333226
-	partName = Part
-	persistentId = 2537264613
-	pos = 0.0160714388,33.0077362,0.317485929
-	attPos = 0,0,0
-	attPos0 = 0,0.640000343,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Heaviest
-	rigidAttachment = False
-	istg = 0
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = 0
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	attN = bottom,HECS2.ProbeCore_4291333292_0|-0.14|0
+	attN = bottom,HECS2.ProbeCore_4294289768_0|-0.14|0
 	EVENTS
 	{
 	}
@@ -1507,12 +741,12 @@ PART
 }
 PART
 {
-	part = LgRadialSolarPanel_4291333168
+	part = solarPanels5_4294289644
 	partName = Part
-	persistentId = 2704469724
-	pos = -0.497917771,31.8590202,0.0207339525
-	attPos = 0.119130194,-0.120418549,0.0687798858
-	attPos0 = -0.633119464,-0.388297081,-0.365531802
+	persistentId = 1888890376
+	pos = -0.386580288,29.5863743,-0.0480464995
+	attPos = 0,0,0
+	attPos0 = -0.631707311,0.048871994,-0.36471647
 	rot = -1.10871703E-08,-0.866025448,-1.92035419E-08,0.5
 	attRot = 0,0,0,1
 	attRot0 = -1.10871703E-08,-0.866025448,-1.92035419E-08,0.5
@@ -1530,12 +764,12 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = LgRadialSolarPanel_4291333116
-	sym = LgRadialSolarPanel_4291333064
-	sym = LgRadialSolarPanel_4291333012
-	sym = LgRadialSolarPanel_4291332960
-	sym = LgRadialSolarPanel_4291332908
-	srfN = srfAttach,HECS2.ProbeCore_4291333292
+	sym = solarPanels5_4294289616
+	sym = solarPanels5_4294289588
+	sym = solarPanels5_4294289560
+	sym = solarPanels5_4294289532
+	sym = solarPanels5_4294289504
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
 	EVENTS
 	{
 	}
@@ -1551,7 +785,7 @@ PART
 		isEnabled = True
 		efficiencyMult = 1
 		launchUT = -1
-		currentRotation = (0, 0, 0, 1)
+		currentRotation = (0, -6.057208E-07, 0, 1)
 		storedAnimationTime = 0
 		storedAnimationSpeed = 0
 		deployState = EXTENDED
@@ -1587,12 +821,12 @@ PART
 }
 PART
 {
-	part = LgRadialSolarPanel_4291333116
+	part = solarPanels5_4294289616
 	partName = Part
-	persistentId = 3513543301
-	pos = -0.497917771,31.8590202,0.614237666
-	attPos = 0.119130194,-0.120418549,-0.0687798262
-	attPos0 = -0.633119524,-0.388297081,0.365531623
+	persistentId = 2550717030
+	pos = -0.386580408,29.5863743,0.681386232
+	attPos = 0,0,0
+	attPos0 = -0.63170737,0.048871994,0.364716321
 	rot = -1.92035419E-08,-0.5,-1.10871694E-08,0.866025448
 	attRot = 0,0,0,1
 	attRot0 = -1.92035419E-08,-0.5,-1.10871694E-08,0.866025448
@@ -1610,12 +844,12 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = LgRadialSolarPanel_4291333064
-	sym = LgRadialSolarPanel_4291333012
-	sym = LgRadialSolarPanel_4291332960
-	sym = LgRadialSolarPanel_4291332908
-	sym = LgRadialSolarPanel_4291333168
-	srfN = srfAttach,HECS2.ProbeCore_4291333292
+	sym = solarPanels5_4294289588
+	sym = solarPanels5_4294289560
+	sym = solarPanels5_4294289532
+	sym = solarPanels5_4294289504
+	sym = solarPanels5_4294289644
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
 	EVENTS
 	{
 	}
@@ -1631,7 +865,7 @@ PART
 		isEnabled = True
 		efficiencyMult = 1
 		launchUT = -1
-		currentRotation = (0, 0, 0, 1)
+		currentRotation = (0, -6.057208E-07, 0, 1)
 		storedAnimationTime = 0
 		storedAnimationSpeed = 0
 		deployState = EXTENDED
@@ -1667,12 +901,12 @@ PART
 }
 PART
 {
-	part = LgRadialSolarPanel_4291333064
+	part = solarPanels5_4294289588
 	partName = Part
-	persistentId = 710539569
-	pos = 0.0160714388,31.8590202,0.910989642
-	attPos = 1.59811862E-08,-0.120418549,-0.137559712
-	attPos0 = -1.346109E-08,-0.388297081,0.731063485
+	persistentId = 4214040304
+	pos = 0.245127037,29.5863743,1.04610276
+	attPos = 0,0,0
+	attPos0 = 7.90491228E-09,0.048871994,0.729432821
 	rot = -2.21743388E-08,2.5809566E-08,1.25671769E-15,1
 	attRot = 0,0,0,1
 	attRot0 = -2.21743388E-08,2.5809566E-08,1.25671769E-15,1
@@ -1690,12 +924,12 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = LgRadialSolarPanel_4291333012
-	sym = LgRadialSolarPanel_4291332960
-	sym = LgRadialSolarPanel_4291332908
-	sym = LgRadialSolarPanel_4291333168
-	sym = LgRadialSolarPanel_4291333116
-	srfN = srfAttach,HECS2.ProbeCore_4291333292
+	sym = solarPanels5_4294289560
+	sym = solarPanels5_4294289532
+	sym = solarPanels5_4294289504
+	sym = solarPanels5_4294289644
+	sym = solarPanels5_4294289616
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
 	EVENTS
 	{
 	}
@@ -1711,7 +945,7 @@ PART
 		isEnabled = True
 		efficiencyMult = 1
 		launchUT = -1
-		currentRotation = (0, 0, 0, 1)
+		currentRotation = (0, -6.057208E-07, 0, 1)
 		storedAnimationTime = 0
 		storedAnimationSpeed = 0
 		deployState = EXTENDED
@@ -1747,12 +981,12 @@ PART
 }
 PART
 {
-	part = LgRadialSolarPanel_4291333012
+	part = solarPanels5_4294289560
 	partName = Part
-	persistentId = 666225539
-	pos = 0.530060649,31.8590202,0.614237785
-	attPos = -0.119130254,-0.120418549,-0.0687798858
-	attPos0 = 0.633119524,-0.388297081,0.365531743
+	persistentId = 413650556
+	pos = 0.876834452,29.5863743,0.681386352
+	attPos = 0,0,0
+	attPos0 = 0.63170737,0.048871994,0.364716411
 	rot = -1.92035419E-08,0.50000006,1.10871712E-08,0.866025448
 	attRot = 0,0,0,1
 	attRot0 = -1.92035419E-08,0.50000006,1.10871712E-08,0.866025448
@@ -1770,12 +1004,12 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = LgRadialSolarPanel_4291332960
-	sym = LgRadialSolarPanel_4291332908
-	sym = LgRadialSolarPanel_4291333168
-	sym = LgRadialSolarPanel_4291333116
-	sym = LgRadialSolarPanel_4291333064
-	srfN = srfAttach,HECS2.ProbeCore_4291333292
+	sym = solarPanels5_4294289532
+	sym = solarPanels5_4294289504
+	sym = solarPanels5_4294289644
+	sym = solarPanels5_4294289616
+	sym = solarPanels5_4294289588
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
 	EVENTS
 	{
 	}
@@ -1791,7 +1025,7 @@ PART
 		isEnabled = True
 		efficiencyMult = 1
 		launchUT = -1
-		currentRotation = (0, 0, 0, 1)
+		currentRotation = (0, -6.057208E-07, 0, 1)
 		storedAnimationTime = 0
 		storedAnimationSpeed = 0
 		deployState = EXTENDED
@@ -1827,12 +1061,12 @@ PART
 }
 PART
 {
-	part = LgRadialSolarPanel_4291332960
+	part = solarPanels5_4294289532
 	partName = Part
-	persistentId = 1980378101
-	pos = 0.530060887,31.8590202,0.0207339525
-	attPos = -0.119130194,-0.120418549,0.068779856
-	attPos0 = 0.633119583,-0.388297081,-0.365531713
+	persistentId = 4108501769
+	pos = 0.876834452,29.5863743,-0.0480464995
+	attPos = 0,0,0
+	attPos0 = 0.63170743,0.048871994,-0.364716411
 	rot = -1.10871694E-08,0.866025448,1.92035436E-08,0.5
 	attRot = 0,0,0,1
 	attRot0 = -1.10871694E-08,0.866025448,1.92035436E-08,0.5
@@ -1850,12 +1084,12 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = LgRadialSolarPanel_4291332908
-	sym = LgRadialSolarPanel_4291333168
-	sym = LgRadialSolarPanel_4291333116
-	sym = LgRadialSolarPanel_4291333064
-	sym = LgRadialSolarPanel_4291333012
-	srfN = srfAttach,HECS2.ProbeCore_4291333292
+	sym = solarPanels5_4294289504
+	sym = solarPanels5_4294289644
+	sym = solarPanels5_4294289616
+	sym = solarPanels5_4294289588
+	sym = solarPanels5_4294289560
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
 	EVENTS
 	{
 	}
@@ -1871,7 +1105,7 @@ PART
 		isEnabled = True
 		efficiencyMult = 1
 		launchUT = -1
-		currentRotation = (0, 0, 0, 1)
+		currentRotation = (0, -6.057208E-07, 0, 1)
 		storedAnimationTime = 0
 		storedAnimationSpeed = 0
 		deployState = EXTENDED
@@ -1907,12 +1141,12 @@ PART
 }
 PART
 {
-	part = LgRadialSolarPanel_4291332908
+	part = solarPanels5_4294289504
 	partName = Part
-	persistentId = 171625879
-	pos = 0.0160716772,31.8590202,-0.276017785
-	attPos = -5.25831183E-08,-0.120418549,0.137559772
-	attPos0 = 2.07983248E-07,-0.388297081,-0.731063485
+	persistentId = 2193866758
+	pos = 0.245127276,29.5863743,-0.41276288
+	attPos = 0,0,0
+	attPos0 = 1.86183442E-07,0.048871994,-0.729432821
 	rot = -1.12105943E-15,1,2.21743406E-08,8.14214616E-08
 	attRot = 0,0,0,1
 	attRot0 = -1.12105943E-15,1,2.21743406E-08,8.14214616E-08
@@ -1930,12 +1164,1004 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = LgRadialSolarPanel_4291333168
-	sym = LgRadialSolarPanel_4291333116
-	sym = LgRadialSolarPanel_4291333064
-	sym = LgRadialSolarPanel_4291333012
-	sym = LgRadialSolarPanel_4291332960
-	srfN = srfAttach,HECS2.ProbeCore_4291333292
+	sym = solarPanels5_4294289644
+	sym = solarPanels5_4294289616
+	sym = solarPanels5_4294289588
+	sym = solarPanels5_4294289560
+	sym = solarPanels5_4294289532
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 1
+		launchUT = -1
+		currentRotation = (0, -6.057208E-07, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = EXTENDED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HighGainAntenna5_4294289476
+	partName = Part
+	persistentId = 1823512655
+	pos = -0.592457294,29.8796349,0.316670001
+	attPos = 0,0,0
+	attPos0 = -0.837584317,0.342132568,4.99239192E-08
+	rot = -6.3220277E-08,-4.21468478E-08,-0.707106769,-0.707106829
+	attRot = 0,-0.707106709,0,-0.707106709
+	attRot0 = -6.3220277E-08,-4.21468478E-08,-0.707106769,-0.707106829
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = HighGainAntenna5_4294289376
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableAntenna
+		isEnabled = True
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HighGainAntenna5_4294289376
+	partName = Part
+	persistentId = 47624523
+	pos = 1.08271134,29.8796349,0.316669822
+	attPos = 0,0,0
+	attPos0 = 0.837584317,0.342132568,-1.23147871E-07
+	rot = -0.707106769,-0.707106829,9.41288931E-08,7.30554675E-08
+	attRot = 0,-0.707106709,0,-0.707106709
+	attRot0 = -0.707106769,-0.707106829,9.41288931E-08,7.30554675E-08
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = HighGainAntenna5_4294289476
+	srfN = srfAttach,HECS2.ProbeCore_4294289768
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableAntenna
+		isEnabled = True
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = Knes.MultiPayload.Adapter.Sylda.AR5.375_4294289276
+	partName = Part
+	persistentId = 815012655
+	pos = 0.245127037,30.180954,0.316669941
+	attPos = 0,0,0
+	attPos0 = 0,2.14318085,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 1
+	resPri = 0
+	dstg = 3
+	sidx = 0
+	sqor = 1
+	sepI = 1
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = Knes.Decoupler.G1250_4294289134
+	attN = top,Knes.Decoupler.G1250_4294289134_0|2.59204|0
+	attN = bottom,Knes.Aero.Fairing.375_4294289882_0|1.81682|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			EnableAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DisableAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = Knes.Decoupler.G1250_4294289134
+	partName = Part
+	persistentId = 3970689992
+	pos = 0.245127037,32.835495,0.316669941
+	attPos = 0,0,0
+	attPos0 = 0,2.65453911,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 5
+	sidx = 0
+	sqor = 2
+	sepI = 2
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HECS2.ProbeCore_4294289076
+	attN = top,HECS2.ProbeCore_4294289076_0|0.0625|0
+	attN = bottom,Knes.MultiPayload.Adapter.Sylda.AR5.375_4294289276_0|-0.0625|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			EnableAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			DisableAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = HECS2.ProbeCore_4294289076
+	partName = Part
+	persistentId = 365776163
+	pos = 0.245127037,33.397995,0.316669941
+	attPos = 0,0,0
+	attPos0 = 0,0.5625,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = HECS2.ProbeCore_4294289010
+	attN = top,HECS2.ProbeCore_4294289010_0|0.5|0
+	attN = bottom,Knes.Decoupler.G1250_4294289134_0|-0.5|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		activeControlPointName = _default
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			MakeReferenceToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			HibernateToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleKerbNetAccess
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OpenKerbNetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 1000
+		maxAmount = 1000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = HECS2.ProbeCore_4294289010
+	partName = Part
+	persistentId = 1795947372
+	pos = 0.245127037,34.1979904,0.316669941
+	attPos = 0,-0.200000763,0
+	attPos0 = 0,1,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = RelayAntenna50_4294288944
+	link = LgRadialSolarPanel_4294288898
+	link = LgRadialSolarPanel_4294288846
+	link = LgRadialSolarPanel_4294288794
+	link = LgRadialSolarPanel_4294288742
+	link = LgRadialSolarPanel_4294288690
+	link = LgRadialSolarPanel_4294288638
+	attN = top,RelayAntenna50_4294288944_0|0.5|0
+	attN = bottom,HECS2.ProbeCore_4294289076_0|-0.5|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		activeControlPointName = _default
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			MakeReferenceToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			HibernateToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleKerbNetAccess
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OpenKerbNetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 1000
+		maxAmount = 1000
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = RelayAntenna50_4294288944
+	partName = Part
+	persistentId = 2785049349
+	pos = 0.245127037,34.6979904,0.316669941
+	attPos = 0,0,0
+	attPos0 = 0,0.5,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	attN = bottom,HECS2.ProbeCore_4294289010_0|0|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = LgRadialSolarPanel_4294288898
+	partName = Part
+	persistentId = 436198875
+	pos = -0.386441529,33.8264084,-0.0479663908
+	attPos = 0,0,0
+	attPos0 = -0.631568551,-0.371583939,-0.364636362
+	rot = -1.10871703E-08,-0.866025448,-1.92035419E-08,0.5
+	attRot = 0,0,0,1
+	attRot0 = -1.10871703E-08,-0.866025448,-1.92035419E-08,0.5
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = LgRadialSolarPanel_4294288846
+	sym = LgRadialSolarPanel_4294288794
+	sym = LgRadialSolarPanel_4294288742
+	sym = LgRadialSolarPanel_4294288690
+	sym = LgRadialSolarPanel_4294288638
+	srfN = srfAttach,HECS2.ProbeCore_4294289010
 	EVENTS
 	{
 	}
@@ -1987,32 +2213,432 @@ PART
 }
 PART
 {
-	part = Knes.Engine.EPS_4291313712
+	part = LgRadialSolarPanel_4294288846
 	partName = Part
-	persistentId = 3594285044
-	pos = 0.0160714388,26.3318939,0.317485929
+	persistentId = 2922232297
+	pos = -0.386441648,33.8264084,0.681306124
 	attPos = 0,0,0
-	attPos0 = 0,-1.01499939,0
+	attPos0 = -0.631568611,-0.371583939,0.364636213
+	rot = -1.92035419E-08,-0.5,-1.10871694E-08,0.866025448
+	attRot = 0,0,0,1
+	attRot0 = -1.92035419E-08,-0.5,-1.10871694E-08,0.866025448
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = LgRadialSolarPanel_4294288794
+	sym = LgRadialSolarPanel_4294288742
+	sym = LgRadialSolarPanel_4294288690
+	sym = LgRadialSolarPanel_4294288638
+	sym = LgRadialSolarPanel_4294288898
+	srfN = srfAttach,HECS2.ProbeCore_4294289010
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 1
+		launchUT = -1
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = EXTENDED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = LgRadialSolarPanel_4294288794
+	partName = Part
+	persistentId = 773408529
+	pos = 0.245127037,33.8264084,1.04594254
+	attPos = 0,0,0
+	attPos0 = 4.20014246E-09,-0.371583939,0.729272604
+	rot = -2.21743388E-08,2.5809566E-08,1.25671769E-15,1
+	attRot = 0,0,0,1
+	attRot0 = -2.21743388E-08,2.5809566E-08,1.25671769E-15,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = LgRadialSolarPanel_4294288742
+	sym = LgRadialSolarPanel_4294288690
+	sym = LgRadialSolarPanel_4294288638
+	sym = LgRadialSolarPanel_4294288898
+	sym = LgRadialSolarPanel_4294288846
+	srfN = srfAttach,HECS2.ProbeCore_4294289010
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 1
+		launchUT = -1
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = EXTENDED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = LgRadialSolarPanel_4294288742
+	partName = Part
+	persistentId = 3353785981
+	pos = 0.876695693,33.8264084,0.681306243
+	attPos = 0,0,0
+	attPos0 = 0.631568611,-0.371583939,0.364636302
+	rot = -1.92035419E-08,0.50000006,1.10871712E-08,0.866025448
+	attRot = 0,0,0,1
+	attRot0 = -1.92035419E-08,0.50000006,1.10871712E-08,0.866025448
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = LgRadialSolarPanel_4294288690
+	sym = LgRadialSolarPanel_4294288638
+	sym = LgRadialSolarPanel_4294288898
+	sym = LgRadialSolarPanel_4294288846
+	sym = LgRadialSolarPanel_4294288794
+	srfN = srfAttach,HECS2.ProbeCore_4294289010
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 1
+		launchUT = -1
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = EXTENDED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = LgRadialSolarPanel_4294288690
+	partName = Part
+	persistentId = 3568646093
+	pos = 0.876695693,33.8264084,-0.0479663908
+	attPos = 0,0,0
+	attPos0 = 0.63156867,-0.371583939,-0.364636302
+	rot = -1.10871694E-08,0.866025448,1.92035436E-08,0.5
+	attRot = 0,0,0,1
+	attRot0 = -1.10871694E-08,0.866025448,1.92035436E-08,0.5
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = LgRadialSolarPanel_4294288638
+	sym = LgRadialSolarPanel_4294288898
+	sym = LgRadialSolarPanel_4294288846
+	sym = LgRadialSolarPanel_4294288794
+	sym = LgRadialSolarPanel_4294288742
+	srfN = srfAttach,HECS2.ProbeCore_4294289010
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 1
+		launchUT = -1
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = EXTENDED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = LgRadialSolarPanel_4294288638
+	partName = Part
+	persistentId = 2820884260
+	pos = 0.245127276,33.8264084,-0.412602663
+	attPos = 0,0,0
+	attPos0 = 1.89845579E-07,-0.371583939,-0.729272604
+	rot = -1.12105943E-15,1,2.21743406E-08,8.14214616E-08
+	attRot = 0,0,0,1
+	attRot0 = -1.12105943E-15,1,2.21743406E-08,8.14214616E-08
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = LgRadialSolarPanel_4294288898
+	sym = LgRadialSolarPanel_4294288846
+	sym = LgRadialSolarPanel_4294288794
+	sym = LgRadialSolarPanel_4294288742
+	sym = LgRadialSolarPanel_4294288690
+	srfN = srfAttach,HECS2.ProbeCore_4294289010
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableSolarPanel
+		isEnabled = True
+		efficiencyMult = 1
+		launchUT = -1
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 0
+		deployState = EXTENDED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = Knes.Engine.EPS_4294263024
+	partName = Part
+	persistentId = 1489237755
+	pos = 0.245127037,26.6732731,0.316669941
+	attPos = 0,0,0
+	attPos0 = 0,-1.01449966,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
-	symMethod = Mirror
+	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 3
 	resPri = 0
 	dstg = 0
 	sidx = 0
-	sqor = 2
+	sqor = 3
 	sepI = -1
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Decoupler.G3750_4291311684
-	attN = top,Knes.Command.Cortex_4291334072_0|0.765|0
-	attN = bottom,Knes.Decoupler.G3750_4291311684_0|-0.955|0
+	link = Knes.Decoupler.G3750_4294256340
+	attN = top,Knes.Command.Cortex_4294158992_0|0.7645|0
+	attN = bottom,Knes.Decoupler.G3750_4294256340_0|-0.955|0
 	EVENTS
 	{
 	}
@@ -2165,6 +2791,44 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 	RESOURCE
 	{
 		name = LiquidFuel
@@ -2190,32 +2854,32 @@ PART
 }
 PART
 {
-	part = Knes.Decoupler.G3750_4291311684
+	part = Knes.Decoupler.G3750_4294256340
 	partName = Part
-	persistentId = 3986330863
-	pos = 0.0160714388,25.251894,0.317485929
+	persistentId = 415683822
+	pos = 0.245127037,25.5932732,0.316669941
 	attPos = 0,0,0
 	attPos0 = 0,-1.07999992,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
-	symMethod = Mirror
+	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 4
 	resPri = 0
 	dstg = 1
-	sidx = 1
-	sqor = 2
-	sepI = 2
+	sidx = 0
+	sqor = 4
+	sepI = 4
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Command.Cortex_4291327890
-	attN = top,Knes.Engine.EPS_4291313712_0|0.125|0
-	attN = bottom,Knes.Command.Cortex_4291327890_0|-0.125|0
+	link = Knes.Fuel.Tanks.EPC_4294164160
+	attN = top,Knes.Engine.EPS_4294263024_0|0.125|0
+	attN = bottom,Knes.Fuel.Tanks.EPC_4294164160_0|-0.125|0
 	EVENTS
 	{
 	}
@@ -2281,218 +2945,34 @@ PART
 }
 PART
 {
-	part = Knes.Command.Cortex_4291327890
+	part = Knes.Fuel.Tanks.EPC_4294164160
 	partName = Part
-	persistentId = 3882832789
-	pos = 0.0160714388,24.876894,0.317485929
+	persistentId = 1932697299
+	pos = 0.245127037,16.1019135,0.316669941
 	attPos = 0,0,0
-	attPos0 = 0,-0.375,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Mirror
-	autostrutMode = Root
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 2
-	sidx = -1
-	sqor = -1
-	sepI = 2
-	attm = 0
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = Knes.Fuel.Tanks.EPC_4291327824
-	attN = top,Knes.Decoupler.G3750_4291311684_0|0.25|0
-	attN = bottom,Knes.Fuel.Tanks.EPC_4291327824_0|-0.25|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleCommand
-		isEnabled = True
-		hibernation = False
-		hibernateOnWarp = False
-		activeControlPointName = _default
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			MakeReferenceToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			HibernateToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleReactionWheel
-		isEnabled = True
-		actuatorModeCycle = 0
-		authorityLimiter = 100
-		stateString = Active
-		stagingEnabled = True
-		WheelState = Active
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			CycleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Activate
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Deactivate
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Toggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleSAS
-		isEnabled = True
-		standaloneToggle = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTripLogger
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		Log
-		{
-			flight = 0
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 250
-		maxAmount = 250
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-	RESOURCE
-	{
-		name = MonoPropellant
-		amount = 50
-		maxAmount = 50
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Fuel.Tanks.EPC_4291327824
-	partName = Part
-	persistentId = 4236385902
-	pos = 0.0160714388,15.2605324,0.317485929
-	attPos = 0,0,0
-	attPos0 = 0,-9.61636066,0
+	attPos0 = 0,-9.49135971,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
 	mir = 1,1,1
 	symMethod = Radial
-	autostrutMode = Heaviest
+	autostrutMode = Off
 	rigidAttachment = False
-	istg = 2
+	istg = 4
 	resPri = 0
 	dstg = 2
 	sidx = -1
 	sqor = -1
-	sepI = 2
+	sepI = 4
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Engine.Vulcain_4291327776
-	link = radialDecoupler_4291327606
-	link = radialDecoupler_4291326882
-	attN = top,Knes.Command.Cortex_4291327890_0|9.36636|0
-	attN = bottom,Knes.Engine.Vulcain_4291327776_0|-7.6263|0
+	link = Knes.Engine.Vulcain_4294141694
+	link = radialDecoupler_4294124902
+	link = radialDecoupler_4294084540
+	attN = top,Knes.Decoupler.G3750_4294256340_0|9.36636|0
+	attN = bottom,Knes.Engine.Vulcain_4294141694_0|-7.6263|0
 	EVENTS
 	{
 	}
@@ -2527,10 +3007,10 @@ PART
 }
 PART
 {
-	part = Knes.Engine.Vulcain_4291327776
+	part = Knes.Engine.Vulcain_4294141694
 	partName = Part
-	persistentId = 2704106165
-	pos = 0.0160714388,5.91623116,0.317485929
+	persistentId = 351781118
+	pos = 0.245127037,6.75761223,0.316669941
 	attPos = 0,0,0
 	attPos0 = 0,-9.34430027,0
 	rot = 0,0,0,1
@@ -2540,17 +3020,17 @@ PART
 	symMethod = Radial
 	autostrutMode = Root
 	rigidAttachment = False
-	istg = 5
+	istg = 7
 	resPri = 0
 	dstg = 2
-	sidx = 0
-	sqor = 5
-	sepI = 2
+	sidx = 1
+	sqor = 7
+	sepI = 4
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	attN = top,Knes.Fuel.Tanks.EPC_4291327824_0|1.718|0
+	attN = top,Knes.Fuel.Tanks.EPC_4294164160_0|1.718|0
 	EVENTS
 	{
 	}
@@ -2719,13 +3199,51 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 }
 PART
 {
-	part = radialDecoupler_4291327606
+	part = radialDecoupler_4294124902
 	partName = Part
-	persistentId = 3435234814
-	pos = -1.8246969,14.9774055,0.317485929
+	persistentId = 1980166576
+	pos = -1.59564137,15.8187866,0.31667006
 	attPos = 0,0,0
 	attPos0 = -1.84076834,-0.283126831,1.19209318E-07
 	rot = -2.5121481E-15,8.42937027E-08,-4.62803769E-08,1
@@ -2735,19 +3253,19 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 3
 	sidx = 0
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Booster.EAP_4291327556
-	sym = radialDecoupler_4291326882
-	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4291327824
+	link = Knes.Booster.EAP_4294088614
+	sym = radialDecoupler_4294084540
+	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4294164160
 	EVENTS
 	{
 	}
@@ -2828,10 +3346,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.EAP_4291327556
+	part = Knes.Booster.EAP_4294088614
 	partName = Part
-	persistentId = 430604929
-	pos = -2.92350769,11.5348854,0.317486167
+	persistentId = 235462878
+	pos = -2.69445229,12.3762665,0.316670269
 	attPos = -1.1920929E-07,-3.09555626,-7.81597009E-14
 	attPos0 = -1.09881008,-0.346963972,2.33706903E-08
 	rot = -3.27251755E-08,-0.707106769,-3.27251648E-08,0.707106888
@@ -2841,27 +3359,26 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = 0
-	sqor = 4
-	sepI = 3
+	sqor = 7
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Aero.NoseCone.A_4291327462
-	link = Knes.Structural.Struts_4291327250
-	link = Knes.Structural.Struts_4291327154
-	link = Knes.Booster.Pushotron_4291327058
-	link = Knes.Booster.Pushotron_4291327014
-	link = Knes.Booster.Pushotron_4291326970
-	link = Knes.Booster.Pushotron_4291326926
-	link = launchClamp1_4291287638
-	sym = Knes.Booster.EAP_4291326832
-	srfN = srfAttach,radialDecoupler_4291327606
-	attN = top,Knes.Aero.NoseCone.A_4291327462_0|9.133|0
+	link = Knes.Aero.NoseCone.A_4294086708
+	link = Knes.Structural.Struts_4294079628
+	link = Knes.Structural.Struts_4294076334
+	link = Knes.Booster.Pushotron_4294049484
+	link = Knes.Booster.Pushotron_4294048810
+	link = Knes.Booster.Pushotron_4294047890
+	link = Knes.Booster.Pushotron_4294047688
+	sym = Knes.Booster.EAP_4294084480
+	srfN = srfAttach,radialDecoupler_4294124902
+	attN = top,Knes.Aero.NoseCone.A_4294086708_0|9.133|0
 	EVENTS
 	{
 	}
@@ -2976,6 +3493,44 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 	RESOURCE
 	{
 		name = SolidFuel
@@ -2990,10 +3545,10 @@ PART
 }
 PART
 {
-	part = Knes.Aero.NoseCone.A_4291327462
+	part = Knes.Aero.NoseCone.A_4294086708
 	partName = Part
-	persistentId = 3815983920
-	pos = -2.92350769,21.554884,0.317486167
+	persistentId = 3587941653
+	pos = -2.69445181,22.396265,0.316670269
 	attPos = 0,0,0
 	attPos0 = 1.64030302E-13,10.0199995,4.76837272E-07
 	rot = -3.5527141E-15,1.00000012,-1.31113098E-15,3.49155798E-08
@@ -3003,22 +3558,22 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 6
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Booster.Pushotron_4291327426
-	link = Knes.Booster.Pushotron_4291327382
-	link = Knes.Booster.Pushotron_4291327338
-	link = Knes.Booster.Pushotron_4291327294
-	sym = Knes.Aero.NoseCone.A_4291326738
-	attN = bottom01,Knes.Booster.EAP_4291327556_0|-0.887|0
+	link = Knes.Booster.Pushotron_4294056112
+	link = Knes.Booster.Pushotron_4294051380
+	link = Knes.Booster.Pushotron_4294049882
+	link = Knes.Booster.Pushotron_4294049686
+	sym = Knes.Aero.NoseCone.A_4294084344
+	attN = bottom01,Knes.Booster.EAP_4294088614_0|-0.887|0
 	EVENTS
 	{
 	}
@@ -3031,10 +3586,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291327426
+	part = Knes.Booster.Pushotron_4294056112
 	partName = Part
-	persistentId = 3107446418
-	pos = -2.05239487,21.6798382,0.0840726346
+	persistentId = 2489509663
+	pos = -1.8233391,22.5212193,0.083256498
 	attPos = 0,0,0
 	attPos0 = -0.871107399,0.124954142,0.233412892
 	rot = 0.429620057,0.562077224,-0.559891582,0.431297451
@@ -3044,18 +3599,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 1
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326702
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291327462
+	sym = Knes.Booster.Pushotron_4294051978
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
 	EVENTS
 	{
 	}
@@ -3117,10 +3672,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291327382
+	part = Knes.Booster.Pushotron_4294051380
 	partName = Part
-	persistentId = 884771591
-	pos = -2.05092001,21.8929462,0.083677277
+	persistentId = 2264968417
+	pos = -1.82186425,22.7343273,0.0828612596
 	attPos = 0,0,0
 	attPos0 = -0.872582376,0.33806029,0.23380807
 	rot = 0.429620057,0.562077224,-0.559891582,0.431297451
@@ -3130,18 +3685,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 2
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326658
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291327462
+	sym = Knes.Booster.Pushotron_4294051214
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
 	EVENTS
 	{
 	}
@@ -3203,10 +3758,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291327338
+	part = Knes.Booster.Pushotron_4294049882
 	partName = Part
-	persistentId = 3729267148
-	pos = -2.04794216,21.6786442,0.552093089
+	persistentId = 3798351930
+	pos = -1.81888664,22.5200253,0.551276982
 	attPos = 0,0,0
 	attPos0 = -0.875560105,0.123758234,-0.234605283
 	rot = -0.559891641,-0.431297213,0.429620028,-0.562077403
@@ -3216,18 +3771,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 3
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326614
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291327462
+	sym = Knes.Booster.Pushotron_4294050756
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
 	EVENTS
 	{
 	}
@@ -3289,10 +3844,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291327294
+	part = Knes.Booster.Pushotron_4294049686
 	partName = Part
-	persistentId = 170418406
-	pos = -2.05312204,21.9039402,0.550705433
+	persistentId = 1535886956
+	pos = -1.82406628,22.7453213,0.549889326
 	attPos = 0,0,0
 	attPos0 = -0.870380342,0.349054247,-0.233217567
 	rot = -0.559891641,-0.431297213,0.429620028,-0.562077403
@@ -3302,18 +3857,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 4
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326556
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291327462
+	sym = Knes.Booster.Pushotron_4294050244
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
 	EVENTS
 	{
 	}
@@ -3375,10 +3930,10 @@ PART
 }
 PART
 {
-	part = Knes.Structural.Struts_4291327250
+	part = Knes.Structural.Struts_4294079628
 	partName = CompoundPart
-	persistentId = 984003098
-	pos = -2.45776606,7.66352654,-0.489204824
+	persistentId = 2008455596
+	pos = -2.22871041,8.50490761,-0.490020812
 	attPos = 0,0,0
 	attPos0 = -0.806688845,-3.87135983,-0.465741575
 	rot = 1.17856914E-07,0.866025448,-2.17643308E-08,-0.5
@@ -3388,18 +3943,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4291326512
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
+	sym = Knes.Structural.Struts_4294079318
+	srfN = srfAttach,Knes.Booster.EAP_4294088614
 	EVENTS
 	{
 	}
@@ -3408,10 +3963,10 @@ PART
 	}
 	PARTDATA
 	{
-		tgt = 4291327776
-		pos = -1.06240535,-0.0639913529,-0.831844151
-		rot = 3.41062556E-09,-0.662718296,-0.414232314,0.623871982
-		dir = -0.7864784,-0.0473715775,-0.615798354
+		tgt = 4294141694
+		pos = -1.06240547,-0.0639913529,-0.831844091
+		rot = 0,-0.662718296,-0.414232284,0.623871922
+		dir = -0.786478162,-0.047371693,-0.615798771
 	}
 	MODULE
 	{
@@ -3446,10 +4001,10 @@ PART
 }
 PART
 {
-	part = Knes.Structural.Struts_4291327154
+	part = Knes.Structural.Struts_4294076334
 	partName = CompoundPart
-	persistentId = 636501850
-	pos = -2.45770311,7.61201286,1.12428534
+	persistentId = 950428675
+	pos = -2.22864747,8.45339394,1.12346935
 	attPos = 0,0,0
 	attPos0 = 0.806796968,-3.9228735,-0.465804636
 	rot = 2.03365417E-07,0.866025627,7.11326535E-08,0.499999821
@@ -3459,18 +4014,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4291326416
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
+	sym = Knes.Structural.Struts_4294076644
+	srfN = srfAttach,Knes.Booster.EAP_4294088614
 	EVENTS
 	{
 	}
@@ -3479,10 +4034,10 @@ PART
 	}
 	PARTDATA
 	{
-		tgt = 4291327776
-		pos = -1.07323813,0.00814478379,0.821890831
-		rot = -6.55245858E-09,0.662718236,-0.414232343,0.623872221
-		dir = -0.793922305,0.00602506101,0.60798943
+		tgt = 4294141694
+		pos = -1.07323909,0.00814478379,0.821890473
+		rot = 0,0.662718117,-0.414232254,0.623872101
+		dir = -0.793922722,0.00602506334,0.607988775
 	}
 	MODULE
 	{
@@ -3517,10 +4072,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291327058
+	part = Knes.Booster.Pushotron_4294049484
 	partName = Part
-	persistentId = 1758236210
-	pos = -2.27306461,4.24135971,-0.33295846
+	persistentId = 1928211862
+	pos = -2.04400921,5.08274078,-0.333774388
 	attPos = -0.0100848675,0,-0.0100843906
 	attPos0 = -0.640358627,-7.29352665,-0.640357971
 	rot = 0.270598084,0.65328151,-0.653281629,0.270597965
@@ -3530,18 +4085,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 5
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326320
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
+	sym = Knes.Booster.Pushotron_4294048994
+	srfN = srfAttach,Knes.Booster.EAP_4294088614
 	EVENTS
 	{
 	}
@@ -3603,10 +4158,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291327014
+	part = Knes.Booster.Pushotron_4294048810
 	partName = Part
-	persistentId = 4080134566
-	pos = -2.11166811,4.22948074,-0.151229918
+	persistentId = 2054969001
+	pos = -1.88261259,5.07086182,-0.152045757
 	attPos = 0,0,0
 	attPos0 = -0.468714923,-7.30540562,-0.811837554
 	rot = 0.353553504,0.612372458,-0.612372637,0.353553265
@@ -3616,18 +4171,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 6
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326276
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
+	sym = Knes.Booster.Pushotron_4294048638
+	srfN = srfAttach,Knes.Booster.EAP_4294088614
 	EVENTS
 	{
 	}
@@ -3689,10 +4244,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326970
+	part = Knes.Booster.Pushotron_4294047890
 	partName = Part
-	persistentId = 1029790964
-	pos = -2.12146902,4.18777084,0.780543327
+	persistentId = 3743754574
+	pos = -1.89241374,5.02915192,0.77972734
 	attPos = 0,0,0
 	attPos0 = 0.463055909,-7.34711552,-0.802036583
 	rot = -0.612372637,-0.353553355,0.353553623,-0.612372398
@@ -3702,18 +4257,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 7
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326232
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
+	sym = Knes.Booster.Pushotron_4294048074
+	srfN = srfAttach,Knes.Booster.EAP_4294088614
 	EVENTS
 	{
 	}
@@ -3775,10 +4330,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326926
+	part = Knes.Booster.Pushotron_4294047688
 	partName = Part
-	persistentId = 3560530241
-	pos = -2.26490736,4.17735672,0.976089478
+	persistentId = 2591283747
+	pos = -2.03585172,5.01873779,0.97527343
 	attPos = 0.0176357031,0,-0.017635107
 	attPos0 = 0.640966475,-7.35752964,-0.640965581
 	rot = 0.653281987,0.270597488,-0.270597726,0.653281569
@@ -3788,18 +4343,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 8
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326188
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
+	sym = Knes.Booster.Pushotron_4294048448
+	srfN = srfAttach,Knes.Booster.EAP_4294088614
 	EVENTS
 	{
 	}
@@ -3861,10 +4416,10 @@ PART
 }
 PART
 {
-	part = radialDecoupler_4291326882
+	part = radialDecoupler_4294084540
 	partName = Part
-	persistentId = 3044618619
-	pos = 1.85684001,14.9774055,0.31748569
+	persistentId = 972359928
+	pos = 2.08589554,15.8187866,0.316669673
 	attPos = 0,0,0
 	attPos0 = 1.84076846,-0.283126831,-2.68220901E-07
 	rot = -4.62803769E-08,1,4.53512748E-15,-1.28005098E-07
@@ -3874,19 +4429,19 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 3
 	sidx = 0
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Booster.EAP_4291326832
-	sym = radialDecoupler_4291327606
-	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4291327824
+	link = Knes.Booster.EAP_4294084480
+	sym = radialDecoupler_4294124902
+	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4294164160
 	EVENTS
 	{
 	}
@@ -3967,10 +4522,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.EAP_4291326832
+	part = Knes.Booster.EAP_4294084480
 	partName = Part
-	persistentId = 1792863325
-	pos = 2.95565081,11.5348854,0.317485452
+	persistentId = 2463308407
+	pos = 3.18470621,12.3762665,0.316669375
 	attPos = -1.1920929E-07,-3.09555626,-7.81597009E-14
 	attPos0 = -1.09881008,-0.346963972,2.33706903E-08
 	rot = -3.27251684E-08,0.707106948,3.27252074E-08,0.707106709
@@ -3980,27 +4535,26 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = 0
-	sqor = 4
-	sepI = 3
+	sqor = 7
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Aero.NoseCone.A_4291326738
-	link = Knes.Structural.Struts_4291326512
-	link = Knes.Structural.Struts_4291326416
-	link = Knes.Booster.Pushotron_4291326320
-	link = Knes.Booster.Pushotron_4291326276
-	link = Knes.Booster.Pushotron_4291326232
-	link = Knes.Booster.Pushotron_4291326188
-	link = launchClamp1_4291283862
-	sym = Knes.Booster.EAP_4291327556
-	srfN = srfAttach,radialDecoupler_4291326882
-	attN = top,Knes.Aero.NoseCone.A_4291326738_0|9.133|0
+	link = Knes.Aero.NoseCone.A_4294084344
+	link = Knes.Structural.Struts_4294079318
+	link = Knes.Structural.Struts_4294076644
+	link = Knes.Booster.Pushotron_4294048994
+	link = Knes.Booster.Pushotron_4294048638
+	link = Knes.Booster.Pushotron_4294048074
+	link = Knes.Booster.Pushotron_4294048448
+	sym = Knes.Booster.EAP_4294088614
+	srfN = srfAttach,radialDecoupler_4294084540
+	attN = top,Knes.Aero.NoseCone.A_4294084344_0|9.133|0
 	EVENTS
 	{
 	}
@@ -4115,6 +4669,44 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 	RESOURCE
 	{
 		name = SolidFuel
@@ -4129,10 +4721,10 @@ PART
 }
 PART
 {
-	part = Knes.Aero.NoseCone.A_4291326738
+	part = Knes.Aero.NoseCone.A_4294084344
 	partName = Part
-	persistentId = 324038448
-	pos = 2.95565033,21.554884,0.317485452
+	persistentId = 3123078624
+	pos = 3.18470573,22.396265,0.316669375
 	attPos = 0,0,0
 	attPos0 = 1.64030302E-13,10.0199995,4.76837272E-07
 	rot = -9.20364825E-17,-8.79582274E-09,0,-1.00000012
@@ -4142,22 +4734,22 @@ PART
 	symMethod = Radial
 	autostrutMode = Heaviest
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 6
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Booster.Pushotron_4291326702
-	link = Knes.Booster.Pushotron_4291326658
-	link = Knes.Booster.Pushotron_4291326614
-	link = Knes.Booster.Pushotron_4291326556
-	sym = Knes.Aero.NoseCone.A_4291327462
-	attN = bottom01,Knes.Booster.EAP_4291326832_0|-0.887|0
+	link = Knes.Booster.Pushotron_4294051978
+	link = Knes.Booster.Pushotron_4294051214
+	link = Knes.Booster.Pushotron_4294050756
+	link = Knes.Booster.Pushotron_4294050244
+	sym = Knes.Aero.NoseCone.A_4294086708
+	attN = bottom01,Knes.Booster.EAP_4294084480_0|-0.887|0
 	EVENTS
 	{
 	}
@@ -4170,10 +4762,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326702
+	part = Knes.Booster.Pushotron_4294051978
 	partName = Part
-	persistentId = 4026043274
-	pos = 2.08453751,21.6798382,0.550899565
+	persistentId = 548961925
+	pos = 2.31359291,22.5212193,0.550083458
 	attPos = 0,0,0
 	attPos0 = -0.871107757,0.124952234,0.23341307
 	rot = -0.55989182,0.431297213,-0.429620147,-0.562077224
@@ -4183,18 +4775,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 1
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291327426
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291326738
+	sym = Knes.Booster.Pushotron_4294056112
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
 	EVENTS
 	{
 	}
@@ -4256,10 +4848,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326658
+	part = Knes.Booster.Pushotron_4294051214
 	partName = Part
-	persistentId = 1735014984
-	pos = 2.08306217,21.8929462,0.551294565
+	persistentId = 2351689474
+	pos = 2.31211782,22.7343273,0.550478578
 	attPos = 0,0,0
 	attPos0 = -0.872582972,0.33806029,0.233808249
 	rot = -0.55989182,0.431297213,-0.429620147,-0.562077224
@@ -4269,18 +4861,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 2
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291327382
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291326738
+	sym = Knes.Booster.Pushotron_4294051380
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
 	EVENTS
 	{
 	}
@@ -4342,10 +4934,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326614
+	part = Knes.Booster.Pushotron_4294050756
 	partName = Part
-	persistentId = 3685921855
-	pos = 2.08008575,21.6786442,0.0828787535
+	persistentId = 2078717567
+	pos = 2.3091414,22.5200253,0.0820627362
 	attPos = 0,0,0
 	attPos0 = -0.87555939,0.123760141,-0.234605163
 	rot = 0.429620087,-0.562077343,0.55989176,0.431297153
@@ -4355,18 +4947,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 3
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291327338
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291326738
+	sym = Knes.Booster.Pushotron_4294049882
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
 	EVENTS
 	{
 	}
@@ -4428,10 +5020,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326556
+	part = Knes.Booster.Pushotron_4294050244
 	partName = Part
-	persistentId = 4146898700
-	pos = 2.08526564,21.9039402,0.0842665881
+	persistentId = 4262631376
+	pos = 2.31432104,22.7453213,0.0834505707
 	attPos = 0,0,0
 	attPos0 = -0.870379865,0.349054247,-0.233217388
 	rot = 0.429620087,-0.562077343,0.55989176,0.431297153
@@ -4441,18 +5033,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 4
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291327294
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4291326738
+	sym = Knes.Booster.Pushotron_4294049686
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
 	EVENTS
 	{
 	}
@@ -4514,10 +5106,10 @@ PART
 }
 PART
 {
-	part = Knes.Structural.Struts_4291326512
+	part = Knes.Structural.Struts_4294079318
 	partName = CompoundPart
-	persistentId = 2736250081
-	pos = 2.48990917,7.66352654,1.12417674
+	persistentId = 1901319617
+	pos = 2.71896482,8.50490761,1.12336063
 	attPos = 0,0,0
 	attPos0 = -0.806689024,-3.87135983,-0.465741634
 	rot = -2.17643734E-08,-0.50000006,-1.17856914E-07,-0.866025388
@@ -4527,18 +5119,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4291327250
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
+	sym = Knes.Structural.Struts_4294079628
+	srfN = srfAttach,Knes.Booster.EAP_4294084480
 	EVENTS
 	{
 	}
@@ -4547,10 +5139,10 @@ PART
 	}
 	PARTDATA
 	{
-		tgt = 4291327776
-		pos = -0.111781359,-0.0378074422,-0.789332092
-		rot = -1.90605656E-10,-0.529030144,-0.330670774,0.781526744
-		dir = -0.140058681,-0.0473715886,-0.98900938
+		tgt = 4294141694
+		pos = -1.06240451,-0.0639913529,-0.831844389
+		rot = 0,-0.662718296,-0.414232403,0.623871744
+		dir = -0.786478162,-0.047371693,-0.615798771
 	}
 	MODULE
 	{
@@ -4585,10 +5177,10 @@ PART
 }
 PART
 {
-	part = Knes.Structural.Struts_4291326416
+	part = Knes.Structural.Struts_4294076644
 	partName = CompoundPart
-	persistentId = 3862242447
-	pos = 2.48984623,7.61201286,-0.489313483
+	persistentId = 264629437
+	pos = 2.71890187,8.45339394,-0.490129471
 	attPos = 0,0,0
 	attPos0 = 0.80679667,-3.9228735,-0.465804458
 	rot = 7.11326251E-08,0.499999762,-2.03365431E-07,-0.866025627
@@ -4598,18 +5190,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 4
+	istg = 7
 	resPri = 0
 	dstg = 4
 	sidx = -1
 	sqor = -1
-	sepI = 3
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4291327154
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
+	sym = Knes.Structural.Struts_4294076334
+	srfN = srfAttach,Knes.Booster.EAP_4294084480
 	EVENTS
 	{
 	}
@@ -4618,10 +5210,10 @@ PART
 	}
 	PARTDATA
 	{
-		tgt = 4291327776
-		pos = -0.104136527,0.00484279776,0.796887755
-		rot = 5.14641996E-10,0.529030085,-0.330670714,0.781526923
-		dir = -0.129574969,0.00602579536,0.99155128
+		tgt = 4294141694
+		pos = -1.07324171,0.00814478379,0.821891546
+		rot = 0,0.662718356,-0.414232224,0.623871863
+		dir = -0.793922722,0.00602506334,0.607988775
 	}
 	MODULE
 	{
@@ -4656,10 +5248,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326320
+	part = Knes.Booster.Pushotron_4294048994
 	partName = Part
-	persistentId = 899391677
-	pos = 2.30520868,4.24135971,0.967930317
+	persistentId = 519605299
+	pos = 2.53426433,5.08274078,0.967114329
 	attPos = -0.0100848675,0,-0.0100839138
 	attPos0 = -0.640358865,-7.29352665,-0.640357733
 	rot = -0.653281629,0.270597905,-0.270597965,-0.653281569
@@ -4669,18 +5261,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 5
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291327058
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
+	sym = Knes.Booster.Pushotron_4294049484
+	srfN = srfAttach,Knes.Booster.EAP_4294084480
 	EVENTS
 	{
 	}
@@ -4742,10 +5334,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326276
+	part = Knes.Booster.Pushotron_4294048638
 	partName = Part
-	persistentId = 2583856292
-	pos = 2.14381123,4.22948074,0.786201715
+	persistentId = 3849137777
+	pos = 2.37286663,5.07086182,0.785385728
 	attPos = 0,0,0
 	attPos0 = -0.468715012,-7.30540562,-0.811837912
 	rot = -0.612372518,0.353553265,-0.353553295,-0.612372518
@@ -4755,18 +5347,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 6
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291327014
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
+	sym = Knes.Booster.Pushotron_4294048810
+	srfN = srfAttach,Knes.Booster.EAP_4294084480
 	EVENTS
 	{
 	}
@@ -4828,10 +5420,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326232
+	part = Knes.Booster.Pushotron_4294048074
 	partName = Part
-	persistentId = 3886305677
-	pos = 2.15361261,4.18777084,-0.1455715
+	persistentId = 2934970027
+	pos = 2.38266826,5.02915192,-0.146387488
 	attPos = 0,0,0
 	attPos0 = 0.46305573,-7.34711552,-0.802036166
 	rot = 0.353553653,-0.612372339,0.612372577,0.353553385
@@ -4841,18 +5433,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 7
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326970
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
+	sym = Knes.Booster.Pushotron_4294047890
+	srfN = srfAttach,Knes.Booster.EAP_4294084480
 	EVENTS
 	{
 	}
@@ -4914,10 +5506,10 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4291326188
+	part = Knes.Booster.Pushotron_4294048448
 	partName = Part
-	persistentId = 3716019336
-	pos = 2.29704952,4.17735672,-0.341117501
+	persistentId = 2086323902
+	pos = 2.52610517,5.01873779,-0.341933489
 	attPos = 0.0176357031,0,-0.0176353455
 	attPos0 = 0.640966237,-7.35752964,-0.640965879
 	rot = -0.270597845,0.65328151,-0.653281868,-0.270597607
@@ -4927,18 +5519,18 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 6
 	resPri = 0
 	dstg = 4
 	sidx = 8
-	sqor = 3
-	sepI = 3
+	sqor = 6
+	sepI = 6
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4291326926
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
+	sym = Knes.Booster.Pushotron_4294047688
+	srfN = srfAttach,Knes.Booster.EAP_4294084480
 	EVENTS
 	{
 	}
@@ -4996,225 +5588,5 @@ PART
 		hideFlow = False
 		isVisible = True
 		flowMode = Both
-	}
-}
-PART
-{
-	part = launchClamp1_4291287638
-	partName = Part
-	persistentId = 3797415345
-	pos = -0.781522393,2.7928009,0.317486286
-	attPos = 1.1074458E-07,-0.0769767761,-1.71755624
-	attPos0 = 1.31157762E-07,-8.66510773,-0.424428403
-	rot = -0.49999994,0.500000179,0.49999994,0.500000179
-	attRot = -0.707106769,0,0,0.707106769
-	attRot0 = -2.98023206E-08,0.707106948,0.707106709,8.94069672E-08
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 4
-	resPri = 0
-	dstg = 4
-	sidx = 1
-	sqor = 4
-	sepI = 4
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = launchClamp1_4291283862
-	srfN = srfAttach,Knes.Booster.EAP_4291327556
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = LaunchClamp
-		isEnabled = True
-		scaleFactor = 0.491818666
-		height = 1.24095535
-		stagingEnabled = True
-		towerRot = 0.499999881,-0.50000006,-0.499999881,0.500000119
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ReleaseClamp
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGenerator
-		isEnabled = True
-		generatorIsActive = False
-		throttle = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = launchClamp1_4291283862
-	partName = Part
-	persistentId = 639527940
-	pos = 0.813664556,2.7928009,0.317485511
-	attPos = 1.41688986E-07,-0.0769767761,-1.71755695
-	attPos0 = 1.08657503E-07,-8.66510773,-0.424428642
-	rot = 0.499999911,0.500000119,0.499999851,-0.500000238
-	attRot = -0.707106769,0,0,0.707106769
-	attRot0 = -2.98023028E-08,0.707106948,0.70710665,0
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 4
-	resPri = 0
-	dstg = 4
-	sidx = 1
-	sqor = 4
-	sepI = 4
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = launchClamp1_4291287638
-	srfN = srfAttach,Knes.Booster.EAP_4291326832
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = LaunchClamp
-		isEnabled = True
-		scaleFactor = 0.491819412
-		height = 1.24095726
-		stagingEnabled = True
-		towerRot = -0.499999911,-0.500000119,-0.499999821,-0.500000238
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ReleaseClamp
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGenerator
-		isEnabled = True
-		generatorIsActive = False
-		throttle = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
 	}
 }
