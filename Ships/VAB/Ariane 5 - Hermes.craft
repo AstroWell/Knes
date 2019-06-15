@@ -2,7 +2,7 @@ ship = Ariane 5 - Hermes
 version = 1.7.2
 description = Select Hermes (root Part) and press E to Launch without Roll, Ariane 5 with Hermes on top is not supposed to make a roll.
 type = VAB
-size = 8.12893009,34.75317,4.41023254
+size = 8.35161591,34.4740791,4.41023254
 steamPublishedFileId = 0
 persistentId = 3955971471
 rot = 0,0,0,0
@@ -3285,8 +3285,8 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.Engine.Vulcain_4294141694
-	link = radialDecoupler_4294124902
-	link = radialDecoupler_4294084540
+	link = Knes.Decoupler.Radial.big_4294229742
+	link = Knes.Decoupler.Radial.big_4294229332
 	attN = top,Knes.Command.Cortex_4294158992_0|9.36635971|0_0|1|0_0|9.36635971|0_0|1|0
 	attN = bottom,Knes.Engine.Vulcain_4294141694_0|-7.62629986|0_0|-1|0_0|-7.62629986|0_0|-1|0
 	EVENTS
@@ -3559,15 +3559,15 @@ PART
 }
 PART
 {
-	part = radialDecoupler_4294124902
+	part = Knes.Decoupler.Radial.big_4294229742
 	partName = Part
-	persistentId = 1520310023
-	pos = -1.59566748,17.7571011,0.31668961
+	persistentId = 1883641007
+	pos = -1.60582435,19.1473579,0.31668961
 	attPos = 0,0,0
-	attPos0 = -1.84076834,-0.283126831,1.19209318E-07
-	rot = -2.5121481E-15,8.42937027E-08,-4.62803769E-08,1
+	attPos0 = -1.85092533,1.10713005,1.1920929E-07
+	rot = 3.27252607E-08,-0.707106709,3.27252572E-08,0.707106829
 	attRot = 0,0,0,1
-	attRot0 = -2.5121481E-15,8.42937027E-08,-4.62803769E-08,1
+	attRot0 = 3.27252607E-08,-0.707106709,3.27252572E-08,0.707106829
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
@@ -3583,8 +3583,8 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.Booster.EAP_4294088614
-	sym = radialDecoupler_4294084540
-	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4294164160
+	sym = Knes.Decoupler.Radial.big_4294229332
+	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4294164160,_Collider
 	EVENTS
 	{
 	}
@@ -3645,8 +3645,112 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleTestSubject
+		name = ModulePartVariants
 		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = Knes.Decoupler.Radial.big_4294229332
+	partName = Part
+	persistentId = 3157463806
+	pos = 2.09602642,19.1473579,0.316689223
+	attPos = 0,0,0
+	attPos0 = 1.85092545,1.10713005,-2.68220901E-07
+	rot = 3.27252572E-08,0.707106888,-3.27252607E-08,0.70710665
+	attRot = 0,0,0,1
+	attRot0 = 3.27252572E-08,0.707106888,-3.27252607E-08,0.70710665
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 5
+	sidx = 0
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = Knes.Booster.EAP_4294212238
+	sym = Knes.Decoupler.Radial.big_4294229742
+	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4294164160,_Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleAnchoredDecoupler
+		isEnabled = True
+		ejectionForcePercent = 100
+		isDecoupled = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleToggleCrossfeed
+		isEnabled = True
+		crossfeedStatus = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			EnableAction
+			{
+				actionGroup = None
+			}
+			DisableAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
 		stagingEnabled = True
 		EVENTS
 		{
@@ -3664,12 +3768,12 @@ PART
 	part = Knes.Booster.EAP_4294088614
 	partName = Part
 	persistentId = 3527761272
-	pos = -2.69447827,14.3145809,0.316689819
-	attPos = -1.1920929E-07,-3.09555626,-7.81597009E-14
-	attPos0 = -1.09881008,-0.346963972,2.33706903E-08
-	rot = -3.27251755E-08,-0.707106769,-3.27251648E-08,0.707106888
+	pos = -2.80582356,14.7473564,0.31668961
+	attPos = -3.87430276E-07,-3.32401466,-0.0410330296
+	attPos0 = 1.49011612E-07,-1.07598674,1.2410332
+	rot = 3.27252643E-08,-0.70710665,3.27252572E-08,0.707106888
 	attRot = 0,0,0,1
-	attRot0 = -1.77635673E-15,-0.707106829,1.77635705E-15,0.707106829
+	attRot0 = 1.77635684E-15,5.96046448E-08,-7.10542736E-15,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
@@ -3691,8 +3795,8 @@ PART
 	link = Knes.Booster.Pushotron_4294048810
 	link = Knes.Booster.Pushotron_4294047890
 	link = Knes.Booster.Pushotron_4294047688
-	sym = Knes.Booster.EAP_4294084480
-	srfN = srfAttach,radialDecoupler_4294124902
+	sym = Knes.Booster.EAP_4294212238
+	srfN = srfAttach,Knes.Decoupler.Radial.big_4294229742,Collider
 	attN = bottom,Null_0_0|-9.10000038|0_0|-1|0_0|-9.10000038|0_0|-1|0
 	attN = top,Knes.Aero.NoseCone.A_4294086708_0|9.13300037|0_0|1|0_0|9.13300037|0_0|1|0
 	EVENTS
@@ -3866,11 +3970,11 @@ PART
 {
 	part = Knes.Aero.NoseCone.A_4294086708
 	partName = Part
-	persistentId = 4139045028
-	pos = -2.6944778,24.3345795,0.316689819
+	persistentId = 2518702549
+	pos = -2.805825,24.767355,0.31668961
 	attPos = 0,0,0
 	attPos0 = 1.64030302E-13,10.0199995,4.76837272E-07
-	rot = -3.5527141E-15,1.00000012,-1.31113098E-15,3.49155798E-08
+	rot = -9.25608887E-08,0.99999994,2.13162821E-14,-5.96046448E-08
 	attRot = 0,0.999999881,0,0
 	attRot0 = -3.27251684E-08,0.707106888,3.27251755E-08,-0.707106769
 	mir = 1,1,1
@@ -3891,7 +3995,7 @@ PART
 	link = Knes.Booster.Pushotron_4294051380
 	link = Knes.Booster.Pushotron_4294049882
 	link = Knes.Booster.Pushotron_4294049686
-	sym = Knes.Aero.NoseCone.A_4294084344
+	sym = Knes.Aero.NoseCone.A_4294212130
 	attN = bottom01,Knes.Booster.EAP_4294088614_0|-0.887000024|0_0|-1|0_0|-0.887000024|0_0|-1|0
 	EVENTS
 	{
@@ -3905,32 +4009,31 @@ PART
 }
 PART
 {
-	part = radialDecoupler_4294084540
+	part = Knes.Booster.Pushotron_4294056112
 	partName = Part
-	persistentId = 4101954994
-	pos = 2.08586955,17.7571011,0.316689223
+	persistentId = 4262783364
+	pos = -1.9347105,24.8923092,0.0832751393
 	attPos = 0,0,0
-	attPos0 = 1.84076846,-0.283126831,-2.68220901E-07
-	rot = -4.62803769E-08,1,4.53512748E-15,-1.28005098E-07
+	attPos0 = -0.871107399,0.124954142,0.233412892
+	rot = 0.429619908,0.562077224,-0.559891582,0.431297362
 	attRot = 0,0,0,1
-	attRot0 = -4.62803769E-08,1,4.53512748E-15,-1.28005098E-07
+	attRot0 = 0.559891522,-0.431297272,0.429620028,0.562077224
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
 	istg = 2
 	resPri = 0
-	dstg = 5
-	sidx = 0
+	dstg = 6
+	sidx = 1
 	sqor = 2
 	sepI = 2
 	attm = 1
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Booster.EAP_4294084480
-	sym = radialDecoupler_4294124902
-	srfN = srfAttach,Knes.Fuel.Tanks.EPC_4294164160
+	sym = Knes.Booster.Pushotron_4294212084
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708,Collider
 	EVENTS
 	{
 	}
@@ -3942,20 +4045,403 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleAnchoredDecoupler
+		name = ModuleEngines
 		isEnabled = True
-		ejectionForcePercent = 100
-		isDecoupled = False
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
 		stagingEnabled = True
 		EVENTS
 		{
 		}
 		ACTIONS
 		{
-			DecoupleAction
+			OnAction
 			{
 				actionGroup = None
 			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294051380
+	partName = Part
+	persistentId = 3169196569
+	pos = -1.93323565,25.1054173,0.0828799009
+	attPos = 0,0,0
+	attPos0 = -0.872582376,0.33806029,0.23380807
+	rot = 0.429619908,0.562077224,-0.559891582,0.431297362
+	attRot = 0,0,0,1
+	attRot0 = 0.559891522,-0.431297272,0.429620028,0.562077224
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 2
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294212022
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294049882
+	partName = Part
+	persistentId = 453782383
+	pos = -1.93025827,24.8911152,0.551296592
+	attPos = 0,0,0
+	attPos0 = -0.875560105,0.123758234,-0.234605283
+	rot = -0.559891462,-0.431297302,0.429619908,-0.562077343
+	attRot = 0,0,0,1
+	attRot0 = -0.429619968,0.562077343,-0.559891582,-0.431297123
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 3
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294211960
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294049686
+	partName = Part
+	persistentId = 2526832028
+	pos = -1.93543768,25.1164112,0.549908757
+	attPos = 0,0,0
+	attPos0 = -0.870380342,0.349054247,-0.233217567
+	rot = -0.559891462,-0.431297302,0.429619908,-0.562077343
+	attRot = 0,0,0,1
+	attRot0 = -0.429619968,0.562077343,-0.559891582,-0.431297123
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 4
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294211898
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Structural.Struts_4294079628
+	partName = CompoundPart
+	persistentId = 2366113434
+	pos = -2.34008145,10.8759975,-0.490002155
+	attPos = -0.169003725,3.7113595,-0.264207363
+	attPos0 = -0.806688845,-3.87135983,-0.465741575
+	rot = 3.76968181E-08,0.866025329,-6.80447698E-08,-0.5
+	attRot = 0,0,0,1
+	attRot0 = 2.32443114E-08,0.258819163,-8.67488765E-08,-0.965925813
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Structural.Struts_4294211836
+	srfN = srfAttach,Knes.Booster.EAP_4294088614,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294164160
+		pos = -1.21961522,-0.200000554,-0.912436366
+		rot = -1.36020786E-14,-0.793353319,-1.15761345E-07,0.608761311
+		dir = -0.793901622,-0.13018924,-0.593945324
+		col = _Collider
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
 		}
 		UPGRADESAPPLIED
 		{
@@ -3963,35 +4449,7 @@ PART
 	}
 	MODULE
 	{
-		name = ModuleToggleCrossfeed
-		isEnabled = True
-		crossfeedStatus = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-			}
-			EnableAction
-			{
-				actionGroup = None
-			}
-			DisableAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
+		name = CModuleStrut
 		isEnabled = True
 		stagingEnabled = True
 		EVENTS
@@ -4007,15 +4465,471 @@ PART
 }
 PART
 {
-	part = Knes.Booster.EAP_4294084480
-	partName = Part
-	persistentId = 472315791
-	pos = 3.18468022,14.3145809,0.316688925
-	attPos = -1.1920929E-07,-3.09555626,-7.81597009E-14
-	attPos0 = -1.09881008,-0.346963972,2.33706903E-08
-	rot = -3.27251684E-08,0.707106948,3.2725211E-08,0.707106709
+	part = Knes.Structural.Struts_4294076334
+	partName = CompoundPart
+	persistentId = 3648222205
+	pos = -2.34001827,10.8244839,1.12348914
+	attPos = 3.09944153E-06,9.53674316E-07,-3.27825546E-07
+	attPos0 = 0.806796968,-3.9228735,-0.465804636
+	rot = 1.23205353E-07,0.866025627,1.1741308E-07,0.499999702
 	attRot = 0,0,0,1
-	attRot0 = -1.77635673E-15,-0.707106829,1.77635705E-15,0.707106829
+	attRot0 = 1.82121184E-07,0.965925813,-4.8799258E-08,-0.258819193
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 6
+	sidx = -1
+	sqor = -1
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Structural.Struts_4294211736
+	srfN = srfAttach,Knes.Booster.EAP_4294088614,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294164160
+		pos = -1.21961749,-0.200000301,0.912437141
+		rot = 0,0.793353081,-7.37828572E-08,0.608761728
+		dir = -0.79390192,-0.130188853,0.593945026
+		col = _Collider
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleStrut
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294049484
+	partName = Part
+	persistentId = 3786430298
+	pos = -2.1553793,7.45383072,-0.333755076
+	attPos = -0.0100848675,0,-0.0100843906
+	attPos0 = -0.640358627,-7.29352665,-0.640357971
+	rot = 0.270597994,0.653281391,-0.653281629,0.270597994
+	attRot = 0,0,0,1
+	attRot0 = -0.270598084,0.65328145,-0.653281569,-0.270598024
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 5
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294211636
+	srfN = srfAttach,Knes.Booster.EAP_4294088614,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294048810
+	partName = Part
+	persistentId = 682634343
+	pos = -1.99398232,7.44195175,-0.152026892
+	attPos = 0,0,0
+	attPos0 = -0.468714923,-7.30540562,-0.811837554
+	rot = 0.353553295,0.612372518,-0.612372518,0.353553295
+	attRot = 0,0,0,1
+	attRot0 = -0.183012679,0.683012724,-0.683012784,-0.183012709
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 6
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294211574
+	srfN = srfAttach,Knes.Booster.EAP_4294088614,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294047890
+	partName = Part
+	persistentId = 1365556028
+	pos = -2.00378323,7.40024185,0.779746771
+	attPos = 0,0,0
+	attPos0 = 0.463055909,-7.34711552,-0.802036583
+	rot = -0.612372458,-0.353553385,0.353553534,-0.612372279
+	attRot = 0,0,0,1
+	attRot0 = -0.183012739,-0.683012605,0.683012903,-0.183012694
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 7
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294211512
+	srfN = srfAttach,Knes.Booster.EAP_4294088614,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294047688
+	partName = Part
+	persistentId = 1235211649
+	pos = -2.14722204,7.38982773,0.975292683
+	attPos = 0.0176357031,0,-0.017635107
+	attPos0 = 0.640966475,-7.35752964,-0.640965581
+	rot = 0.653281808,0.270597517,-0.270597607,0.65328151
+	attRot = 0,0,0,1
+	attRot0 = 0.27059859,0.653281152,-0.65328151,0.270598412
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 8
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294211450
+	srfN = srfAttach,Knes.Booster.EAP_4294088614,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.EAP_4294212238
+	partName = Part
+	persistentId = 2499126475
+	pos = 3.29602528,14.7473564,0.316688985
+	attPos = -3.57627954E-07,-3.32401466,-0.0410330296
+	attPos0 = 1.19209261E-07,-1.07598674,1.24103284
+	rot = 3.27252572E-08,0.707106948,-3.27252607E-08,0.70710659
+	attRot = 0,0,0,1
+	attRot0 = 1.77635705E-15,5.96046519E-08,-7.1054282E-15,1
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Heaviest
@@ -4030,17 +4944,17 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Aero.NoseCone.A_4294084344
-	link = Knes.Structural.Struts_4294079318
-	link = Knes.Structural.Struts_4294076644
-	link = Knes.Booster.Pushotron_4294048994
-	link = Knes.Booster.Pushotron_4294048638
-	link = Knes.Booster.Pushotron_4294048074
-	link = Knes.Booster.Pushotron_4294048448
+	link = Knes.Aero.NoseCone.A_4294212130
+	link = Knes.Structural.Struts_4294211836
+	link = Knes.Structural.Struts_4294211736
+	link = Knes.Booster.Pushotron_4294211636
+	link = Knes.Booster.Pushotron_4294211574
+	link = Knes.Booster.Pushotron_4294211512
+	link = Knes.Booster.Pushotron_4294211450
 	sym = Knes.Booster.EAP_4294088614
-	srfN = srfAttach,radialDecoupler_4294084540
+	srfN = srfAttach,Knes.Decoupler.Radial.big_4294229332,Collider
 	attN = bottom,Null_0_0|-9.10000038|0_0|-1|0_0|-9.10000038|0_0|-1|0
-	attN = top,Knes.Aero.NoseCone.A_4294084344_0|9.13300037|0_0|1|0_0|9.13300037|0_0|1|0
+	attN = top,Knes.Aero.NoseCone.A_4294212130_0|9.13300037|0_0|1|0_0|9.13300037|0_0|1|0
 	EVENTS
 	{
 	}
@@ -4210,13 +5124,13 @@ PART
 }
 PART
 {
-	part = Knes.Aero.NoseCone.A_4294084344
+	part = Knes.Aero.NoseCone.A_4294212130
 	partName = Part
-	persistentId = 3186659441
-	pos = 3.18467975,24.3345795,0.316688925
+	persistentId = 4139045028
+	pos = 3.29602647,24.767355,0.316688985
 	attPos = 0,0,0
 	attPos0 = 1.64030302E-13,10.0199995,4.76837272E-07
-	rot = 9.48530364E-16,-8.79582274E-09,3.55271368E-15,-1.00000012
+	rot = 3.55271368E-14,-1.49011612E-07,9.25608887E-08,-1
 	attRot = 0,0.999999881,0,0
 	attRot0 = -3.27251684E-08,0.707106888,3.27251755E-08,-0.707106769
 	mir = 1,1,1
@@ -4233,12 +5147,12 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Booster.Pushotron_4294051978
-	link = Knes.Booster.Pushotron_4294051214
-	link = Knes.Booster.Pushotron_4294050756
-	link = Knes.Booster.Pushotron_4294050244
+	link = Knes.Booster.Pushotron_4294212084
+	link = Knes.Booster.Pushotron_4294212022
+	link = Knes.Booster.Pushotron_4294211960
+	link = Knes.Booster.Pushotron_4294211898
 	sym = Knes.Aero.NoseCone.A_4294086708
-	attN = bottom01,Knes.Booster.EAP_4294084480_0|-0.887000024|0_0|-1|0_0|-0.887000024|0_0|-1|0
+	attN = bottom01,Knes.Booster.EAP_4294212238_0|-0.887000024|0_0|-1|0_0|-0.887000024|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -4251,13 +5165,397 @@ PART
 }
 PART
 {
-	part = Knes.Structural.Struts_4294079628
+	part = Knes.Booster.Pushotron_4294212084
+	partName = Part
+	persistentId = 3077860674
+	pos = 2.42491221,24.8923092,0.550103605
+	attPos = 0,0,0
+	attPos0 = -0.871107399,0.124954142,0.233412892
+	rot = -0.559891522,0.431297362,-0.429619759,-0.562077224
+	attRot = 0,0,0,1
+	attRot0 = 0.559891522,-0.431297272,0.429620028,0.562077224
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 1
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294056112
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294212130,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294212022
+	partName = Part
+	persistentId = 3853225877
+	pos = 2.4234376,25.1054173,0.550498903
+	attPos = 0,0,0
+	attPos0 = -0.872582376,0.33806029,0.23380807
+	rot = -0.559891522,0.431297362,-0.429619759,-0.562077224
+	attRot = 0,0,0,1
+	attRot0 = 0.559891522,-0.431297272,0.429620028,0.562077224
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 2
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294051380
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294212130,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294211960
+	partName = Part
+	persistentId = 1439977921
+	pos = 2.42045975,24.8911152,0.082082212
+	attPos = 0,0,0
+	attPos0 = -0.875560105,0.123758234,-0.234605283
+	rot = 0.429620028,-0.562077284,0.559891522,0.431297213
+	attRot = 0,0,0,1
+	attRot0 = -0.429619968,0.562077343,-0.559891582,-0.431297123
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 3
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294049882
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294212130,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Booster.Pushotron_4294211898
+	partName = Part
+	persistentId = 2724424561
+	pos = 2.42563939,25.1164112,0.0834699273
+	attPos = 0,0,0
+	attPos0 = -0.870380342,0.349054247,-0.233217567
+	rot = 0.429620028,-0.562077284,0.559891522,0.431297213
+	attRot = 0,0,0,1
+	attRot0 = -0.429619968,0.562077343,-0.559891582,-0.431297123
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 6
+	sidx = 4
+	sqor = 2
+	sepI = 2
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = Knes.Booster.Pushotron_4294049686
+	srfN = srfAttach,Knes.Aero.NoseCone.A_4294212130,Collider
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+		AXISGROUPS
+		{
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 8
+		maxAmount = 8
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = Knes.Structural.Struts_4294211836
 	partName = CompoundPart
 	persistentId = 3222104736
-	pos = -2.2287364,10.443222,-0.49000144
-	attPos = 0,0,0
+	pos = 2.83028364,10.8759975,1.12338078
+	attPos = -3.09944153E-06,9.53674316E-07,-4.47034836E-07
 	attPos0 = -0.806688845,-3.87135983,-0.465741575
-	rot = 1.17856914E-07,0.866025448,-2.17643308E-08,-0.5
+	rot = -6.80447698E-08,-0.500000119,-3.7696811E-08,-0.866025388
 	attRot = 0,0,0,1
 	attRot0 = 2.32443114E-08,0.258819163,-8.67488765E-08,-0.965925813
 	mir = 1,1,1
@@ -4274,79 +5572,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4294079318
-	srfN = srfAttach,Knes.Booster.EAP_4294088614
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-		tgt = 4294141694
-		pos = -1.06240237,-0.0639913529,-0.831842661
-		rot = 3.41062245E-09,-0.662718296,-0.414232314,0.623871982
-		dir = -0.786478162,-0.047371693,-0.615798771
-	}
-	MODULE
-	{
-		name = CModuleLinkedMesh
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = CModuleStrut
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = Knes.Structural.Struts_4294079318
-	partName = CompoundPart
-	persistentId = 4275451320
-	pos = 2.71893883,10.443222,1.12338042
-	attPos = 0,0,0
-	attPos0 = -0.806689024,-3.87135983,-0.465741634
-	rot = -2.1764377E-08,-0.50000006,-1.17856914E-07,-0.866025388
-	attRot = 0,0,0,1
-	attRot0 = 2.32443078E-08,0.258819103,-8.67488836E-08,-0.965925813
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 3
-	resPri = 0
-	dstg = 6
-	sidx = -1
-	sqor = -1
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
 	sym = Knes.Structural.Struts_4294079628
-	srfN = srfAttach,Knes.Booster.EAP_4294084480
+	srfN = srfAttach,Knes.Booster.EAP_4294212238,Collider
 	EVENTS
 	{
 	}
@@ -4355,10 +5582,11 @@ PART
 	}
 	PARTDATA
 	{
-		tgt = 4294141694
-		pos = -1.06240249,-0.0639913529,-0.831843078
-		rot = -1.04883755E-08,-0.662718356,-0.414232403,0.623871744
-		dir = -0.786478043,-0.0473716818,-0.615798891
+		tgt = 4294164160
+		pos = -1.21961522,-0.200000554,-0.912436366
+		rot = 7.38806912E-16,-0.793353379,-1.15761345E-07,0.608761311
+		dir = -0.793901622,-0.13018924,-0.593945324
+		col = _Collider
 	}
 	MODULE
 	{
@@ -4393,84 +5621,13 @@ PART
 }
 PART
 {
-	part = Knes.Structural.Struts_4294076644
-	partName = CompoundPart
-	persistentId = 816897997
-	pos = 2.71887589,10.3917084,-0.490110159
-	attPos = 0,0,0
-	attPos0 = 0.80679667,-3.9228735,-0.465804458
-	rot = 7.1132618E-08,0.499999762,-2.03365431E-07,-0.866025627
-	attRot = 0,0,0,1
-	attRot0 = 1.82121184E-07,0.965925813,-4.8799258E-08,-0.258819222
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 3
-	resPri = 0
-	dstg = 6
-	sidx = -1
-	sqor = -1
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4294076334
-	srfN = srfAttach,Knes.Booster.EAP_4294084480
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-		tgt = 4294141694
-		pos = -1.07323837,0.00814478379,0.821889639
-		rot = -8.98329855E-09,0.662718475,-0.414232284,0.623871982
-		dir = -0.793922722,0.00602506334,0.607988775
-	}
-	MODULE
-	{
-		name = CModuleLinkedMesh
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = CModuleStrut
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = Knes.Structural.Struts_4294076334
+	part = Knes.Structural.Struts_4294211736
 	partName = CompoundPart
 	persistentId = 2763835246
-	pos = -2.22867346,10.3917084,1.12348914
-	attPos = 0,0,0
+	pos = 2.83021975,10.8244839,-0.490110517
+	attPos = -1.78249109,3.76287317,1.19575357
 	attPos0 = 0.806796968,-3.9228735,-0.465804636
-	rot = 2.03365417E-07,0.866025627,7.11326535E-08,0.499999821
+	rot = 1.17413066E-07,0.499999672,-1.23205339E-07,-0.866025567
 	attRot = 0,0,0,1
 	attRot0 = 1.82121184E-07,0.965925813,-4.8799258E-08,-0.258819193
 	mir = 1,1,1
@@ -4487,8 +5644,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Structural.Struts_4294076644
-	srfN = srfAttach,Knes.Booster.EAP_4294088614
+	sym = Knes.Structural.Struts_4294076334
+	srfN = srfAttach,Knes.Booster.EAP_4294212238,Collider
 	EVENTS
 	{
 	}
@@ -4497,10 +5654,11 @@ PART
 	}
 	PARTDATA
 	{
-		tgt = 4294141694
-		pos = -1.07323503,0.00814478379,0.821888208
-		rot = -4.33883374E-09,0.662718296,-0.414232373,0.623872221
-		dir = -0.793922365,0.00602507917,0.607989311
+		tgt = 4294164160
+		pos = -1.21961761,-0.200000301,0.912436783
+		rot = 2.8421706E-14,0.79335314,-7.37828501E-08,0.608761728
+		dir = -0.79390204,-0.130188882,0.593944848
+		col = _Collider
 	}
 	MODULE
 	{
@@ -4535,781 +5693,13 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4294056112
-	partName = Part
-	persistentId = 3077860674
-	pos = -1.82336473,24.4595337,0.0832759142
-	attPos = 0,0,0
-	attPos0 = -0.871107399,0.124954142,0.233412892
-	rot = 0.429620057,0.562077224,-0.559891582,0.431297451
-	attRot = 0,0,0,1
-	attRot0 = 0.559891522,-0.431297272,0.429620028,0.562077224
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 1
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294051978
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294051978
-	partName = Part
-	persistentId = 2833585033
-	pos = 2.31356645,24.4595337,0.550103128
-	attPos = 0,0,0
-	attPos0 = -0.871107757,0.124952234,0.23341307
-	rot = -0.55989182,0.431297213,-0.429620147,-0.562077224
-	attRot = 0,0,0,1
-	attRot0 = 0.559891582,-0.431297213,0.429620087,0.562077165
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 1
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294056112
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294051380
-	partName = Part
-	persistentId = 3853225877
-	pos = -1.82188988,24.6726418,0.0828806758
-	attPos = 0,0,0
-	attPos0 = -0.872582376,0.33806029,0.23380807
-	rot = 0.429620057,0.562077224,-0.559891582,0.431297451
-	attRot = 0,0,0,1
-	attRot0 = 0.559891522,-0.431297272,0.429620028,0.562077224
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 2
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294051214
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294051214
-	partName = Part
-	persistentId = 4092623003
-	pos = 2.31209135,24.6726418,0.550498247
-	attPos = 0,0,0
-	attPos0 = -0.872582972,0.33806029,0.233808249
-	rot = -0.55989182,0.431297213,-0.429620147,-0.562077224
-	attRot = 0,0,0,1
-	attRot0 = 0.559891582,-0.431297213,0.429620087,0.562077165
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 2
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294051380
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294050756
-	partName = Part
-	persistentId = 3043803682
-	pos = 2.30911493,24.4583397,0.0820821524
-	attPos = 0,0,0
-	attPos0 = -0.87555939,0.123760141,-0.234605163
-	rot = 0.429620087,-0.562077343,0.55989176,0.431297153
-	attRot = 0,0,0,1
-	attRot0 = -0.429620028,0.562077284,-0.559891701,-0.431297064
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 3
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294049882
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294049882
-	partName = Part
-	persistentId = 1439977921
-	pos = -1.81891227,24.4583397,0.551296651
-	attPos = 0,0,0
-	attPos0 = -0.875560105,0.123758234,-0.234605283
-	rot = -0.559891641,-0.431297213,0.429620028,-0.562077403
-	attRot = 0,0,0,1
-	attRot0 = -0.429619968,0.562077343,-0.559891582,-0.431297123
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 3
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294050756
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294050244
-	partName = Part
-	persistentId = 2383511395
-	pos = 2.31429458,24.6836357,0.0834699869
-	attPos = 0,0,0
-	attPos0 = -0.870379865,0.349054247,-0.233217388
-	rot = 0.429620087,-0.562077343,0.55989176,0.431297153
-	attRot = 0,0,0,1
-	attRot0 = -0.429620028,0.562077284,-0.559891701,-0.431297064
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 4
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294049686
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294084344
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294049686
-	partName = Part
-	persistentId = 2724424561
-	pos = -1.82409191,24.6836357,0.549908996
-	attPos = 0,0,0
-	attPos0 = -0.870380342,0.349054247,-0.233217567
-	rot = -0.559891641,-0.431297213,0.429620028,-0.562077403
-	attRot = 0,0,0,1
-	attRot0 = -0.429619968,0.562077343,-0.559891582,-0.431297123
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 4
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294050244
-	srfN = srfAttach,Knes.Aero.NoseCone.A_4294086708
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294049484
+	part = Knes.Booster.Pushotron_4294211636
 	partName = Part
 	persistentId = 1657585875
-	pos = -2.0440352,7.02105522,-0.333754957
+	pos = 2.64558125,7.45383072,0.96713388
 	attPos = -0.0100848675,0,-0.0100843906
 	attPos0 = -0.640358627,-7.29352665,-0.640357971
-	rot = 0.270598084,0.65328151,-0.653281629,0.270597965
+	rot = -0.653281569,0.270597935,-0.270597935,-0.65328151
 	attRot = 0,0,0,1
 	attRot0 = -0.270598084,0.65328145,-0.653281569,-0.270598024
 	mir = 1,1,1
@@ -5326,104 +5716,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294048994
-	srfN = srfAttach,Knes.Booster.EAP_4294088614
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294048994
-	partName = Part
-	persistentId = 2570209028
-	pos = 2.5342381,7.02105522,0.967133999
-	attPos = -0.0100848675,0,-0.0100839138
-	attPos0 = -0.640358865,-7.29352665,-0.640357733
-	rot = -0.653281629,0.270597905,-0.270597965,-0.653281569
-	attRot = 0,0,0,1
-	attRot0 = -0.270598143,0.65328145,-0.653281569,-0.270598114
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 5
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
 	sym = Knes.Booster.Pushotron_4294049484
-	srfN = srfAttach,Knes.Booster.EAP_4294084480
+	srfN = srfAttach,Knes.Booster.EAP_4294212238,Collider
 	EVENTS
 	{
 	}
@@ -5495,13 +5789,13 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4294048810
+	part = Knes.Booster.Pushotron_4294211574
 	partName = Part
 	persistentId = 705485821
-	pos = -1.88263845,7.00917625,-0.152026296
+	pos = 2.48418379,7.44195175,0.785405636
 	attPos = 0,0,0
 	attPos0 = -0.468714923,-7.30540562,-0.811837554
-	rot = 0.353553504,0.612372458,-0.612372637,0.353553265
+	rot = -0.612372518,0.353553176,-0.353553265,-0.612372518
 	attRot = 0,0,0,1
 	attRot0 = -0.183012679,0.683012724,-0.683012784,-0.183012709
 	mir = 1,1,1
@@ -5518,104 +5812,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294048638
-	srfN = srfAttach,Knes.Booster.EAP_4294088614
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294048638
-	partName = Part
-	persistentId = 2105607826
-	pos = 2.3728404,7.00917625,0.785405338
-	attPos = 0,0,0
-	attPos0 = -0.468715012,-7.30540562,-0.811837912
-	rot = -0.612372518,0.353553265,-0.353553295,-0.612372518
-	attRot = 0,0,0,1
-	attRot0 = -0.183012709,0.683012664,-0.683012664,-0.183012709
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 6
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
 	sym = Knes.Booster.Pushotron_4294048810
-	srfN = srfAttach,Knes.Booster.EAP_4294084480
+	srfN = srfAttach,Knes.Booster.EAP_4294212238,Collider
 	EVENTS
 	{
 	}
@@ -5687,109 +5885,13 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4294048074
-	partName = Part
-	persistentId = 3764902393
-	pos = 2.38264203,6.96746635,-0.146368027
-	attPos = 0,0,0
-	attPos0 = 0.46305573,-7.34711552,-0.802036166
-	rot = 0.353553653,-0.612372339,0.612372577,0.353553385
-	attRot = 0,0,0,1
-	attRot0 = -0.183012739,-0.683012605,0.683012903,-0.183012664
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 7
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294047890
-	srfN = srfAttach,Knes.Booster.EAP_4294084480
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294047890
+	part = Knes.Booster.Pushotron_4294211512
 	partName = Part
 	persistentId = 1267865190
-	pos = -1.8924396,6.96746635,0.779747009
+	pos = 2.4939847,7.40024185,-0.146367908
 	attPos = 0,0,0
 	attPos0 = 0.463055909,-7.34711552,-0.802036583
-	rot = -0.612372637,-0.353553355,0.353553623,-0.612372398
+	rot = 0.353553593,-0.61237222,0.612372518,0.353553474
 	attRot = 0,0,0,1
 	attRot0 = -0.183012739,-0.683012605,0.683012903,-0.183012694
 	mir = 1,1,1
@@ -5806,8 +5908,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294048074
-	srfN = srfAttach,Knes.Booster.EAP_4294088614
+	sym = Knes.Booster.Pushotron_4294047890
+	srfN = srfAttach,Knes.Booster.EAP_4294212238,Collider
 	EVENTS
 	{
 	}
@@ -5879,109 +5981,13 @@ PART
 }
 PART
 {
-	part = Knes.Booster.Pushotron_4294048448
-	partName = Part
-	persistentId = 3157759490
-	pos = 2.52607918,6.95705223,-0.341914058
-	attPos = 0.0176357031,0,-0.0176353455
-	attPos0 = 0.640966237,-7.35752964,-0.640965879
-	rot = -0.270597845,0.65328151,-0.653281868,-0.270597607
-	attRot = 0,0,0,1
-	attRot0 = 0.270598561,0.653281212,-0.65328151,0.270598441
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 2
-	resPri = 0
-	dstg = 6
-	sidx = 8
-	sqor = 2
-	sepI = 2
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294047688
-	srfN = srfAttach,Knes.Booster.EAP_4294084480
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEngines
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-			}
-			ActivateAction
-			{
-				actionGroup = None
-			}
-		}
-		AXISGROUPS
-		{
-			thrustPercentage
-			{
-				axisGroup = None
-				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				axisInverted = None
-				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 8
-		maxAmount = 8
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = Knes.Booster.Pushotron_4294047688
+	part = Knes.Booster.Pushotron_4294211450
 	partName = Part
 	persistentId = 2356984275
-	pos = -2.0358777,6.95705223,0.9752931
+	pos = 2.63742352,7.38982773,-0.341913819
 	attPos = 0.0176357031,0,-0.017635107
 	attPos0 = 0.640966475,-7.35752964,-0.640965581
-	rot = 0.653281987,0.270597488,-0.270597726,0.653281569
+	rot = -0.270597696,0.65328145,-0.653281808,-0.270597637
 	attRot = 0,0,0,1
 	attRot0 = 0.27059859,0.653281152,-0.65328151,0.270598412
 	mir = 1,1,1
@@ -5998,8 +6004,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = Knes.Booster.Pushotron_4294048448
-	srfN = srfAttach,Knes.Booster.EAP_4294088614
+	sym = Knes.Booster.Pushotron_4294047688
+	srfN = srfAttach,Knes.Booster.EAP_4294212238,Collider
 	EVENTS
 	{
 	}
