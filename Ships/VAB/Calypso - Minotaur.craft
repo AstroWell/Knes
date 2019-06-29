@@ -1,8 +1,8 @@
-ship = Calypso - Viking
+ship = Calypso - Minotaur
 version = 1.7.2
 description = 
 type = VAB
-size = 1.87499213,16.7685432,1.87499189
+size = 1.87499213,16.7685452,1.87499201
 steamPublishedFileId = 0
 persistentId = 1005576239
 rot = 0,0,0,0
@@ -14,12 +14,12 @@ OverrideAxisControl = 0,0,0,0
 OverrideGroupNames = ,,,
 PART
 {
-	part = Knes.Crew.Pod.09375_4294574014
+	part = Knes.Cargo.Pod.09375_4293907546
 	partName = Part
-	persistentId = 2585889761
-	pos = 0.523956418,17.2931557,-0.240608379
+	persistentId = 1995623920
+	pos = 0.454553008,17.2560024,-0.301711887
 	attPos = 0,0,0
-	attPos0 = 0.523956418,17.2931557,-0.240608379
+	attPos0 = 0.454553008,17.2560024,-0.301711887
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -30,16 +30,16 @@ PART
 	istg = 0
 	resPri = 0
 	dstg = 0
-	sidx = 0
-	sqor = 0
+	sidx = 1
+	sqor = 1
 	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.Heatshield.09375_4294558696
-	link = .Knes.Control.LowProfile.RCS.0625_4294599876
-	attN = top,.Knes.Control.LowProfile.RCS.0625_4294599876_0|0.280000001|0_0|1|0_0|0.280000001|0_0|1|0
+	link = .Knes.Control.LowProfile.RCS.0625_4294488768
+	attN = top,.Knes.Control.LowProfile.RCS.0625_4294488768_0|0.280000001|0_0|1|0_0|0.280000001|0_0|1|0
 	attN = bottom,Knes.Heatshield.09375_4294558696_0|-0.328130007|0_0|-1|0_0|-0.328130007|0_0|-1|0
 	EVENTS
 	{
@@ -70,7 +70,25 @@ PART
 			HibernateToggle
 			{
 				actionGroup = None
-				active = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleScienceContainer
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CollectAllAction
+			{
+				actionGroup = None
 			}
 		}
 		UPGRADESAPPLIED
@@ -113,13 +131,32 @@ PART
 			}
 			Activate
 			{
-				actionGroup = Abort
+				actionGroup = None
 			}
 			Deactivate
 			{
 				actionGroup = None
 			}
 			Toggle
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleKerbNetAccess
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OpenKerbNetAction
 			{
 				actionGroup = None
 			}
@@ -141,32 +178,6 @@ PART
 		ACTIONS
 		{
 			DecoupleAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-			}
-			ResetAction
 			{
 				actionGroup = None
 			}
@@ -810,8 +821,30 @@ PART
 	RESOURCE
 	{
 		name = ElectricCharge
-		amount = 200
-		maxAmount = 200
+		amount = 500
+		maxAmount = 500
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Ore
+		amount = 0
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Crystal
+		amount = 0
+		maxAmount = 500
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -823,8 +856,8 @@ PART
 {
 	part = Knes.Heatshield.09375_4294558696
 	partName = Part
-	persistentId = 1675159727
-	pos = 0.523956418,16.9350243,-0.240608379
+	persistentId = 568637352
+	pos = 0.454553008,16.897871,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.358131409,0
 	rot = 0,0,0,1
@@ -845,7 +878,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = .Knes.Diamant.Decoupler.09375_4294544666
-	attN = top,Knes.Crew.Pod.09375_4294574014_0|0.0299999993|0_0|1|0_0|0.0299999993|0_0|1|0
+	attN = top,Knes.Cargo.Pod.09375_4293907546_0|0.0299999993|0_0|1|0_0|0.0299999993|0_0|1|0
 	attN = bottom,.Knes.Diamant.Decoupler.09375_4294544666_0|-0.0700000003|0_0|-1|0_0|-0.0700000003|0_0|-1|0
 	EVENTS
 	{
@@ -931,8 +964,8 @@ PART
 {
 	part = .Knes.Diamant.Decoupler.09375_4294544666
 	partName = Part
-	persistentId = 905520692
-	pos = 0.523956418,16.8150253,-0.240608379
+	persistentId = 3975649939
+	pos = 0.454553008,16.7778721,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.119998932,0
 	rot = 0,0,0,1
@@ -946,7 +979,7 @@ PART
 	resPri = 0
 	dstg = 3
 	sidx = 0
-	sqor = 1
+	sqor = 2
 	sepI = 1
 	attm = 0
 	modCost = 0
@@ -1018,8 +1051,8 @@ PART
 {
 	part = Knes.MonoProp.FuelTank.Nano.09375_4294501044
 	partName = Part
-	persistentId = 1659245303
-	pos = 0.523956418,16.7150269,-0.240608379
+	persistentId = 3237651285
+	pos = 0.454553008,16.6778736,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.0999984741,0
 	rot = 0,0,0,1
@@ -1067,8 +1100,8 @@ PART
 {
 	part = Knes.Service.Module.Viking.09375_4294481350
 	partName = Part
-	persistentId = 2796585778
-	pos = 0.523956418,16.4037285,-0.240608379
+	persistentId = 3345726702
+	pos = 0.454553008,16.3665752,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.31129837,0
 	rot = 0,0,0,1
@@ -1082,7 +1115,7 @@ PART
 	resPri = 0
 	dstg = 4
 	sidx = 0
-	sqor = 2
+	sqor = 3
 	sepI = 1
 	attm = 0
 	modCost = 0
@@ -1279,8 +1312,8 @@ PART
 {
 	part = .Knes.Diamant.Decoupler.09375_4294456774
 	partName = Part
-	persistentId = 1711509083
-	pos = 0.523956418,16.02981,-0.240608379
+	persistentId = 31136660
+	pos = 0.454553008,15.9926567,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.373918533,0
 	rot = 0,0,0,1
@@ -1294,7 +1327,7 @@ PART
 	resPri = 0
 	dstg = 5
 	sidx = 1
-	sqor = 2
+	sqor = 3
 	sepI = 2
 	attm = 0
 	modCost = 0
@@ -1366,8 +1399,8 @@ PART
 {
 	part = .Knes.DiamantBP4.Avionics.09375_4294555938
 	partName = Part
-	persistentId = 503444167
-	pos = 0.523956418,15.90481,-0.240608379
+	persistentId = 3610751950
+	pos = 0.454553008,15.8676567,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.125,0
 	rot = 0,0,0,1
@@ -1638,8 +1671,8 @@ PART
 {
 	part = .Knes.Mireille.LFO.medium.09375_4294166628
 	partName = Part
-	persistentId = 1092451594
-	pos = 0.523956418,14.9860601,-0.240608379
+	persistentId = 748569687
+	pos = 0.454553008,14.9489069,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-0.918749809,0
 	rot = 0,0,0,1
@@ -1698,8 +1731,8 @@ PART
 {
 	part = .Knes.Mireille.Engine.09375_4294526774
 	partName = Part
-	persistentId = 2897638366
-	pos = 0.523956418,13.82586,-0.240608379
+	persistentId = 3193553226
+	pos = 0.454553008,13.7887068,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-1.16020012,0
 	rot = 0,0,0,1
@@ -1713,7 +1746,7 @@ PART
 	resPri = 0
 	dstg = 6
 	sidx = 0
-	sqor = 4
+	sqor = 5
 	sepI = 2
 	attm = 0
 	modCost = 0
@@ -1927,8 +1960,8 @@ PART
 {
 	part = Knes.Decoupler.G1250_4294353480
 	partName = Part
-	persistentId = 1258520997
-	pos = 0.523956418,12.6677103,-0.240608379
+	persistentId = 3587273017
+	pos = 0.454553008,12.6305571,-0.301711887
 	attPos = 0,-0.0390911102,0
 	attPos0 = 0,-1.15814972,0
 	rot = 0,0,0,1
@@ -1942,7 +1975,7 @@ PART
 	resPri = 0
 	dstg = 7
 	sidx = 1
-	sqor = 5
+	sqor = 6
 	sepI = 5
 	attm = 0
 	modCost = 0
@@ -2031,8 +2064,8 @@ PART
 {
 	part = .Knes.Carmen.FuelTank.125_4294467050
 	partName = Part
-	persistentId = 3454413069
-	pos = 0.523956418,9.1052103,-0.240608379
+	persistentId = 2634460545
+	pos = 0.454553008,9.06805706,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-3.5625,0
 	rot = 0,0,0,1
@@ -2095,8 +2128,8 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293734544
 	partName = Part
-	persistentId = 2499499242
-	pos = 0.523956478,12.3702621,-0.920369327
+	persistentId = 2549051383
+	pos = 0.454553068,12.3331089,-0.98147285
 	attPos = 0,0,0
 	attPos0 = 5.96046448E-08,3.26505184,-0.679760933
 	rot = -5.18578247E-08,0,1,0
@@ -2110,7 +2143,7 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 0
-	sqor = 5
+	sqor = 6
 	sepI = 5
 	attm = 1
 	modCost = 0
@@ -2230,8 +2263,8 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293732814
 	partName = Part
-	persistentId = 1935019062
-	pos = -0.155804455,12.3702621,-0.240608484
+	persistentId = 4070914680
+	pos = -0.225207865,12.3331089,-0.301711977
 	attPos = 0,0,0
 	attPos0 = -0.679760873,3.26505184,-1.04308128E-07
 	rot = 0.707106709,0,0.707106829,0
@@ -2245,7 +2278,7 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 0
-	sqor = 5
+	sqor = 6
 	sepI = 5
 	attm = 1
 	modCost = 0
@@ -2365,8 +2398,8 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293732742
 	partName = Part
-	persistentId = 28144171
-	pos = 0.523956418,12.3702621,0.439152539
+	persistentId = 711577319
+	pos = 0.454553008,12.3331089,0.378049046
 	attPos = 0,0,0
 	attPos0 = 0,3.26505184,0.679760933
 	rot = 1,0,8.14643641E-09,0
@@ -2380,7 +2413,7 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 0
-	sqor = 5
+	sqor = 6
 	sepI = 5
 	attm = 1
 	modCost = 0
@@ -2500,8 +2533,8 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293732670
 	partName = Part
-	persistentId = 1216890659
-	pos = 1.20371735,12.3702621,-0.240608364
+	persistentId = 3335065641
+	pos = 1.13431394,12.3331089,-0.301711857
 	attPos = 0,0,0
 	attPos0 = 0.679760933,3.26505184,1.49011612E-08
 	rot = 0.707106829,0,-0.707106709,0
@@ -2515,7 +2548,7 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 0
-	sqor = 5
+	sqor = 6
 	sepI = 5
 	attm = 1
 	modCost = 0
@@ -2635,8 +2668,8 @@ PART
 {
 	part = .Knes.Diane.Engine.125_4294539734
 	partName = Part
-	persistentId = 2787536534
-	pos = 0.523956418,5.25681019,-0.240608379
+	persistentId = 4228753242
+	pos = 0.454553008,5.21965694,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,-3.84840012,0
 	rot = 0,0,0,1
@@ -2650,7 +2683,7 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 0
-	sqor = 6
+	sqor = 7
 	sepI = 5
 	attm = 0
 	modCost = 0
@@ -2892,10 +2925,10 @@ PART
 }
 PART
 {
-	part = .Knes.Control.LowProfile.RCS.0625_4294599876
+	part = .Knes.Control.LowProfile.RCS.0625_4294488768
 	partName = Part
-	persistentId = 340890045
-	pos = 0.523956418,17.6231556,-0.240608379
+	persistentId = 9620013
+	pos = 0.454553008,17.5860023,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,0.329999924,0
 	rot = 0,0,0,1
@@ -2917,7 +2950,7 @@ PART
 	modSize = 0,0,0
 	link = Knes.Parachute.Inline.0625_4294527782
 	attN = top,Knes.Parachute.Inline.0625_4294527782_0|0.0500000007|0_0|1|0_0|0.0500000007|0_0|1|0
-	attN = bottom,Knes.Crew.Pod.09375_4294574014_0|-0.0500000007|0_0|-1|0_0|-0.0500000007|0_0|-1|0
+	attN = bottom,Knes.Cargo.Pod.09375_4293907546_0|-0.0500000007|0_0|-1|0_0|-0.0500000007|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -3012,8 +3045,8 @@ PART
 {
 	part = Knes.Parachute.Inline.0625_4294527782
 	partName = Part
-	persistentId = 3725751473
-	pos = 0.523956418,17.7231541,-0.240608379
+	persistentId = 3175975323
+	pos = 0.454553008,17.6860008,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,0.0999984741,0
 	rot = 0,0,0,1
@@ -3026,15 +3059,15 @@ PART
 	istg = 0
 	resPri = 0
 	dstg = 1
-	sidx = 1
-	sqor = 0
+	sidx = 0
+	sqor = 1
 	sepI = 0
 	attm = 0
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.DockingPortJr.0625_4294541146
-	attN = bottom,.Knes.Control.LowProfile.RCS.0625_4294599876_0|-0.0500000007|0_0|-1|0_0|-0.0500000007|0_0|-1|0
+	attN = bottom,.Knes.Control.LowProfile.RCS.0625_4294488768_0|-0.0500000007|0_0|-1|0_0|-0.0500000007|0_0|-1|0
 	attN = top,Knes.DockingPortJr.0625_4294541146_0|0.0500000007|0_0|1|0_0|0.0500000007|0_0|1|0
 	EVENTS
 	{
@@ -3130,8 +3163,8 @@ PART
 {
 	part = Knes.DockingPortJr.0625_4294541146
 	partName = Part
-	persistentId = 1990763928
-	pos = 0.523956418,17.7981529,-0.240608379
+	persistentId = 4181514081
+	pos = 0.454553008,17.7609997,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,0.0749988556,0
 	rot = 0,0,0,1
@@ -3284,8 +3317,8 @@ PART
 {
 	part = Knes.EscapeTower.Small_4294471060
 	partName = Part
-	persistentId = 599720342
-	pos = 0.523956418,18.6481533,-0.240608379
+	persistentId = 1609673844
+	pos = 0.454553008,18.6110001,-0.301711887
 	attPos = 0,0,0
 	attPos0 = 0,0.850000381,0
 	rot = 0,0,0,1
@@ -3299,7 +3332,7 @@ PART
 	resPri = 0
 	dstg = 2
 	sidx = 0
-	sqor = 3
+	sqor = 4
 	sepI = 3
 	attm = 0
 	modCost = 0
