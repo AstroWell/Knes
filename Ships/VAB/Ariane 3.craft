@@ -1,18 +1,22 @@
 ship = Ariane 3
-version = 1.7.0
+version = 1.7.3
 description = 
 type = VAB
-size = 3.24402761,32.4446182,4.37935829
+size = 3.24402761,32.4446259,4.37935829
 steamPublishedFileId = 0
 persistentId = 1875876809
 rot = 0,0,0,0
 missionFlag = Squad/Flags/retro
 vesselType = Debris
+OverrideDefault = False,False,False,False
+OverrideActionControl = 0,0,0,0
+OverrideAxisControl = 0,0,0,0
+OverrideGroupNames = ,,,
 PART
 {
 	part = HECS2.ProbeCore_4294096122
 	partName = Part
-	persistentId = 3706531273
+	persistentId = 701763363
 	pos = 0.17360729,28.7711945,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0.17360729,28.7711945,-0.433499217
@@ -30,13 +34,14 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = HECS2.ProbeCore_4294092740
 	link = Knes.Decoupler.G0625_4293951594
-	attN = top,HECS2.ProbeCore_4294092740_0|0.5|0
-	attN = bottom,Knes.Decoupler.G0625_4293951594_0|-0.5|0
+	attN = top,HECS2.ProbeCore_4294092740_0|0.5|0_0|1|0_0|0.5|0_0|1|0
+	attN = bottom,Knes.Decoupler.G0625_4293951594_0|-0.5|0_0|-1|0_0|-0.5|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -185,6 +190,575 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = MechJebCore
+		isEnabled = True
+		running = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnOrbitProgradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRetrogradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitNormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitAntinormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialInAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialOutAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnKillRotationAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnDeactivateSmartASSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnPanicAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronOffAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronKeepVertAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronZeroSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronPlusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronMinusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronToggleHSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnAscentAPToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		MechJebLocalSettings
+		{
+			MechJebModuleMenu
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAirplaneAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAirplaneGuidance
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentClassic
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentClassicMenu
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentGT
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentGuidance
+			{
+				unlockParts = 
+				unlockTechs = unmannedTech
+			}
+			MechJebModuleAscentNavBall
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentPVG
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAttitudeAdjustment
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleCustomWindowEditor
+			{
+				unlockParts = 
+				unlockTechs = flightControl
+			}
+			MechJebModuleDebugArrows
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleDockingAutopilot
+			{
+				forceRol = False
+				overrideSafeDistance = False
+				overrideTargetSize = False
+				unlockParts = 
+				unlockTechs = 
+				rol
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleDockingGuidance
+			{
+				unlockParts = 
+				unlockTechs = advUnmanned
+			}
+			MechJebModuleGuidanceController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleInfoItems
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleLandingAutopilot
+			{
+				deployGears = True
+				deployChutes = True
+				rcsAdjustment = True
+				unlockParts = 
+				unlockTechs = 
+				touchdownSpeed
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				limitGearsStage
+				{
+					val = 0
+					_text = 0
+				}
+				limitChutesStage
+				{
+					val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleLandingGuidance
+			{
+				landingSiteIdx = 0
+				unlockParts = 
+				unlockTechs = unmannedTech
+			}
+			MechJebModuleLandingPredictions
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleLogicalStageTracking
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleManeuverPlanner
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleNodeEditor
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleNodeExecutor
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleRCSBalancerWindow
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleRendezvousAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleRendezvousAutopilotWindow
+			{
+				unlockParts = 
+				unlockTechs = advUnmanned
+			}
+			MechJebModuleRendezvousGuidance
+			{
+				unlockParts = 
+				unlockTechs = advUnmanned
+			}
+			MechJebModuleRoverController
+			{
+				ControlHeading = False
+				ControlSpeed = False
+				BrakeOnEject = False
+				BrakeOnEnergyDepletion = False
+				WarpToDaylight = False
+				StabilityControl = False
+				LimitAcceleration = False
+				unlockParts = 
+				unlockTechs = 
+				heading
+				{
+					_val = 0
+					_text = 0
+				}
+				speed
+				{
+					_val = 10
+					_text = 10
+				}
+			}
+			MechJebModuleRoverWindow
+			{
+				unlockParts = 
+				unlockTechs = fieldScience
+			}
+			MechJebModuleScript
+			{
+				minifiedGUI = False
+				selectedSlot = 0
+				selectedMemorySlotType = 0
+				activeSavepoint = -1
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSettings
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSmartASS
+			{
+				mode = ORBITAL
+				target = OFF
+				advReference = INERTIAL
+				advDirection = FORWARD
+				forceRol = False
+				forcePitch = True
+				forceYaw = True
+				unlockParts = 
+				unlockTechs = flightControl
+				srfHdg
+				{
+					_val = 90
+					_text = 90
+				}
+				srfPit
+				{
+					_val = 90
+					_text = 90
+				}
+				srfRol
+				{
+					_val = 0
+					_text = 0
+				}
+				srfVelYaw
+				{
+					_val = 0
+					_text = 0
+				}
+				srfVelPit
+				{
+					_val = 0
+					_text = 0
+				}
+				srfVelRol
+				{
+					_val = 0
+					_text = 0
+				}
+				rol
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleSmartRcs
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSpaceplaneAutopilot
+			{
+				bBreakAsSoonAsLanded = False
+				unlockParts = 
+				unlockTechs = 
+				glideslope
+				{
+					_val = 3
+					_text = 3
+				}
+				approachSpeed
+				{
+					_val = 80
+					_text = 80
+				}
+				touchdownSpeed
+				{
+					_val = 60
+					_text = 60
+				}
+				maximumSafeBankAngle
+				{
+					_val = 25
+					_text = 25
+				}
+			}
+			MechJebModuleSpaceplaneGuidance
+			{
+				runwayIndex = 0
+				unlockParts = 
+				unlockTechs = unmannedTech
+			}
+			MechJebModuleStageStats
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleTargetController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleThrustWindow
+			{
+				autostageSavedState = False
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleTranslatron
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+				trans_spd
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleWarpHelper
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+				phaseAngle
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleWaypointWindow
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleWaypointHelpWindow
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			ModExtensionDemo
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleCustomInfoWindow
+			{
+			}
+			MechJebModuleWarpController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleDeployableAntennaController
+			{
+				prev_shouldDeploy = False
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSolarPanelController
+			{
+				prev_shouldDeploy = False
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleThrustController
+			{
+				limitThrottle = False
+				limiterMinThrottle = False
+				electricThrottle = False
+				unlockParts = 
+				unlockTechs = 
+				maxThrottle
+				{
+					_val = 1
+					_text = 100
+				}
+				minThrottle
+				{
+					_val = 0.050000000000000003
+					_text = 5
+				}
+				electricThrottleLo
+				{
+					_val = 0.050000000000000003
+					_text = 5
+				}
+				electricThrottleHi
+				{
+					_val = 0.14999999999999999
+					_text = 15
+				}
+			}
+			MechJebModuleRCSController
+			{
+				unlockParts = 
+				unlockTechs = 
+				Tf
+				{
+					_val = 1
+					_text = 1
+				}
+				Kp
+				{
+					_val = 0.125
+					_text = 0.125
+				}
+				Ki
+				{
+					_val = 0.070000000000000007
+					_text = 0.07
+				}
+				Kd
+				{
+					_val = 0.53000000000000003
+					_text = 0.53
+				}
+			}
+			MechJebModuleRCSBalancer
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAttitudeController
+			{
+				unlockParts = 
+				unlockTechs = 
+				MJAttitudeController
+				{
+				}
+				KosAttitudeController
+				{
+				}
+				HybridController
+				{
+				}
+			}
+			MechJebModuleStagingController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleFlightRecorder
+			{
+				markUT = 0
+				deltaVExpended = 0
+				dragLosses = 0
+				gravityLosses = 0
+				steeringLosses = 0
+				markLAN = 0
+				markLatitude = 0
+				markLongitude = 0
+				markAltitude = 0
+				markBodyIndex = 1
+				maxDragGees = 0
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleFlightRecorderGraph
+			{
+				unlockParts = 
+				unlockTechs = 
 			}
 		}
 		UPGRADESAPPLIED
@@ -226,7 +800,7 @@ PART
 {
 	part = HECS2.ProbeCore_4294092740
 	partName = Part
-	persistentId = 1705440081
+	persistentId = 70385275
 	pos = 0.17360729,29.5547886,-0.433499217
 	attPos = 0,-0.216405869,0
 	attPos0 = 0,1,0
@@ -244,6 +818,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -254,8 +829,8 @@ PART
 	link = LgRadialSolarPanel_4294074720
 	link = LgRadialSolarPanel_4294074664
 	link = RelayAntenna5_4294069418
-	attN = top,RelayAntenna5_4294069418_0|0.5|0
-	attN = bottom,HECS2.ProbeCore_4294096122_0|-0.5|0
+	attN = top,RelayAntenna5_4294069418_0|0.5|0_0|1|0_0|0.5|0_0|1|0
+	attN = bottom,HECS2.ProbeCore_4294096122_0|-0.5|0_0|-1|0_0|-0.5|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -401,6 +976,102 @@ PART
 		ACTIONS
 		{
 			CollectAllAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = MechJebCore
+		isEnabled = True
+		running = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnOrbitProgradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRetrogradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitNormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitAntinormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialInAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialOutAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnKillRotationAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnDeactivateSmartASSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnPanicAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronOffAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronKeepVertAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronZeroSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronPlusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronMinusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronToggleHSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnAscentAPToggleAction
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
@@ -445,7 +1116,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294076734
 	partName = Part
-	persistentId = 3269173604
+	persistentId = 1121349388
 	pos = -0.335187674,29.170742,-0.727252364
 	attPos = 0.121213436,0,0.0699824691
 	attPos0 = -0.630008399,-0.384046555,-0.363735616
@@ -463,6 +1134,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -525,7 +1197,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074888
 	partName = Part
-	persistentId = 1681449241
+	persistentId = 2921801885
 	pos = -0.335187852,29.170742,-0.139746338
 	attPos = 0.121213317,0,-0.0699825883
 	attPos0 = -0.630008459,-0.384046555,0.363735467
@@ -543,6 +1215,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -605,7 +1278,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074832
 	partName = Part
-	persistentId = 950341222
+	persistentId = 413372679
 	pos = 0.173607141,29.170742,0.15400672
 	attPos = -1.41561031E-07,0,-0.139965177
 	attPos0 = -3.7252903E-09,-0.384046555,0.727471113
@@ -623,6 +1296,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -685,7 +1359,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074776
 	partName = Part
-	persistentId = 176193004
+	persistentId = 1362754259
 	pos = 0.682402313,29.170742,-0.13974607
 	attPos = -0.121213436,0,-0.0699824095
 	attPos0 = 0.630008459,-0.384046555,0.363735557
@@ -703,6 +1377,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -765,7 +1440,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074720
 	partName = Part
-	persistentId = 926460566
+	persistentId = 2609209035
 	pos = 0.682402492,29.170742,-0.727251947
 	attPos = -0.121213317,0,0.0699827969
 	attPos0 = 0.630008519,-0.384046555,-0.363735527
@@ -783,6 +1458,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -845,7 +1521,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074664
 	partName = Part
-	persistentId = 3637559761
+	persistentId = 3400913277
 	pos = 0.173607484,29.170742,-1.02100515
 	attPos = 0,0,0.139965177
 	attPos0 = 1.97440386E-07,-0.384046555,-0.727471113
@@ -863,6 +1539,7 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -925,7 +1602,7 @@ PART
 {
 	part = RelayAntenna5_4294069418
 	partName = Part
-	persistentId = 1268066053
+	persistentId = 1350776586
 	pos = 0.17360729,30.0547886,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,0.5,0
@@ -943,10 +1620,11 @@ PART
 	sqor = -1
 	sepI = -1
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	attN = bottom,HECS2.ProbeCore_4294092740_0|0|0
+	attN = bottom,HECS2.ProbeCore_4294092740_0|0|0_0|-1|0_0|0|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1001,7 +1679,7 @@ PART
 {
 	part = Knes.Decoupler.G0625_4293951594
 	partName = Part
-	persistentId = 2942398748
+	persistentId = 1166799551
 	pos = 0.17360729,28.2086945,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-0.5625,0
@@ -1019,12 +1697,13 @@ PART
 	sqor = 0
 	sepI = 0
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = Knes.Aero.Fairing.1875_4293969124
-	attN = top,HECS2.ProbeCore_4294096122_0|0.0625|0
-	attN = bottom,Knes.Aero.Fairing.1875_4293969124_0|-0.0625|0
+	link = Knes.Structural.Kylda.125_4294358596
+	attN = top,HECS2.ProbeCore_4294096122_0|0.0625|0_0|1|0_0|0.0625|0_0|1|0
+	attN = bottom,Knes.Structural.Kylda.125_4294358596_0|-0.0625|0_0|-1|0_0|-0.0625|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1106,12 +1785,51 @@ PART
 }
 PART
 {
+	part = Knes.Structural.Kylda.125_4294358596
+	partName = Part
+	persistentId = 3604381912
+	pos = 0.17360729,27.9338303,-0.433499217
+	attPos = 0,0,0
+	attPos0 = 0,-0.274864197,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 0
+	resPri = 0
+	dstg = 2
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = Knes.Aero.Fairing.1875_4293969124
+	attN = top,Knes.Decoupler.G0625_4293951594_0|0.212365001|0_0|0.5|0_0|0.212365001|0_0|0.5|0
+	attN = bottom,Knes.Aero.Fairing.1875_4293969124_0|-0.174999997|0_0|-0.5|0_0|-0.174999997|0_0|-0.5|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+}
+PART
+{
 	part = Knes.Aero.Fairing.1875_4293969124
 	partName = Part
-	persistentId = 2302535370
-	pos = 0.17360729,27.7088242,-0.433499217
+	persistentId = 554875105
+	pos = 0.17360729,27.7088318,-0.433499217
 	attPos = 0,0,0
-	attPos0 = 0,-0.4998703,0
+	attPos0 = 0,-0.224998474,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -1126,12 +1844,13 @@ PART
 	sqor = 1
 	sepI = 0
 	attm = 0
+	sameVesselCollision = False
 	modCost = 364.205261
 	modMass = 3.64205265
 	modSize = 0,0,0
 	link = Knes.Command.Minus_4293882128
-	attN = bottom,Knes.Command.Minus_4293882128_0|-0.05|0
-	attN = Payload,Knes.Decoupler.G0625_4293951594_0|0.43737|0
+	attN = top,Knes.Structural.Kylda.125_4294358596_0|0.0500000007|0_0|1|0_0|0.0500000007|0_0|1|0
+	attN = bottom,Knes.Command.Minus_4293882128_0|-0.0500000007|0_0|-1|0_0|-0.0500000007|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1206,70 +1925,13 @@ PART
 		{
 		}
 	}
-	MODULE
-	{
-		name = ModuleJettison
-		isEnabled = True
-		activejettisonName = Adapter
-		isJettisoned = False
-		shroudHideOverride = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			JettisonAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleStructuralNode
-		isEnabled = True
-		spawnState = False
-		visibilityState = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleStructuralNodeToggle
-		isEnabled = True
-		showMesh = True
-		showNodes = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
 }
 PART
 {
 	part = Knes.Command.Minus_4293882128
 	partName = Part
-	persistentId = 534955278
-	pos = 0.17360729,27.5088234,-0.433499217
+	persistentId = 4094748296
+	pos = 0.17360729,27.508831,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-0.199999809,0
 	rot = 0,0,0,1
@@ -1286,12 +1948,13 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.Fuel.Tanks.1875.H10_4293218670
-	attN = top,Knes.Aero.Fairing.1875_4293969124_0|0.15|0
-	attN = bottom,Knes.Fuel.Tanks.1875.H10_4293218670_0|-0.15|0
+	attN = top,Knes.Aero.Fairing.1875_4293969124_0|0.150000006|0_0|1|0_0|0.150000006|0_0|1|0
+	attN = bottom,Knes.Fuel.Tanks.1875.H10_4293218670_0|-0.150000006|0_0|-1|0_0|-0.150000006|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1408,6 +2071,102 @@ PART
 	}
 	MODULE
 	{
+		name = MechJebCore
+		isEnabled = True
+		running = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnOrbitProgradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRetrogradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitNormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitAntinormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialInAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialOutAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnKillRotationAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnDeactivateSmartASSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnPanicAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronOffAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronKeepVertAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronZeroSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronPlusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronMinusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronToggleHSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnAscentAPToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
 		name = ModuleTripLogger
 		isEnabled = True
 		stagingEnabled = True
@@ -1452,8 +2211,8 @@ PART
 {
 	part = Knes.Fuel.Tanks.1875.H10_4293218670
 	partName = Part
-	persistentId = 4017067812
-	pos = 0.17360729,25.0851231,-0.433499217
+	persistentId = 4254646221
+	pos = 0.17360729,25.0851307,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.42370033,0
 	rot = 0,0,0,1
@@ -1470,13 +2229,14 @@ PART
 	sqor = -1
 	sepI = 0
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.Engine.Zebulon_4293878282
 	link = launchClamp1_4293197102
-	attN = top,Knes.Command.Minus_4293882128_0|2.2737|0
-	attN = bottom,Knes.Engine.Zebulon_4293878282_0|-2.2737|0
+	attN = top,Knes.Command.Minus_4293882128_0|2.2737|0_0|1|0_0|2.2737|0_0|1|0
+	attN = bottom,Knes.Engine.Zebulon_4293878282_0|-2.2737|0_0|-1|0_0|-2.2737|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1513,8 +2273,8 @@ PART
 {
 	part = Knes.Engine.Zebulon_4293878282
 	partName = Part
-	persistentId = 3836120471
-	pos = 0.17360729,22.3114243,-0.433499217
+	persistentId = 466387848
+	pos = 0.17360729,22.3114319,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.77369881,0
 	rot = 0,0,0,1
@@ -1531,14 +2291,15 @@ PART
 	sqor = 2
 	sepI = 0
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = Knes.Decoupler.G1875_4293871796
 	link = .Knes.L3S.H8.Separatron_4293453752
 	link = .Knes.L3S.H8.Separatron_4293453452
-	attN = top,Knes.Fuel.Tanks.1875.H10_4293218670_0|0.5|0
-	attN = bottom,Knes.Decoupler.G1875_4293871796_0|-1.53363|0
+	attN = top,Knes.Fuel.Tanks.1875.H10_4293218670_0|0.5|0_0|1|0_0|0.5|0_0|1|0
+	attN = bottom,Knes.Decoupler.G1875_4293871796_0|-1.53363001|0_0|-1|0_0|-1.53363001|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1552,6 +2313,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -1580,6 +2343,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -1729,13 +2520,29 @@ PART
 		{
 		}
 	}
+	MODULE
+	{
+		name = ModulePartVariants
+		isEnabled = True
+		useVariantMass = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
 }
 PART
 {
 	part = Knes.Decoupler.G1875_4293871796
 	partName = Part
-	persistentId = 273556146
-	pos = 0.17360729,20.7152939,-0.433499217
+	persistentId = 1631466703
+	pos = 0.17360729,20.7153015,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-1.59612942,0
 	rot = 0,0,0,1
@@ -1752,12 +2559,13 @@ PART
 	sqor = 3
 	sepI = 3
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = .Knes.L3S.L33_4293496260
-	attN = top,Knes.Engine.Zebulon_4293878282_0|0.0625|0
-	attN = bottom,.Knes.L3S.L33_4293496260_0|-0.0625|0
+	attN = top,Knes.Engine.Zebulon_4293878282_0|0.0625|0_0|1|0_0|0.0625|0_0|1|0
+	attN = bottom,.Knes.L3S.L33_4293496260_0|-0.0625|0_0|-1|0_0|-0.0625|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1842,8 +2650,8 @@ PART
 {
 	part = .Knes.L3S.L33_4293496260
 	partName = Part
-	persistentId = 1594618587
-	pos = 0.17360729,18.5277939,-0.433499217
+	persistentId = 2289963605
+	pos = 0.17360729,18.5278015,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.1875,0
 	rot = 0,0,0,1
@@ -1860,14 +2668,15 @@ PART
 	sqor = -1
 	sepI = 3
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = .Knes.L3S.L33.Engine_4293473886
 	link = .Knes.L3S.H8.Separatron_4293449904
 	link = .Knes.L3S.H8.Separatron_4293447498
-	attN = top,Knes.Decoupler.G1875_4293871796_0|2.125|0
-	attN = bottom,.Knes.L3S.L33.Engine_4293473886_0|-2.125|0
+	attN = top,Knes.Decoupler.G1875_4293871796_0|2.125|0_0|1|0_0|2.125|0_0|1|0
+	attN = bottom,.Knes.L3S.L33.Engine_4293473886_0|-2.125|0_0|-1|0_0|-2.125|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1904,8 +2713,8 @@ PART
 {
 	part = .Knes.L3S.L33.Engine_4293473886
 	partName = Part
-	persistentId = 1700387459
-	pos = 0.17360729,15.9027939,-0.433499217
+	persistentId = 3371311511
+	pos = 0.17360729,15.9028015,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.625,0
 	rot = 0,0,0,1
@@ -1922,6 +2731,7 @@ PART
 	sqor = 4
 	sepI = 3
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -1930,8 +2740,8 @@ PART
 	link = .Knes.L3S.L33.Separatron_4293444994
 	link = .Knes.L3S.L33.Separatron_4293441196
 	link = Knes.Decoupler.G2500_4293423744
-	attN = top,.Knes.L3S.L33_4293496260_0|0.5|0
-	attN = bottom,Knes.Decoupler.G2500_4293423744_0|-2.64179|0
+	attN = top,.Knes.L3S.L33_4293496260_0|0.5|0_0|1|0_0|0.5|0_0|1|0
+	attN = bottom,Knes.Decoupler.G2500_4293423744_0|-2.64178991|0_0|-1|0_0|-2.64178991|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -1945,6 +2755,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -1973,6 +2785,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -2127,8 +2967,8 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293442460
 	partName = Part
-	persistentId = 1834215281
-	pos = -0.674926996,16.1681843,0.0564023256
+	persistentId = 1475335724
+	pos = -0.674926996,16.1681919,0.0564023256
 	attPos = 0,0,0
 	attPos0 = -0.848534286,0.265390396,0.489901543
 	rot = 0.0161904078,0.86557126,-0.028042607,0.499737829
@@ -2145,6 +2985,7 @@ PART
 	sqor = 5
 	sepI = 3
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -2163,6 +3004,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -2191,6 +3034,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -2251,8 +3122,8 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293442296
 	partName = Part
-	persistentId = 1399764883
-	pos = 1.02214146,16.1681843,-0.923400819
+	persistentId = 2371209201
+	pos = 1.02214146,16.1681919,-0.923400819
 	attPos = 0,0,0
 	attPos0 = 0.848534226,0.265390396,-0.489901602
 	rot = -0.028042607,0.499737799,-0.0161904059,-0.86557126
@@ -2269,6 +3140,7 @@ PART
 	sqor = 5
 	sepI = 3
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -2287,6 +3159,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -2315,6 +3189,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -2375,8 +3277,8 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293444994
 	partName = Part
-	persistentId = 820725372
-	pos = -0.684964538,16.1755829,-0.92919606
+	persistentId = 4211448246
+	pos = -0.684964538,16.1755905,-0.92919606
 	attPos = 0,0,0
 	attPos0 = -0.858571827,0.272789001,-0.495696843
 	rot = -0.0280426275,-0.499737769,0.0161904171,-0.86557132
@@ -2393,6 +3295,7 @@ PART
 	sqor = 5
 	sepI = 3
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -2411,6 +3314,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -2439,6 +3344,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -2499,8 +3432,8 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293441196
 	partName = Part
-	persistentId = 2489991752
-	pos = 1.03217912,16.1755829,0.0621975362
+	persistentId = 1738726015
+	pos = 1.03217912,16.1755905,0.0621975362
 	attPos = 0,0,0
 	attPos0 = 0.858571887,0.272789001,0.495696753
 	rot = 0.016190419,-0.86557132,0.0280426275,0.499737799
@@ -2517,6 +3450,7 @@ PART
 	sqor = 5
 	sepI = 3
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -2535,6 +3469,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -2563,6 +3499,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -2623,8 +3587,8 @@ PART
 {
 	part = Knes.Decoupler.G2500_4293423744
 	partName = Part
-	persistentId = 1373625801
-	pos = 0.17360729,13.1985035,-0.433499217
+	persistentId = 2388991831
+	pos = 0.17360729,13.1985111,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.70429039,0
 	rot = 0,0,0,1
@@ -2641,12 +3605,13 @@ PART
 	sqor = 5
 	sepI = 5
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
 	link = .Knes.L3S.L140_4293406624
-	attN = top,.Knes.L3S.L33.Engine_4293473886_0|0.0625|0
-	attN = bottom,.Knes.L3S.L140_4293406624_0|-0.0625|0
+	attN = top,.Knes.L3S.L33.Engine_4293473886_0|0.0625|0_0|1|0_0|0.0625|0_0|1|0
+	attN = bottom,.Knes.L3S.L140_4293406624_0|-0.0625|0_0|-1|0_0|-0.0625|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -2731,8 +3696,8 @@ PART
 {
 	part = .Knes.L3S.L140_4293406624
 	partName = Part
-	persistentId = 239336220
-	pos = 0.17360729,8.03600311,-0.433499217
+	persistentId = 3640840678
+	pos = 0.17360729,8.03601074,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-5.16250038,0
 	rot = 0,0,0,1
@@ -2746,9 +3711,10 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 0
-	sqor = 9
+	sqor = 8
 	sepI = 5
 	attm = 0
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -2763,7 +3729,7 @@ PART
 	link = launchClamp1_4293341572
 	link = Knes.Decoupler.Radial.big_4293843554
 	link = Knes.Decoupler.Radial.big_4293842254
-	attN = top,Knes.Decoupler.G2500_4293423744_0|5.1|0
+	attN = top,Knes.Decoupler.G2500_4293423744_0|5.0999999|0_0|1|0_0|5.0999999|0_0|1|0
 	EVENTS
 	{
 	}
@@ -2777,6 +3743,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -2805,6 +3773,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -2943,8 +3939,8 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293395114
 	partName = Part
-	persistentId = 4060392141
-	pos = -1.12357426,12.595171,-0.433499157
+	persistentId = 3637012572
+	pos = -1.12357426,12.5951786,-0.433499157
 	attPos = 0,0,0
 	attPos0 = -1.29718161,4.55916786,5.96046448E-08
 	rot = 0,0.707106829,0,0.707106829
@@ -2961,6 +3957,7 @@ PART
 	sqor = 5
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -2981,6 +3978,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -3009,6 +4008,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -3069,8 +4096,8 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293390890
 	partName = Part
-	persistentId = 2470677257
-	pos = 0.173607275,12.595171,0.86368227
+	persistentId = 1011778471
+	pos = 0.173607275,12.5951786,0.86368227
 	attPos = 0,0,0
 	attPos0 = -1.49011612E-08,4.55916786,1.29718149
 	rot = 0,1,0,0
@@ -3087,6 +4114,7 @@ PART
 	sqor = 5
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3107,6 +4135,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -3135,6 +4165,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -3195,8 +4253,8 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293390802
 	partName = Part
-	persistentId = 479316482
-	pos = 1.47078896,12.595171,-0.433499396
+	persistentId = 1853381179
+	pos = 1.47078896,12.5951786,-0.433499396
 	attPos = 0,0,0
 	attPos0 = 1.29718161,4.55916786,-1.78813934E-07
 	rot = 0,0.707106769,0,-0.707106888
@@ -3213,6 +4271,7 @@ PART
 	sqor = 5
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3233,6 +4292,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -3261,6 +4322,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -3321,8 +4410,8 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293390714
 	partName = Part
-	persistentId = 1624332959
-	pos = 0.173607156,12.595171,-1.7306807
+	persistentId = 839119849
+	pos = 0.173607156,12.5951786,-1.7306807
 	attPos = 0,0,0
 	attPos0 = -1.34110451E-07,4.55916786,-1.29718149
 	rot = 0,0,0,-1
@@ -3339,6 +4428,7 @@ PART
 	sqor = 5
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3359,6 +4449,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -3387,6 +4479,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -3447,8 +4567,8 @@ PART
 {
 	part = .Knes.L3S.Fin_4293370518
 	partName = Part
-	persistentId = 1949601348
-	pos = -1.25749063,2.85457802,-1.86459708
+	persistentId = 410139591
+	pos = -1.25749063,2.85458565,-1.86459708
 	attPos = -0.244306803,-0.419652939,-0.244306803
 	attPos0 = -1.18679106,-4.76177216,-1.18679106
 	rot = 0,-0.382683426,0,0.923879564
@@ -3465,6 +4585,7 @@ PART
 	sqor = -1
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3501,8 +4622,8 @@ PART
 {
 	part = .Knes.L3S.Fin_4293369960
 	partName = Part
-	persistentId = 2885580706
-	pos = -1.2574904,2.85457802,0.997598886
+	persistentId = 3472927883
+	pos = -1.2574904,2.85458565,0.997598886
 	attPos = -0.244306684,-0.419652939,0.24430716
 	attPos0 = -1.18679106,-4.76177216,1.18679094
 	rot = 0,0.382683486,0,0.923879564
@@ -3519,6 +4640,7 @@ PART
 	sqor = -1
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3555,8 +4677,8 @@ PART
 {
 	part = .Knes.L3S.Fin_4293369916
 	partName = Part
-	persistentId = 1533972043
-	pos = 1.60470533,2.85457802,0.997598529
+	persistentId = 1757063193
+	pos = 1.60470533,2.85458565,0.997598529
 	attPos = 0.244306803,-0.419652939,0.244306803
 	attPos0 = 1.18679118,-4.76177216,1.18679094
 	rot = 0,0.923879564,0,0.382683426
@@ -3573,6 +4695,7 @@ PART
 	sqor = -1
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3609,8 +4732,8 @@ PART
 {
 	part = .Knes.L3S.Fin_4293369872
 	partName = Part
-	persistentId = 2669944017
-	pos = 1.6047051,2.85457802,-1.8645972
+	persistentId = 3781234785
+	pos = 1.6047051,2.85458565,-1.8645972
 	attPos = 0.244306922,-0.419652939,-0.244306922
 	attPos0 = 1.18679094,-4.76177216,-1.18679106
 	rot = 0,-0.923879564,0,0.382683456
@@ -3627,6 +4750,7 @@ PART
 	sqor = -1
 	sepI = 5
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3663,8 +4787,8 @@ PART
 {
 	part = launchClamp1_4293341572
 	partName = Part
-	persistentId = 2614499917
-	pos = -1.87232304,4.46464729,-0.433499068
+	persistentId = 2282657907
+	pos = -1.87232304,4.46465492,-0.433499068
 	attPos = 0,0,0
 	attPos0 = -2.04593039,-3.57135582,1.49011612E-07
 	rot = 0,0.707106829,0,0.707106829
@@ -3678,9 +4802,10 @@ PART
 	resPri = 0
 	dstg = 8
 	sidx = 1
-	sqor = 8
+	sqor = 7
 	sepI = 7
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -3698,615 +4823,10 @@ PART
 	{
 		name = LaunchClamp
 		isEnabled = True
-		scaleFactor = 2.03107285
-		height = 5.12479782
+		scaleFactor = 2.03107595
+		height = 5.12480545
 		stagingEnabled = True
 		towerRot = 0,-0.707106829,0,0.707106829
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ReleaseClamp
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleGenerator
-		isEnabled = True
-		generatorIsActive = False
-		throttle = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTestSubject
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-}
-PART
-{
-	part = .Knes.L3S.H8.Separatron_4293449904
-	partName = Part
-	persistentId = 3823452261
-	pos = -0.785147071,20.5416412,-0.690396607
-	attPos = 0,0,0
-	attPos0 = -0.958754361,2.0138464,-0.25689739
-	rot = -0.60876143,0,-0.793353379,0
-	attRot = 0,0,-0.99999994,0
-	attRot0 = -0.60876143,0,-0.793353379,0
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 3
-	resPri = 0
-	dstg = 6
-	sidx = 0
-	sqor = 3
-	sepI = 3
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = .Knes.L3S.H8.Separatron_4293447498
-	srfN = srfAttach,.Knes.L3S.L33_4293496260
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleThrottleEffects
-		isEnabled = True
-		state = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleColorChanger
-		isEnabled = True
-		animState = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 7
-		maxAmount = 7
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = .Knes.L3S.H8.Separatron_4293447498
-	partName = Part
-	persistentId = 266830669
-	pos = 1.13236165,20.5416412,-0.176601917
-	attPos = 0,0,0
-	attPos0 = 0.958754361,2.0138464,0.2568973
-	rot = -0.793353379,0,0.608761489,0
-	attRot = 0,0,-0.99999994,0
-	attRot0 = -0.793353379,0,0.608761489,0
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 3
-	resPri = 0
-	dstg = 6
-	sidx = 0
-	sqor = 3
-	sepI = 3
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = .Knes.L3S.H8.Separatron_4293449904
-	srfN = srfAttach,.Knes.L3S.L33_4293496260
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleThrottleEffects
-		isEnabled = True
-		state = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleColorChanger
-		isEnabled = True
-		animState = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 7
-		maxAmount = 7
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = .Knes.L3S.H8.Separatron_4293453752
-	partName = Part
-	persistentId = 218542568
-	pos = -0.811885357,22.6993275,-0.433499157
-	attPos = 0,0,0
-	attPos0 = -0.985492647,0.387903214,6.33299351E-08
-	rot = 2.71638855E-05,0.707106829,-2.71638874E-05,0.707106709
-	attRot = 0,0,0,1
-	attRot0 = 2.71638855E-05,0.707106829,-2.71638874E-05,0.707106709
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 3
-	resPri = 0
-	dstg = 4
-	sidx = 1
-	sqor = 3
-	sepI = 0
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = .Knes.L3S.H8.Separatron_4293453452
-	srfN = srfAttach,Knes.Engine.Zebulon_4293878282
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleThrottleEffects
-		isEnabled = True
-		state = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleColorChanger
-		isEnabled = True
-		animState = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 7
-		maxAmount = 7
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = .Knes.L3S.H8.Separatron_4293453452
-	partName = Part
-	persistentId = 2735086107
-	pos = 1.15909994,22.6993275,-0.433499366
-	attPos = 0,0,0
-	attPos0 = 0.985492647,0.387903214,-1.49011612E-07
-	rot = -2.71638892E-05,0.70710665,-2.71638837E-05,-0.707106888
-	attRot = 0,0,0,1
-	attRot0 = -2.71638892E-05,0.70710665,-2.71638837E-05,-0.707106888
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 3
-	resPri = 0
-	dstg = 4
-	sidx = 1
-	sqor = 3
-	sepI = 0
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	sym = .Knes.L3S.H8.Separatron_4293453752
-	srfN = srfAttach,Knes.Engine.Zebulon_4293878282
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleEnginesFX
-		isEnabled = True
-		staged = False
-		flameout = False
-		EngineIgnited = False
-		engineShutdown = False
-		currentThrottle = 0
-		thrustPercentage = 100
-		manuallyOverridden = False
-		includeinDVCalcs = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ShutdownAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ActivateAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = FXModuleThrottleEffects
-		isEnabled = True
-		state = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleColorChanger
-		isEnabled = True
-		animState = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ToggleAction
-			{
-				actionGroup = None
-				active = False
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = SolidFuel
-		amount = 7
-		maxAmount = 7
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
-	part = launchClamp1_4293197102
-	partName = Part
-	persistentId = 3409823920
-	pos = -1.56527519,22.194231,-0.433499068
-	attPos = 0,0,0
-	attPos0 = -1.73888254,-2.89089203,1.49011612E-07
-	rot = 0,0.707106829,0,0.707106709
-	attRot = 0,0,0,1
-	attRot0 = 0,0.707106829,0,0.707106709
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = 7
-	resPri = 0
-	dstg = 4
-	sidx = 2
-	sqor = 8
-	sepI = 7
-	attm = 1
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	srfN = srfAttach,Knes.Fuel.Tanks.1875.H10_4293218670
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = LaunchClamp
-		isEnabled = True
-		scaleFactor = 9.05770683
-		height = 22.8543816
-		stagingEnabled = True
-		towerRot = 0,-0.707106829,0,0.707106709
 		EVENTS
 		{
 		}
@@ -4378,7 +4898,7 @@ PART
 	part = Knes.Decoupler.Radial.big_4293843554
 	partName = Part
 	persistentId = 3036890575
-	pos = 0.173607394,5.91808319,-1.6742419
+	pos = 0.173607394,5.91809082,-1.6742419
 	attPos = 0,-0.41179657,0
 	attPos0 = 1.04308128E-07,-1.70612335,-1.24074268
 	rot = 0,1,0,4.41444286E-08
@@ -4395,6 +4915,7 @@ PART
 	sqor = 6
 	sepI = 6
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -4483,10 +5004,127 @@ PART
 }
 PART
 {
+	part = .Knes.L3S.PAP_4293489316
+	partName = Part
+	persistentId = 1048051574
+	pos = 0.173607439,5.07503128,-2.27569032
+	attPos = 0,0,0
+	attPos0 = 8.39770919E-09,-0.84305954,0.601448417
+	rot = -5.30508247E-20,2.91650029E-08,-1.54722741E-27,-1
+	attRot = 0,0,0,1
+	attRot0 = -7.94670858E-28,1,-5.30508247E-20,-1.49794257E-08
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 7
+	resPri = 0
+	dstg = 10
+	sidx = 0
+	sqor = 7
+	sepI = 6
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = .Knes.L3S.PAP_4293487322
+	srfN = srfAttach,Knes.Decoupler.Radial.big_4293843554
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 180
+		maxAmount = 180
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
 	part = Knes.Decoupler.Radial.big_4293842254
 	partName = Part
 	persistentId = 2015046122
-	pos = 0.17360729,5.91808319,0.807243466
+	pos = 0.17360729,5.91809082,0.807243466
 	attPos = 0,-0.41179657,0
 	attPos0 = 0,-1.70612335,1.24074268
 	rot = 0,4.3304027E-10,0,-1
@@ -4503,6 +5141,7 @@ PART
 	sqor = 6
 	sepI = 6
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
@@ -4591,15 +5230,15 @@ PART
 }
 PART
 {
-	part = .Knes.L3S.PAP_4293489316
+	part = .Knes.L3S.PAP_4293487322
 	partName = Part
-	persistentId = 1048051574
-	pos = 0.173607439,5.07502365,-2.27569032
+	persistentId = 1385551864
+	pos = 0.173607305,5.07503128,1.40869188
 	attPos = 0,0,0
-	attPos0 = 8.39770919E-09,-0.84305954,0.601448417
-	rot = -5.30508247E-20,2.91650029E-08,-1.54722741E-27,-1
+	attPos0 = 1.54220636E-08,-0.84305954,0.601448417
+	rot = 7.71697788E-28,-1,5.30508247E-20,1.45463854E-08
 	attRot = 0,0,0,1
-	attRot0 = -7.94670858E-28,1,-5.30508247E-20,-1.49794257E-08
+	attRot0 = -7.94670954E-28,1,-5.30508247E-20,-1.49794257E-08
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
@@ -4608,14 +5247,15 @@ PART
 	resPri = 0
 	dstg = 10
 	sidx = 0
-	sqor = 8
+	sqor = 7
 	sepI = 6
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = .Knes.L3S.PAP_4293487322
-	srfN = srfAttach,Knes.Decoupler.Radial.big_4293843554
+	sym = .Knes.L3S.PAP_4293489316
+	srfN = srfAttach,Knes.Decoupler.Radial.big_4293842254
 	EVENTS
 	{
 	}
@@ -4629,6 +5269,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -4657,6 +5299,34 @@ PART
 			{
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
 			}
 		}
 		UPGRADESAPPLIED
@@ -4677,31 +5347,32 @@ PART
 }
 PART
 {
-	part = .Knes.L3S.PAP_4293487322
+	part = .Knes.L3S.H8.Separatron_4293449904
 	partName = Part
-	persistentId = 1385551864
-	pos = 0.173607305,5.07502365,1.40869188
+	persistentId = 1050779417
+	pos = -0.785147071,20.5416489,-0.690396607
 	attPos = 0,0,0
-	attPos0 = 1.54220636E-08,-0.84305954,0.601448417
-	rot = 7.71697788E-28,-1,5.30508247E-20,1.45463854E-08
-	attRot = 0,0,0,1
-	attRot0 = -7.94670954E-28,1,-5.30508247E-20,-1.49794257E-08
+	attPos0 = -0.958754361,2.0138464,-0.25689739
+	rot = -0.60876143,0,-0.793353379,0
+	attRot = 0,0,-0.99999994,0
+	attRot0 = -0.60876143,0,-0.793353379,0
 	mir = 1,1,1
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 7
+	istg = 3
 	resPri = 0
-	dstg = 10
+	dstg = 6
 	sidx = 0
-	sqor = 8
-	sepI = 6
+	sqor = 3
+	sepI = 3
 	attm = 1
+	sameVesselCollision = False
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	sym = .Knes.L3S.PAP_4293489316
-	srfN = srfAttach,Knes.Decoupler.Radial.big_4293842254
+	sym = .Knes.L3S.H8.Separatron_4293447498
+	srfN = srfAttach,.Knes.L3S.L33_4293496260
 	EVENTS
 	{
 	}
@@ -4715,6 +5386,8 @@ PART
 	{
 		name = ModuleEnginesFX
 		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
 		staged = False
 		flameout = False
 		EngineIgnited = False
@@ -4744,6 +5417,72 @@ PART
 				actionGroup = None
 				wasActiveBeforePartWasAdjusted = False
 			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
 		}
 		UPGRADESAPPLIED
 		{
@@ -4752,12 +5491,587 @@ PART
 	RESOURCE
 	{
 		name = SolidFuel
-		amount = 180
-		maxAmount = 180
+		amount = 7
+		maxAmount = 7
 		flowState = True
 		isTweakable = True
 		hideFlow = False
 		isVisible = True
 		flowMode = Both
+	}
+}
+PART
+{
+	part = .Knes.L3S.H8.Separatron_4293447498
+	partName = Part
+	persistentId = 622603339
+	pos = 1.13236165,20.5416489,-0.176601917
+	attPos = 0,0,0
+	attPos0 = 0.958754361,2.0138464,0.2568973
+	rot = -0.793353379,0,0.608761489,0
+	attRot = 0,0,-0.99999994,0
+	attRot0 = -0.793353379,0,0.608761489,0
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 6
+	sidx = 0
+	sqor = 3
+	sepI = 3
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = .Knes.L3S.H8.Separatron_4293449904
+	srfN = srfAttach,.Knes.L3S.L33_4293496260
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 7
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = .Knes.L3S.H8.Separatron_4293453752
+	partName = Part
+	persistentId = 1575147344
+	pos = -0.811885357,22.6993351,-0.433499157
+	attPos = 0,0,0
+	attPos0 = -0.985492647,0.387903214,6.33299351E-08
+	rot = 2.71638855E-05,0.707106829,-2.71638874E-05,0.707106709
+	attRot = 0,0,0,1
+	attRot0 = 2.71638855E-05,0.707106829,-2.71638874E-05,0.707106709
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 4
+	sidx = 1
+	sqor = 3
+	sepI = 0
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = .Knes.L3S.H8.Separatron_4293453452
+	srfN = srfAttach,Knes.Engine.Zebulon_4293878282
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 7
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = .Knes.L3S.H8.Separatron_4293453452
+	partName = Part
+	persistentId = 3740154840
+	pos = 1.15909994,22.6993351,-0.433499366
+	attPos = 0,0,0
+	attPos0 = 0.985492647,0.387903214,-1.49011612E-07
+	rot = -2.71638892E-05,0.70710665,-2.71638837E-05,-0.707106888
+	attRot = 0,0,0,1
+	attRot0 = -2.71638892E-05,0.70710665,-2.71638837E-05,-0.707106888
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 3
+	resPri = 0
+	dstg = 4
+	sidx = 1
+	sqor = 3
+	sepI = 0
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = .Knes.L3S.H8.Separatron_4293453752
+	srfN = srfAttach,Knes.Engine.Zebulon_4293878282
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEnginesFX
+		isEnabled = True
+		independentThrottle = False
+		independentThrottlePercentage = 0
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		includeinDVCalcs = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ToggleThrottle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		AXISGROUPS
+		{
+			independentThrottlePercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+			thrustPercentage
+			{
+				axisGroup = None
+				axisIncremental = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				axisInverted = None
+				overrideIncremental0 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental1 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental2 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+				overrideIncremental3 = Pitch, Yaw, Roll, TranslateX, TranslateY, TranslateZ, WheelSteer, WheelThrottle, Custom01, Custom02, Custom03, Custom04
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = FXModuleThrottleEffects
+		isEnabled = True
+		state = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleColorChanger
+		isEnabled = True
+		animState = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = SolidFuel
+		amount = 7
+		maxAmount = 7
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = launchClamp1_4293197102
+	partName = Part
+	persistentId = 482312779
+	pos = -1.56527519,22.1942387,-0.433499068
+	attPos = 0,0,0
+	attPos0 = -1.73888254,-2.89089203,1.49011612E-07
+	rot = 0,0.707106829,0,0.707106709
+	attRot = 0,0,0,1
+	attRot0 = 0,0.707106829,0,0.707106709
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 7
+	resPri = 0
+	dstg = 4
+	sidx = 2
+	sqor = 7
+	sepI = 7
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	srfN = srfAttach,Knes.Fuel.Tanks.1875.H10_4293218670
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = LaunchClamp
+		isEnabled = True
+		scaleFactor = 9.05770969
+		height = 22.8543892
+		stagingEnabled = True
+		towerRot = 0,-0.707106829,0,0.707106709
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ReleaseClamp
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleGenerator
+		isEnabled = True
+		generatorIsActive = False
+		throttle = 0
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ActivateAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+				active = False
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
 	}
 }
