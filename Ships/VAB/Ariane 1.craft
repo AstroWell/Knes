@@ -1,5 +1,5 @@
 ship = Ariane 1
-version = 1.7.3
+version = 1.9.1
 description = 
 type = VAB
 size = 3.24402761,30.4659805,3.24402785
@@ -16,7 +16,7 @@ PART
 {
 	part = HECS2.ProbeCore_4294096122
 	partName = Part
-	persistentId = 3706531273
+	persistentId = 553360614
 	pos = 0.17360729,28.7711945,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0.17360729,28.7711945,-0.433499217
@@ -47,6 +47,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -66,7 +78,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -89,12 +100,10 @@ PART
 			MakeReferenceToggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			HibernateToggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -118,22 +127,18 @@ PART
 			CycleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Activate
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Deactivate
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Toggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -169,7 +174,6 @@ PART
 			OpenKerbNetAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -189,7 +193,6 @@ PART
 			CollectAllAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -210,82 +213,74 @@ PART
 			OnOrbitProgradeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRetrogradeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitNormalAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitAntinormalAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRadialInAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRadialOutAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnKillRotationAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnDeactivateSmartASSAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
+			}
+			OnLandsomewhereAction
+			{
+				actionGroup = None
+			}
+			OnLandTargetAction
+			{
+				actionGroup = None
 			}
 			OnPanicAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronOffAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronKeepVertAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronZeroSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronPlusOneSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronMinusOneSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronToggleHSAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnAscentAPToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		MechJebLocalSettings
@@ -295,124 +290,17 @@ PART
 				unlockParts = 
 				unlockTechs = 
 			}
-			MechJebModuleAirplaneAutopilot
+			MechJebModuleRoverWindow
 			{
 				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAirplaneGuidance
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentClassic
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentClassicMenu
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentGT
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentGuidance
-			{
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleAscentNavBall
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleAscentPVG
-			{
-				unlockParts = 
-				unlockTechs = 
+				unlockTechs = fieldScience
 			}
 			MechJebModuleAttitudeAdjustment
 			{
 				unlockParts = 
 				unlockTechs = advFlightControl
 			}
-			MechJebModuleCustomWindowEditor
-			{
-				unlockParts = 
-				unlockTechs = flightControl
-			}
-			MechJebModuleDebugArrows
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleDockingAutopilot
-			{
-				forceRol = False
-				overrideSafeDistance = False
-				overrideTargetSize = False
-				unlockParts = 
-				unlockTechs = 
-				rol
-				{
-					_val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleDockingGuidance
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleGuidanceController
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleInfoItems
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleLandingAutopilot
-			{
-				deployGears = True
-				deployChutes = True
-				rcsAdjustment = True
-				unlockParts = 
-				unlockTechs = 
-				touchdownSpeed
-				{
-					_val = 0.5
-					_text = 0.5
-				}
-				limitGearsStage
-				{
-					val = 0
-					_text = 0
-				}
-				limitChutesStage
-				{
-					val = 0
-					_text = 0
-				}
-			}
-			MechJebModuleLandingGuidance
-			{
-				landingSiteIdx = 0
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleLandingPredictions
+			MechJebModuleAscentNavBall
 			{
 				unlockParts = 
 				unlockTechs = 
@@ -422,40 +310,10 @@ PART
 				unlockParts = 
 				unlockTechs = 
 			}
-			MechJebModuleManeuverPlanner
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleNodeEditor
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-			}
-			MechJebModuleNodeExecutor
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
 			MechJebModuleRCSBalancerWindow
 			{
 				unlockParts = 
 				unlockTechs = advFlightControl
-			}
-			MechJebModuleRendezvousAutopilot
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleRendezvousAutopilotWindow
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
-			}
-			MechJebModuleRendezvousGuidance
-			{
-				unlockParts = 
-				unlockTechs = advUnmanned
 			}
 			MechJebModuleRoverController
 			{
@@ -479,21 +337,79 @@ PART
 					_text = 10
 				}
 			}
-			MechJebModuleRoverWindow
+			MechJebModuleSpaceplaneGuidance
 			{
+				runwayIndex = 0
 				unlockParts = 
-				unlockTechs = fieldScience
+				unlockTechs = unmannedTech
 			}
-			MechJebModuleScript
+			MechJebModuleAscentPVG
 			{
-				minifiedGUI = False
-				selectedSlot = 0
-				selectedMemorySlotType = 0
-				activeSavepoint = -1
 				unlockParts = 
 				unlockTechs = 
 			}
+			MechJebModuleInfoItems
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSmartRcs
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentClassic
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleSpaceplaneAutopilot
+			{
+				bBreakAsSoonAsLanded = False
+				unlockParts = 
+				unlockTechs = 
+				glideslope
+				{
+					_val = 3
+					_text = 3
+				}
+				approachSpeed
+				{
+					_val = 80
+					_text = 80
+				}
+				touchdownSpeed
+				{
+					_val = 60
+					_text = 60
+				}
+				maximumSafeBankAngle
+				{
+					_val = 25
+					_text = 25
+				}
+			}
+			MechJebModuleAirplaneAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleDockingGuidance
+			{
+				unlockParts = 
+				unlockTechs = advUnmanned
+			}
 			MechJebModuleSettings
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAscentGT
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleDebugArrows
 			{
 				unlockParts = 
 				unlockTechs = 
@@ -545,49 +461,20 @@ PART
 					_text = 0
 				}
 			}
-			MechJebModuleSmartRcs
+			MechJebModuleDockingAutopilot
 			{
+				forceRol = False
+				overrideSafeDistance = False
+				overrideTargetSize = False
 				unlockParts = 
 				unlockTechs = 
-			}
-			MechJebModuleSpaceplaneAutopilot
-			{
-				bBreakAsSoonAsLanded = False
-				unlockParts = 
-				unlockTechs = 
-				glideslope
+				rol
 				{
-					_val = 3
-					_text = 3
-				}
-				approachSpeed
-				{
-					_val = 80
-					_text = 80
-				}
-				touchdownSpeed
-				{
-					_val = 60
-					_text = 60
-				}
-				maximumSafeBankAngle
-				{
-					_val = 25
-					_text = 25
+					_val = 0
+					_text = 0
 				}
 			}
-			MechJebModuleSpaceplaneGuidance
-			{
-				runwayIndex = 0
-				unlockParts = 
-				unlockTechs = unmannedTech
-			}
-			MechJebModuleStageStats
-			{
-				unlockParts = 
-				unlockTechs = 
-			}
-			MechJebModuleTargetController
+			ModExtensionDemo
 			{
 				unlockParts = 
 				unlockTechs = 
@@ -597,16 +484,6 @@ PART
 				autostageSavedState = False
 				unlockParts = 
 				unlockTechs = advFlightControl
-			}
-			MechJebModuleTranslatron
-			{
-				unlockParts = 
-				unlockTechs = advFlightControl
-				trans_spd
-				{
-					_val = 0
-					_text = 0
-				}
 			}
 			MechJebModuleWarpHelper
 			{
@@ -618,6 +495,94 @@ PART
 					_text = 0
 				}
 			}
+			MechJebModuleCustomWindowEditor
+			{
+				unlockParts = 
+				unlockTechs = flightControl
+			}
+			MechJebModuleAscentAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleRendezvousAutopilotWindow
+			{
+				unlockParts = 
+				unlockTechs = advUnmanned
+			}
+			MechJebModuleNodeExecutor
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleNodeEditor
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleLandingAutopilot
+			{
+				deployGears = True
+				deployChutes = True
+				rcsAdjustment = True
+				unlockParts = 
+				unlockTechs = 
+				touchdownSpeed
+				{
+					_val = 0.5
+					_text = 0.5
+				}
+				limitGearsStage
+				{
+					val = 0
+					_text = 0
+				}
+				limitChutesStage
+				{
+					val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleScript
+			{
+				minifiedGUI = False
+				selectedSlot = 0
+				selectedMemorySlotType = 0
+				activeSavepoint = -1
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleLandingGuidance
+			{
+				landingSiteIdx = 0
+				unlockParts = 
+				unlockTechs = unmannedTech
+			}
+			MechJebModuleLandingPredictions
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleTranslatron
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+				trans_spd
+				{
+					_val = 0
+					_text = 0
+				}
+			}
+			MechJebModuleAscentGuidance
+			{
+				unlockParts = 
+				unlockTechs = unmannedTech
+			}
+			MechJebModuleRendezvousAutopilot
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
 			MechJebModuleWaypointWindow
 			{
 				unlockParts = 
@@ -628,7 +593,37 @@ PART
 				unlockParts = 
 				unlockTechs = 
 			}
-			ModExtensionDemo
+			MechJebModuleTargetController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleManeuverPlanner
+			{
+				unlockParts = 
+				unlockTechs = advFlightControl
+			}
+			MechJebModuleStageStats
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleAirplaneGuidance
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleGuidanceController
+			{
+				unlockParts = 
+				unlockTechs = 
+			}
+			MechJebModuleRendezvousGuidance
+			{
+				unlockParts = 
+				unlockTechs = advUnmanned
+			}
+			MechJebModuleAscentClassicMenu
 			{
 				unlockParts = 
 				unlockTechs = 
@@ -800,7 +795,7 @@ PART
 {
 	part = HECS2.ProbeCore_4294092740
 	partName = Part
-	persistentId = 1705440081
+	persistentId = 295551242
 	pos = 0.17360729,29.5547886,-0.433499217
 	attPos = 0,-0.216405869,0
 	attPos0 = 0,1,0
@@ -836,6 +831,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -855,7 +862,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -878,12 +884,10 @@ PART
 			MakeReferenceToggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			HibernateToggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -907,22 +911,18 @@ PART
 			CycleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Activate
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Deactivate
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Toggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -958,7 +958,6 @@ PART
 			OpenKerbNetAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -978,7 +977,6 @@ PART
 			CollectAllAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -999,82 +997,74 @@ PART
 			OnOrbitProgradeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRetrogradeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitNormalAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitAntinormalAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRadialInAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRadialOutAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnKillRotationAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnDeactivateSmartASSAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
+			}
+			OnLandsomewhereAction
+			{
+				actionGroup = None
+			}
+			OnLandTargetAction
+			{
+				actionGroup = None
 			}
 			OnPanicAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronOffAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronKeepVertAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronZeroSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronPlusOneSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronMinusOneSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronToggleHSAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnAscentAPToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1116,7 +1106,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294076734
 	partName = Part
-	persistentId = 3269173604
+	persistentId = 177682385
 	pos = -0.335187674,29.170742,-0.727252364
 	attPos = 0.121213436,0,0.0699824691
 	attPos0 = -0.630008399,-0.384046555,-0.363735616
@@ -1143,12 +1133,24 @@ PART
 	sym = LgRadialSolarPanel_4294074776
 	sym = LgRadialSolarPanel_4294074720
 	sym = LgRadialSolarPanel_4294074664
-	srfN = srfAttach,HECS2.ProbeCore_4294092740
+	srfN = srfAttach,HECS2.ProbeCore_4294092740,,0|0|0,0|0|1,0|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1173,19 +1175,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			RetractAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1197,7 +1196,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074888
 	partName = Part
-	persistentId = 1681449241
+	persistentId = 2991198459
 	pos = -0.335187852,29.170742,-0.139746338
 	attPos = 0.121213317,0,-0.0699825883
 	attPos0 = -0.630008459,-0.384046555,0.363735467
@@ -1224,12 +1223,24 @@ PART
 	sym = LgRadialSolarPanel_4294074720
 	sym = LgRadialSolarPanel_4294074664
 	sym = LgRadialSolarPanel_4294076734
-	srfN = srfAttach,HECS2.ProbeCore_4294092740
+	srfN = srfAttach,HECS2.ProbeCore_4294092740,,0|0|0,0|0|1,0|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1254,19 +1265,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			RetractAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1278,7 +1286,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074832
 	partName = Part
-	persistentId = 950341222
+	persistentId = 898895425
 	pos = 0.173607141,29.170742,0.15400672
 	attPos = -1.41561031E-07,0,-0.139965177
 	attPos0 = -3.7252903E-09,-0.384046555,0.727471113
@@ -1305,12 +1313,24 @@ PART
 	sym = LgRadialSolarPanel_4294074664
 	sym = LgRadialSolarPanel_4294076734
 	sym = LgRadialSolarPanel_4294074888
-	srfN = srfAttach,HECS2.ProbeCore_4294092740
+	srfN = srfAttach,HECS2.ProbeCore_4294092740,,0|0|0,0|0|1,0|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1335,19 +1355,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			RetractAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1359,7 +1376,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074776
 	partName = Part
-	persistentId = 176193004
+	persistentId = 339473752
 	pos = 0.682402313,29.170742,-0.13974607
 	attPos = -0.121213436,0,-0.0699824095
 	attPos0 = 0.630008459,-0.384046555,0.363735557
@@ -1386,12 +1403,24 @@ PART
 	sym = LgRadialSolarPanel_4294076734
 	sym = LgRadialSolarPanel_4294074888
 	sym = LgRadialSolarPanel_4294074832
-	srfN = srfAttach,HECS2.ProbeCore_4294092740
+	srfN = srfAttach,HECS2.ProbeCore_4294092740,,0|0|0,0|0|1,0|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1416,19 +1445,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			RetractAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1440,7 +1466,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074720
 	partName = Part
-	persistentId = 926460566
+	persistentId = 4171611662
 	pos = 0.682402492,29.170742,-0.727251947
 	attPos = -0.121213317,0,0.0699827969
 	attPos0 = 0.630008519,-0.384046555,-0.363735527
@@ -1467,12 +1493,24 @@ PART
 	sym = LgRadialSolarPanel_4294074888
 	sym = LgRadialSolarPanel_4294074832
 	sym = LgRadialSolarPanel_4294074776
-	srfN = srfAttach,HECS2.ProbeCore_4294092740
+	srfN = srfAttach,HECS2.ProbeCore_4294092740,,0|0|0,0|0|1,0|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1497,19 +1535,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			RetractAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1521,7 +1556,7 @@ PART
 {
 	part = LgRadialSolarPanel_4294074664
 	partName = Part
-	persistentId = 3637559761
+	persistentId = 2256335493
 	pos = 0.173607484,29.170742,-1.02100515
 	attPos = 0,0,0.139965177
 	attPos0 = 1.97440386E-07,-0.384046555,-0.727471113
@@ -1548,12 +1583,24 @@ PART
 	sym = LgRadialSolarPanel_4294074832
 	sym = LgRadialSolarPanel_4294074776
 	sym = LgRadialSolarPanel_4294074720
-	srfN = srfAttach,HECS2.ProbeCore_4294092740
+	srfN = srfAttach,HECS2.ProbeCore_4294092740,,0|0|0,0|0|1,0|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1578,19 +1625,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ExtendAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			RetractAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1602,7 +1646,7 @@ PART
 {
 	part = RelayAntenna5_4294069418
 	partName = Part
-	persistentId = 1268066053
+	persistentId = 3584619918
 	pos = 0.17360729,30.0547886,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,0.5,0
@@ -1630,6 +1674,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1648,7 +1704,6 @@ PART
 			StartTransmissionAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1679,7 +1734,7 @@ PART
 {
 	part = Knes.Decoupler.G0625_4293951594
 	partName = Part
-	persistentId = 2942398748
+	persistentId = 4289154141
 	pos = 0.17360729,28.2086945,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-0.5625,0
@@ -1709,6 +1764,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1728,7 +1795,6 @@ PART
 			DecoupleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1749,17 +1815,14 @@ PART
 			ToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			EnableAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			DisableAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -1787,7 +1850,7 @@ PART
 {
 	part = Knes.Structural.Kylda.125_4294462672
 	partName = Part
-	persistentId = 1455743057
+	persistentId = 633984580
 	pos = 0.17360729,27.9338303,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-0.274864197,0
@@ -1817,6 +1880,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1826,7 +1901,7 @@ PART
 {
 	part = Knes.Aero.Fairing.1875_4293969124
 	partName = Part
-	persistentId = 2302535370
+	persistentId = 833353730
 	pos = 0.17360729,27.7088318,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-0.224998474,0
@@ -1846,7 +1921,7 @@ PART
 	attm = 0
 	sameVesselCollision = False
 	modCost = 364.205261
-	modMass = 3.64205265
+	modMass = 0.364205271
 	modSize = 0,0,0
 	link = Knes.Command.Minus_4293882128
 	attN = top,Knes.Structural.Kylda.125_4294462672_0|0.0500000007|0_0|1|0_0|0.0500000007|0_0|1|0
@@ -1856,6 +1931,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1878,7 +1965,6 @@ PART
 			DeployFairingAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		XSECTION
@@ -1930,7 +2016,7 @@ PART
 {
 	part = Knes.Command.Minus_4293882128
 	partName = Part
-	persistentId = 534955278
+	persistentId = 3041070833
 	pos = 0.17360729,27.508831,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-0.199999809,0
@@ -1960,6 +2046,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -1980,12 +2078,10 @@ PART
 			MakeReferenceToggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			HibernateToggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2009,22 +2105,18 @@ PART
 			CycleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Activate
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Deactivate
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			Toggle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2062,7 +2154,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2083,82 +2174,74 @@ PART
 			OnOrbitProgradeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRetrogradeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitNormalAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitAntinormalAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRadialInAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnOrbitRadialOutAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnKillRotationAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnDeactivateSmartASSAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
+			}
+			OnLandsomewhereAction
+			{
+				actionGroup = None
+			}
+			OnLandTargetAction
+			{
+				actionGroup = None
 			}
 			OnPanicAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronOffAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronKeepVertAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronZeroSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronPlusOneSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronMinusOneSpeedAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnTranslatronToggleHSAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			OnAscentAPToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2211,7 +2294,7 @@ PART
 {
 	part = .Knes.L3S.H8_4293891734
 	partName = Part
-	persistentId = 3406088255
+	persistentId = 1704307571
 	pos = 0.17360729,25.4838333,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.02499962,0
@@ -2242,6 +2325,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -2273,7 +2368,7 @@ PART
 {
 	part = Knes.Engine.Zebulon_4293878282
 	partName = Part
-	persistentId = 3836120471
+	persistentId = 751506717
 	pos = 0.17360729,23.1088333,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.375,0
@@ -2298,6 +2393,8 @@ PART
 	link = Knes.Decoupler.G1875_4293871796
 	link = .Knes.L3S.H8.Separatron_4293453752
 	link = .Knes.L3S.H8.Separatron_4293453452
+	link = .Knes.RCS.3way_4294377098
+	link = .Knes.RCS.3way_4294376600
 	attN = top,.Knes.L3S.H8_4293891734_0|0.5|0_0|1|0_0|0.5|0_0|1|0
 	attN = bottom,Knes.Decoupler.G1875_4293871796_0|-1.53363001|0_0|-1|0_0|-1.53363001|0_0|-1|0
 	EVENTS
@@ -2305,6 +2402,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -2332,22 +2441,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -2393,7 +2498,6 @@ PART
 			JettisonAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2420,32 +2524,26 @@ PART
 			ToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			LockAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			FreeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			TogglePitchAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleYawAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleRollAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2513,7 +2611,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2541,7 +2638,7 @@ PART
 {
 	part = Knes.Decoupler.G1875_4293871796
 	partName = Part
-	persistentId = 273556146
+	persistentId = 3675122101
 	pos = 0.17360729,21.5127029,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-1.59612942,0
@@ -2571,6 +2668,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -2590,7 +2699,6 @@ PART
 			DecoupleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2611,17 +2719,14 @@ PART
 			ToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			EnableAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			DisableAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2650,7 +2755,7 @@ PART
 {
 	part = .Knes.L3S.L33_4293496260
 	partName = Part
-	persistentId = 1594618587
+	persistentId = 41857382
 	pos = 0.17360729,19.3252029,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.1875,0
@@ -2682,6 +2787,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -2713,7 +2830,7 @@ PART
 {
 	part = .Knes.L3S.L33.Engine_4293473886
 	partName = Part
-	persistentId = 1700387459
+	persistentId = 3716109132
 	pos = 0.17360729,16.7002029,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.625,0
@@ -2747,6 +2864,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -2774,22 +2903,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -2835,7 +2960,6 @@ PART
 			JettisonAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2862,32 +2986,26 @@ PART
 			ToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			LockAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			FreeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			TogglePitchAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleYawAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleRollAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2955,7 +3073,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -2967,7 +3084,7 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293442460
 	partName = Part
-	persistentId = 1834215281
+	persistentId = 3315078101
 	pos = -0.674926996,16.9655933,0.0564023256
 	attPos = 0,0,0
 	attPos0 = -0.848534286,0.265390396,0.489901543
@@ -2990,12 +3107,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.L33.Separatron_4293442296
-	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886
+	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886,,0|0|0.0439999998,0|0|-1,0|0|0.0439999998
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3023,22 +3152,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -3099,7 +3224,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3122,7 +3246,7 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293442296
 	partName = Part
-	persistentId = 1399764883
+	persistentId = 1308682534
 	pos = 1.02214146,16.9655933,-0.923400819
 	attPos = 0,0,0
 	attPos0 = 0.848534226,0.265390396,-0.489901602
@@ -3145,12 +3269,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.L33.Separatron_4293442460
-	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886
+	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886,,0|0|0.0439999998,0|0|-1,0|0|0.0439999998
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3178,22 +3314,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -3254,7 +3386,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3277,7 +3408,7 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293444994
 	partName = Part
-	persistentId = 820725372
+	persistentId = 232402698
 	pos = -0.684964538,16.9729919,-0.92919606
 	attPos = 0,0,0
 	attPos0 = -0.858571827,0.272789001,-0.495696843
@@ -3300,12 +3431,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.L33.Separatron_4293441196
-	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886
+	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886,,0|0|0.0439999998,0|0|-1,0|0|0.0439999998
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3333,22 +3476,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -3409,7 +3548,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3432,7 +3570,7 @@ PART
 {
 	part = .Knes.L3S.L33.Separatron_4293441196
 	partName = Part
-	persistentId = 2489991752
+	persistentId = 3255317465
 	pos = 1.03217912,16.9729919,0.0621975362
 	attPos = 0,0,0
 	attPos0 = 0.858571887,0.272789001,0.495696753
@@ -3455,12 +3593,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.L33.Separatron_4293444994
-	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886
+	srfN = srfAttach,.Knes.L3S.L33.Engine_4293473886,,0|0|0.0439999998,0|0|-1,0|0|0.0439999998
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3488,22 +3638,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -3564,7 +3710,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3587,7 +3732,7 @@ PART
 {
 	part = Knes.Decoupler.G2500_4293423744
 	partName = Part
-	persistentId = 1373625801
+	persistentId = 3784657524
 	pos = 0.17360729,13.9959126,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-2.70429039,0
@@ -3617,6 +3762,18 @@ PART
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3636,7 +3793,6 @@ PART
 			DecoupleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3657,17 +3813,14 @@ PART
 			ToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			EnableAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			DisableAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3696,7 +3849,7 @@ PART
 {
 	part = .Knes.L3S.L140_4293406624
 	partName = Part
-	persistentId = 239336220
+	persistentId = 3711338944
 	pos = 0.17360729,8.83341217,-0.433499217
 	attPos = 0,0,0
 	attPos0 = 0,-5.16250038,0
@@ -3728,11 +3881,24 @@ PART
 	link = .Knes.L3S.Fin_4293369872
 	link = launchClamp1_4293341572
 	attN = top,Knes.Decoupler.G2500_4293423744_0|5.0999999|0_0|1|0_0|5.0999999|0_0|1|0
+	attN = bottom02,Null_0_0|-7.5|0_0|-1|0_0|-7.5|0_0|-1|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3760,22 +3926,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -3825,32 +3987,26 @@ PART
 			ToggleAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			LockAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			FreeAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			TogglePitchAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleYawAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleRollAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3903,7 +4059,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -3937,7 +4092,7 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293395114
 	partName = Part
-	persistentId = 4060392141
+	persistentId = 1380693065
 	pos = -1.12357426,13.39258,-0.433499157
 	attPos = 0,0,0
 	attPos0 = -1.29718161,4.55916786,5.96046448E-08
@@ -3962,12 +4117,24 @@ PART
 	sym = .Knes.L3S.Separatron_4293390890
 	sym = .Knes.L3S.Separatron_4293390802
 	sym = .Knes.L3S.Separatron_4293390714
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0|0|0.0577500015,0|0|-1,0|0|0.0577500015
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -3995,22 +4162,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -4071,7 +4234,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -4094,7 +4256,7 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293390890
 	partName = Part
-	persistentId = 2470677257
+	persistentId = 2957639632
 	pos = 0.173607275,13.39258,0.86368227
 	attPos = 0,0,0
 	attPos0 = -1.49011612E-08,4.55916786,1.29718149
@@ -4119,12 +4281,24 @@ PART
 	sym = .Knes.L3S.Separatron_4293390802
 	sym = .Knes.L3S.Separatron_4293390714
 	sym = .Knes.L3S.Separatron_4293395114
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0|0|0.0577500015,0|0|-1,0|0|0.0577500015
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4152,22 +4326,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -4228,7 +4398,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -4251,7 +4420,7 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293390802
 	partName = Part
-	persistentId = 479316482
+	persistentId = 1109841422
 	pos = 1.47078896,13.39258,-0.433499396
 	attPos = 0,0,0
 	attPos0 = 1.29718161,4.55916786,-1.78813934E-07
@@ -4276,12 +4445,24 @@ PART
 	sym = .Knes.L3S.Separatron_4293390714
 	sym = .Knes.L3S.Separatron_4293395114
 	sym = .Knes.L3S.Separatron_4293390890
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0|0|0.0577500015,0|0|-1,0|0|0.0577500015
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4309,22 +4490,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -4385,7 +4562,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -4408,7 +4584,7 @@ PART
 {
 	part = .Knes.L3S.Separatron_4293390714
 	partName = Part
-	persistentId = 1624332959
+	persistentId = 1443111230
 	pos = 0.173607156,13.39258,-1.7306807
 	attPos = 0,0,0
 	attPos0 = -1.34110451E-07,4.55916786,-1.29718149
@@ -4433,12 +4609,24 @@ PART
 	sym = .Knes.L3S.Separatron_4293395114
 	sym = .Knes.L3S.Separatron_4293390890
 	sym = .Knes.L3S.Separatron_4293390802
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0|0|0.0577500015,0|0|-1,0|0|0.0577500015
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4466,22 +4654,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -4542,7 +4726,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -4565,7 +4748,7 @@ PART
 {
 	part = .Knes.L3S.Fin_4293370518
 	partName = Part
-	persistentId = 1949601348
+	persistentId = 2573231620
 	pos = -1.25749063,3.65198708,-1.86459708
 	attPos = -0.244306803,-0.419652939,-0.244306803
 	attPos0 = -1.18679106,-4.76177216,-1.18679106
@@ -4590,12 +4773,24 @@ PART
 	sym = .Knes.L3S.Fin_4293369960
 	sym = .Knes.L3S.Fin_4293369916
 	sym = .Knes.L3S.Fin_4293369872
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0.469999999|0|0,1|0|0,0.469999999|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4620,7 +4815,7 @@ PART
 {
 	part = .Knes.L3S.Fin_4293369960
 	partName = Part
-	persistentId = 2885580706
+	persistentId = 726096026
 	pos = -1.2574904,3.65198708,0.997598886
 	attPos = -0.244306684,-0.419652939,0.24430716
 	attPos0 = -1.18679106,-4.76177216,1.18679094
@@ -4645,12 +4840,24 @@ PART
 	sym = .Knes.L3S.Fin_4293369916
 	sym = .Knes.L3S.Fin_4293369872
 	sym = .Knes.L3S.Fin_4293370518
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0.469999999|0|0,1|0|0,0.469999999|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4675,7 +4882,7 @@ PART
 {
 	part = .Knes.L3S.Fin_4293369916
 	partName = Part
-	persistentId = 1533972043
+	persistentId = 1724259088
 	pos = 1.60470533,3.65198708,0.997598529
 	attPos = 0.244306803,-0.419652939,0.244306803
 	attPos0 = 1.18679118,-4.76177216,1.18679094
@@ -4700,12 +4907,24 @@ PART
 	sym = .Knes.L3S.Fin_4293369872
 	sym = .Knes.L3S.Fin_4293370518
 	sym = .Knes.L3S.Fin_4293369960
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0.469999999|0|0,1|0|0,0.469999999|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4730,7 +4949,7 @@ PART
 {
 	part = .Knes.L3S.Fin_4293369872
 	partName = Part
-	persistentId = 2669944017
+	persistentId = 3446903419
 	pos = 1.6047051,3.65198708,-1.8645972
 	attPos = 0.244306922,-0.419652939,-0.244306922
 	attPos0 = 1.18679094,-4.76177216,-1.18679106
@@ -4755,12 +4974,24 @@ PART
 	sym = .Knes.L3S.Fin_4293370518
 	sym = .Knes.L3S.Fin_4293369960
 	sym = .Knes.L3S.Fin_4293369916
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0.469999999|0|0,1|0|0,0.469999999|0|0
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4785,7 +5016,7 @@ PART
 {
 	part = launchClamp1_4293341572
 	partName = Part
-	persistentId = 2614499917
+	persistentId = 2834927690
 	pos = -1.87232304,5.26205635,-0.433499068
 	attPos = 0,0,0
 	attPos0 = -2.04593039,-3.57135582,1.49011612E-07
@@ -4807,12 +5038,24 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,.Knes.L3S.L140_4293406624
+	srfN = srfAttach,.Knes.L3S.L140_4293406624,,0|1.35443699|0.806919396,0|0|-1,0|1.35443699|0.806919396
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4833,7 +5076,6 @@ PART
 			ReleaseClamp
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -4856,19 +5098,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -4895,7 +5134,7 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293449904
 	partName = Part
-	persistentId = 3823452261
+	persistentId = 3413696826
 	pos = -0.785147071,21.3390503,-0.690396607
 	attPos = 0,0,0
 	attPos0 = -0.958754361,2.0138464,-0.25689739
@@ -4918,12 +5157,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.H8.Separatron_4293447498
-	srfN = srfAttach,.Knes.L3S.L33_4293496260
+	srfN = srfAttach,.Knes.L3S.L33_4293496260,,0|0|0.0649999976,0|0|-1,0|0|0.0649999976
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -4951,22 +5202,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -5027,7 +5274,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -5050,7 +5296,7 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293447498
 	partName = Part
-	persistentId = 266830669
+	persistentId = 3701991906
 	pos = 1.13236165,21.3390503,-0.176601917
 	attPos = 0,0,0
 	attPos0 = 0.958754361,2.0138464,0.2568973
@@ -5073,12 +5319,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.H8.Separatron_4293449904
-	srfN = srfAttach,.Knes.L3S.L33_4293496260
+	srfN = srfAttach,.Knes.L3S.L33_4293496260,,0|0|0.0649999976,0|0|-1,0|0|0.0649999976
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -5106,22 +5364,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -5182,7 +5436,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -5205,7 +5458,7 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293453752
 	partName = Part
-	persistentId = 218542568
+	persistentId = 2755445661
 	pos = -0.811885357,23.4967365,-0.433499157
 	attPos = 0,0,0
 	attPos0 = -0.985492647,0.387903214,6.33299351E-08
@@ -5228,12 +5481,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.H8.Separatron_4293453452
-	srfN = srfAttach,Knes.Engine.Zebulon_4293878282
+	srfN = srfAttach,Knes.Engine.Zebulon_4293878282,,0|0|0.0649999976,0|0|-1,0|0|0.0649999976
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -5261,22 +5526,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -5337,7 +5598,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -5360,7 +5620,7 @@ PART
 {
 	part = .Knes.L3S.H8.Separatron_4293453452
 	partName = Part
-	persistentId = 2735086107
+	persistentId = 3790115862
 	pos = 1.15909994,23.4967365,-0.433499366
 	attPos = 0,0,0
 	attPos0 = 0.985492647,0.387903214,-1.49011612E-07
@@ -5383,12 +5643,24 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	sym = .Knes.L3S.H8.Separatron_4293453752
-	srfN = srfAttach,Knes.Engine.Zebulon_4293878282
+	srfN = srfAttach,Knes.Engine.Zebulon_4293878282,,0|0|0.0649999976,0|0|-1,0|0|0.0649999976
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -5416,22 +5688,18 @@ PART
 			OnAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ToggleThrottle
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		AXISGROUPS
@@ -5492,7 +5760,6 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -5515,7 +5782,7 @@ PART
 {
 	part = launchClamp1_4293339486
 	partName = Part
-	persistentId = 2919498568
+	persistentId = 70254245
 	pos = -1.55613971,25.3528404,-0.433499068
 	attPos = 0,0,0
 	attPos0 = -1.72974694,-0.130992889,1.49011612E-07
@@ -5537,12 +5804,24 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	srfN = srfAttach,.Knes.L3S.H8_4293891734
+	srfN = srfAttach,.Knes.L3S.H8_4293891734,,0|1.35443699|0.806919396,0|0|-1,0|1.35443699|0.806919396
 	EVENTS
 	{
 	}
 	ACTIONS
 	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
 	}
 	PARTDATA
 	{
@@ -5563,7 +5842,6 @@ PART
 			ReleaseClamp
 			{
 				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -5586,19 +5864,16 @@ PART
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ActivateAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 			ShutdownAction
 			{
 				actionGroup = None
 				active = False
-				wasActiveBeforePartWasAdjusted = False
 			}
 		}
 		UPGRADESAPPLIED
@@ -5619,5 +5894,187 @@ PART
 		UPGRADESAPPLIED
 		{
 		}
+	}
+}
+PART
+{
+	part = .Knes.RCS.3way_4294377098
+	partName = Part
+	persistentId = 3658726409
+	pos = 0.173607215,23.4912815,-1.39779675
+	attPos = 0,0,0
+	attPos0 = -7.4505806E-08,0.382448196,-0.964297533
+	rot = -3.80890851E-05,-6.72154314E-08,2.56017429E-12,-1
+	attRot = 0,0,0,1
+	attRot0 = -3.80890851E-05,-6.72154314E-08,2.56017429E-12,-1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = .Knes.RCS.3way_4294376600
+	srfN = srfAttach,Knes.Engine.Zebulon_4293878282,Collider1875,0|0|0.0439999998,0|0|-1,0|0|0.0439999998
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleRCSFX
+		isEnabled = True
+		rcsEnabled = True
+		thrustPercentage = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		enableX = True
+		enableY = True
+		enableZ = True
+		useThrottle = False
+		fullThrust = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 10
+		maxAmount = 10
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = .Knes.RCS.3way_4294376600
+	partName = Part
+	persistentId = 1733147052
+	pos = 0.173607454,23.4912815,0.530798316
+	attPos = 0,0,0
+	attPos0 = 1.63912773E-07,0.382448196,0.964297533
+	rot = 4.22510117E-12,-1,3.80890851E-05,1.1092682E-07
+	attRot = 0,0,0,1
+	attRot0 = 4.22510117E-12,-1,3.80890851E-05,1.1092682E-07
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Off
+	rigidAttachment = False
+	istg = 2
+	resPri = 0
+	dstg = 4
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	sym = .Knes.RCS.3way_4294377098
+	srfN = srfAttach,Knes.Engine.Zebulon_4293878282,Collider1875,0|0|0.0439999998,0|0|-1,0|0|0.0439999998
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleRCSFX
+		isEnabled = True
+		rcsEnabled = True
+		thrustPercentage = 100
+		currentShowToggles = False
+		enableYaw = True
+		enablePitch = True
+		enableRoll = True
+		enableX = True
+		enableY = True
+		enableZ = True
+		useThrottle = False
+		fullThrust = False
+		stagingEnabled = False
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = MonoPropellant
+		amount = 10
+		maxAmount = 10
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
 	}
 }
