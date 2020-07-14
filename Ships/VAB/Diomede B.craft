@@ -29,9 +29,9 @@ PART
 	rigidAttachment = False
 	istg = 0
 	resPri = 0
-	dstg = 3
+	dstg = 1
 	sidx = 0
-	sqor = 0
+	sqor = 1
 	sepI = 0
 	attm = 0
 	sameVesselCollision = False
@@ -134,20 +134,20 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 3
+	istg = 1
 	resPri = 0
 	dstg = 2
 	sidx = 0
-	sqor = 3
+	sqor = 2
 	sepI = 0
 	attm = 0
 	sameVesselCollision = False
 	modCost = 21.4638443
 	modMass = 0.0214638431
 	modSize = 0,0,0
-	link = .Knes.Diamant.Booster.P064.0625_4294498274
+	link = .Knes.Diamant.Booster.P064.0625_4294310008
 	attN = top,.Knes.Veronique.Decoupler.03125_4294559304_0|0.194159999|0_0|1|0_0|0.194159999|0_0|1|0
-	attN = bottom,.Knes.Diamant.Booster.P064.0625_4294498274_0|-0.03125|0_0|-1|0_0|-0.03125|0_0|-1|0
+	attN = bottom,.Knes.Diamant.Booster.P064.0625_4294310008_0|-0.03125|0_0|-1|0_0|-0.03125|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -988,12 +988,12 @@ PART
 }
 PART
 {
-	part = .Knes.Diamant.Booster.P064.0625_4294498274
+	part = .Knes.Sat.Asterix_4293827330
 	partName = Part
-	persistentId = 3708191380
-	pos = -0.0193839259,15.4064703,0.0663413927
+	persistentId = 86319064
+	pos = -0.0193839259,16.4112606,0.0663413927
 	attPos = 0,0,0
-	attPos0 = 0,-0.601249695,0
+	attPos0 = -0.0193839259,16.4112606,0.0663413927
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -1001,11 +1001,359 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
+	istg = -1
+	resPri = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = -1
+	attm = 0
+	sameVesselCollision = False
+	modCost = 0
+	modMass = 0
+	modSize = 0,0,0
+	link = .Knes.Veronique.Decoupler.03125_4294559304
+	attN = bottom,.Knes.Veronique.Decoupler.03125_4294559304_0|-0.146880001|0_0|-1|0_0|-0.146880001|0_0|-1|0
+	attN = top,Null_0_0|0.146880001|0_0|1|0_0|0.146880001|0_0|1|0
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+		ToggleSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		SetSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+		RemoveSameVesselInteraction
+		{
+			actionGroup = None
+			wasActiveBeforePartWasAdjusted = False
+		}
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleDeployableAntenna
+		isEnabled = True
+		currentRotation = (0, 0, 0, 1)
+		storedAnimationTime = 0
+		storedAnimationSpeed = 1
+		deployState = RETRACTED
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ExtendPanelsAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			ExtendAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			RetractAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleCommand
+		isEnabled = True
+		hibernation = False
+		hibernateOnWarp = False
+		activeControlPointName = _default
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			MakeReferenceToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			HibernateToggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleReactionWheel
+		isEnabled = True
+		actuatorModeCycle = 0
+		authorityLimiter = 100
+		stateString = Active
+		stagingEnabled = True
+		WheelState = Active
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			CycleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Activate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Deactivate
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			Toggle
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSAS
+		isEnabled = True
+		standaloneToggle = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleKerbNetAccess
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OpenKerbNetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleDataTransmitter
+		isEnabled = True
+		xmitIncomplete = False
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			StartTransmissionAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = MechJebCore
+		isEnabled = True
+		running = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			OnOrbitProgradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRetrogradeAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitNormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitAntinormalAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialInAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnOrbitRadialOutAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnKillRotationAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnDeactivateSmartASSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnLandsomewhereAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnLandTargetAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnPanicAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronOffAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronKeepVertAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronZeroSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronPlusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronMinusOneSpeedAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnTranslatronToggleHSAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+			OnAscentAPToggleAction
+			{
+				actionGroup = None
+				wasActiveBeforePartWasAdjusted = False
+			}
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleTripLogger
+		isEnabled = True
+		stagingEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+		Log
+		{
+			flight = 0
+		}
+		UPGRADESAPPLIED
+		{
+		}
+	}
+	RESOURCE
+	{
+		name = ElectricCharge
+		amount = 50
+		maxAmount = 50
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		isVisible = True
+		flowMode = Both
+	}
+}
+PART
+{
+	part = .Knes.Diamant.Booster.P064.0625_4294310008
+	partName = Part
+	persistentId = 1797532798
+	pos = -0.0193839259,15.4064713,0.0663413927
+	attPos = 0,0,0
+	attPos0 = 0,-0.601249695,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	autostrutMode = Heaviest
+	rigidAttachment = False
 	istg = 1
 	resPri = 0
 	dstg = 2
-	sidx = 0
-	sqor = 1
+	sidx = 1
+	sqor = 2
 	sepI = 0
 	attm = 0
 	sameVesselCollision = False
@@ -1202,8 +1550,8 @@ PART
 	RESOURCE
 	{
 		name = SolidFuel
-		amount = 20
-		maxAmount = 20
+		amount = 30
+		maxAmount = 30
 		flowState = True
 		isTweakable = True
 		hideFlow = False
@@ -1216,7 +1564,7 @@ PART
 	part = .Knes.Diamant.Decoupler.0625_4294490702
 	partName = Part
 	persistentId = 351663360
-	pos = -0.0193839259,14.69522,0.0663413927
+	pos = -0.0193839259,14.6952209,0.0663413927
 	attPos = 0,0,0
 	attPos0 = 0,-0.711250305,0
 	rot = 0,0,0,1
@@ -1228,9 +1576,9 @@ PART
 	rigidAttachment = False
 	istg = 2
 	resPri = 0
-	dstg = 1
+	dstg = 3
 	sidx = 0
-	sqor = 2
+	sqor = 3
 	sepI = 2
 	attm = 0
 	sameVesselCollision = False
@@ -1238,7 +1586,7 @@ PART
 	modMass = 0
 	modSize = 0,0,0
 	link = .Knes.DiamantB.Avionics.0625_4293930990
-	attN = top,.Knes.Diamant.Booster.P064.0625_4294498274_0|0.03125|0_0|1|0_0|0.03125|0_0|1|0
+	attN = top,.Knes.Diamant.Booster.P064.0625_4294310008_0|0.03125|0_0|1|0_0|0.03125|0_0|1|0
 	attN = bottom,.Knes.DiamantB.Avionics.0625_4293930990_0|-0.03125|0_0|-1|0_0|-0.03125|0_0|-1|0
 	EVENTS
 	{
@@ -1339,7 +1687,7 @@ PART
 	part = .Knes.DiamantB.Avionics.0625_4293930990
 	partName = Part
 	persistentId = 1478200939
-	pos = -0.0193839259,14.35147,0.0663413927
+	pos = -0.0193839259,14.3514709,0.0663413927
 	attPos = 0,0,0
 	attPos0 = -0.0292185135,13.3541956,0.0960196629
 	rot = 0,0,0,1
@@ -1351,7 +1699,7 @@ PART
 	rigidAttachment = False
 	istg = 2
 	resPri = 0
-	dstg = 0
+	dstg = 4
 	sidx = -1
 	sqor = -1
 	sepI = 2
@@ -1739,7 +2087,7 @@ PART
 	part = .Knes.Topaze.Booster.0625_4294485504
 	partName = Part
 	persistentId = 2612103892
-	pos = -0.0193839259,12.9189701,0.0663413927
+	pos = -0.0193839259,12.9189711,0.0663413927
 	attPos = 0,0,0
 	attPos0 = 0,-1.43249989,0
 	rot = 0,0,0,1
@@ -1749,9 +2097,9 @@ PART
 	symMethod = Radial
 	autostrutMode = Root
 	rigidAttachment = False
-	istg = 4
+	istg = 3
 	resPri = 0
-	dstg = 0
+	dstg = 4
 	sidx = 0
 	sqor = 4
 	sepI = 2
@@ -2016,7 +2364,7 @@ PART
 	part = .Knes.Diamant.Decoupler.09375_4294481630
 	partName = Part
 	persistentId = 1957890513
-	pos = -0.0193839259,11.0689697,0.0663413927
+	pos = -0.0193839259,11.0689707,0.0663413927
 	attPos = 0,0,0
 	attPos0 = 0,-1.85000038,0
 	rot = 0,0,0,1
@@ -2026,12 +2374,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 4
 	resPri = 0
-	dstg = 1
+	dstg = 5
 	sidx = 0
 	sqor = 5
-	sepI = 5
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -2139,7 +2487,7 @@ PART
 	part = .Knes.DiamantB.FuelTank.09375_4294248228
 	partName = Part
 	persistentId = 4187774089
-	pos = -0.0193839259,7.91193962,0.0663413927
+	pos = -0.0193839259,7.91194057,0.0663413927
 	attPos = 0,0,0
 	attPos0 = 0,-3.15703011,0
 	rot = 0,0,0,1
@@ -2149,12 +2497,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 5
+	istg = 4
 	resPri = 0
-	dstg = 2
+	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 5
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -2248,7 +2596,7 @@ PART
 	part = .Knes.Diamant.Engine.09375_4294476462
 	partName = Part
 	persistentId = 3457790667
-	pos = -0.0193839259,4.22492027,0.0663413927
+	pos = -0.0193839259,4.22492123,0.0663413927
 	attPos = 0,0,0
 	attPos0 = 0,-3.68701935,0
 	rot = 0,0,0,1
@@ -2258,12 +2606,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Root
 	rigidAttachment = False
-	istg = 6
+	istg = 5
 	resPri = 0
-	dstg = 2
+	dstg = 6
 	sidx = 1
 	sqor = 6
-	sepI = 5
+	sepI = 4
 	attm = 0
 	sameVesselCollision = False
 	modCost = 0
@@ -2517,7 +2865,7 @@ PART
 	part = .Knes.Diamant.Aileron.B_4294473616
 	partName = Part
 	persistentId = 1606826931
-	pos = -0.460237443,4.35389328,-0.374511778
+	pos = -0.460237443,4.35389423,-0.374511778
 	attPos = 0,0,0
 	attPos0 = -0.440853506,0.128973007,-0.440853179
 	rot = -8.14051191E-08,0.382682711,1.96529754E-07,-0.923879862
@@ -2527,12 +2875,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 5
 	resPri = 0
-	dstg = 2
+	dstg = 6
 	sidx = 0
 	sqor = 6
-	sepI = 5
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -2721,7 +3069,7 @@ PART
 	part = .Knes.Diamant.Aileron.B_4294472782
 	partName = Part
 	persistentId = 3015637759
-	pos = 0.421469599,4.35389328,0.507194519
+	pos = 0.421469599,4.35389423,0.507194519
 	attPos = 0,0,0
 	attPos0 = 0.440853536,0.128973007,0.440853149
 	rot = 1.96529754E-07,-0.923879862,8.1405112E-08,-0.382682681
@@ -2731,12 +3079,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 5
 	resPri = 0
-	dstg = 2
+	dstg = 6
 	sidx = 0
 	sqor = 6
-	sepI = 5
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -2925,7 +3273,7 @@ PART
 	part = .Knes.Diamant.Aileron_4294469896
 	partName = Part
 	persistentId = 1992508857
-	pos = -0.458440214,4.34202957,0.50539726
+	pos = -0.458440214,4.34203053,0.50539726
 	attPos = 0,0,0
 	attPos0 = -0.439056277,0.117109299,0.43905589
 	rot = 8.49444461E-08,0.382682651,2.05074514E-07,0.923879862
@@ -2935,12 +3283,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 5
 	resPri = 0
-	dstg = 2
+	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 5
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -3009,7 +3357,7 @@ PART
 	part = .Knes.Diamant.Aileron_4294469800
 	partName = Part
 	persistentId = 1942597076
-	pos = 0.41967231,4.34202957,-0.37271452
+	pos = 0.41967231,4.34203053,-0.37271452
 	attPos = 0,0,0
 	attPos0 = 0.439056247,0.117109299,-0.43905592
 	rot = 2.05074514E-07,0.923879862,-8.49444532E-08,-0.382682681
@@ -3019,12 +3367,12 @@ PART
 	symMethod = Radial
 	autostrutMode = Off
 	rigidAttachment = False
-	istg = 6
+	istg = 5
 	resPri = 0
-	dstg = 2
+	dstg = 6
 	sidx = -1
 	sqor = -1
-	sepI = 5
+	sepI = 4
 	attm = 1
 	sameVesselCollision = False
 	modCost = 0
@@ -3086,353 +3434,5 @@ PART
 		UPGRADESAPPLIED
 		{
 		}
-	}
-}
-PART
-{
-	part = .Knes.Sat.Asterix_4293827330
-	partName = Part
-	persistentId = 86319064
-	pos = -0.0193839259,16.4112606,0.0663413927
-	attPos = 0,0,0
-	attPos0 = -0.0193839259,16.4112606,0.0663413927
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 4
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 0
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = .Knes.Veronique.Decoupler.03125_4294559304
-	attN = bottom,.Knes.Veronique.Decoupler.03125_4294559304_0|-0.146880001|0_0|-1|0_0|-0.146880001|0_0|-1|0
-	attN = top,Null_0_0|0.146880001|0_0|1|0_0|0.146880001|0_0|1|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-			wasActiveBeforePartWasAdjusted = False
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleDeployableAntenna
-		isEnabled = True
-		currentRotation = (0, 0, 0, 1)
-		storedAnimationTime = 0
-		storedAnimationSpeed = 1
-		deployState = RETRACTED
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			ExtendPanelsAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			ExtendAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			RetractAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleCommand
-		isEnabled = True
-		hibernation = False
-		hibernateOnWarp = False
-		activeControlPointName = _default
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			MakeReferenceToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			HibernateToggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleReactionWheel
-		isEnabled = True
-		actuatorModeCycle = 0
-		authorityLimiter = 100
-		stateString = Active
-		stagingEnabled = True
-		WheelState = Active
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			CycleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Activate
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Deactivate
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			Toggle
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleSAS
-		isEnabled = True
-		standaloneToggle = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleKerbNetAccess
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OpenKerbNetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleDataTransmitter
-		isEnabled = True
-		xmitIncomplete = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			StartTransmissionAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = MechJebCore
-		isEnabled = True
-		running = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnOrbitProgradeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitRetrogradeAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitNormalAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitAntinormalAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitRadialInAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnOrbitRadialOutAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnKillRotationAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnDeactivateSmartASSAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnLandsomewhereAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnLandTargetAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnPanicAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronOffAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronKeepVertAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronZeroSpeedAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronPlusOneSpeedAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronMinusOneSpeedAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnTranslatronToggleHSAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-			OnAscentAPToggleAction
-			{
-				actionGroup = None
-				wasActiveBeforePartWasAdjusted = False
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleTripLogger
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		Log
-		{
-			flight = 0
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 50
-		maxAmount = 50
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
 	}
 }
