@@ -2,7 +2,7 @@ ship = Varinka
 version = 1.11.0
 description = 
 type = VAB
-size = 1.32157445,4.67668152,14.5793362
+size = 0.752088547,4.05168152,8.1505928
 steamPublishedFileId = 0
 persistentId = 532190284
 rot = 0,0,0,0
@@ -38,8 +38,8 @@ PART
 	modCost = 0
 	modMass = 0
 	modSize = 0,0,0
-	link = .Knes.Vesta.CatPod.03125_4293240520
-	attN = bottom,.Knes.Vesta.CatPod.03125_4293240520_0|-0.163499996|0_0|-1|0_0|-0.163499996|0_0|-1|0
+	link = .Knes.Vesta.Parachute.03125_4293239644
+	attN = bottom,.Knes.Vesta.Parachute.03125_4293239644_0|-0.163499996|0_0|-1|0_0|-0.163499996|0_0|-1|0
 	EVENTS
 	{
 	}
@@ -892,250 +892,12 @@ PART
 }
 PART
 {
-	part = .Knes.Vesta.CatPod.03125_4293240520
-	partName = Part
-	persistentId = 825392397
-	pos = 0,14.5240002,0
-	attPos = 0,0,0
-	attPos0 = 0,-0.475999832,0
-	rot = 0,0,0,1
-	attRot = 0,0,0,1
-	attRot0 = 0,0,0,1
-	mir = 1,1,1
-	symMethod = Radial
-	autostrutMode = Off
-	rigidAttachment = False
-	istg = -1
-	resPri = 0
-	dstg = 0
-	sidx = -1
-	sqor = -1
-	sepI = -1
-	attm = 0
-	sameVesselCollision = False
-	modCost = 0
-	modMass = 0
-	modSize = 0,0,0
-	link = .Knes.Vesta.Parachute.03125_4293239644
-	attN = top,.Knes.Vesta.Avionic.03125_4293241400_0|0.3125|0_0|1|0_0|0.3125|0_0|1|0
-	attN = bottom,.Knes.Vesta.Parachute.03125_4293239644_0|-0.3125|0_0|-1|0_0|-0.3125|0_0|-1|0
-	EVENTS
-	{
-	}
-	ACTIONS
-	{
-		ToggleSameVesselInteraction
-		{
-			actionGroup = None
-		}
-		SetSameVesselInteraction
-		{
-			actionGroup = None
-		}
-		RemoveSameVesselInteraction
-		{
-			actionGroup = None
-		}
-	}
-	PARTDATA
-	{
-	}
-	MODULE
-	{
-		name = ModuleCommand
-		isEnabled = True
-		hibernation = False
-		hibernateOnWarp = False
-		activeControlPointName = _default
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			MakeReferenceToggle
-			{
-				actionGroup = None
-			}
-			HibernateToggle
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceContainer
-		isEnabled = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			CollectAllAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleScienceExperiment
-		isEnabled = True
-		Deployed = False
-		Inoperable = False
-		cooldownToGo = 0
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			DeployAction
-			{
-				actionGroup = None
-			}
-			ResetAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = ModuleCargoPart
-		isEnabled = True
-		beingAttached = False
-		beingSettled = False
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	MODULE
-	{
-		name = MechJebCore
-		isEnabled = True
-		running = True
-		stagingEnabled = True
-		EVENTS
-		{
-		}
-		ACTIONS
-		{
-			OnOrbitProgradeAction
-			{
-				actionGroup = None
-			}
-			OnOrbitRetrogradeAction
-			{
-				actionGroup = None
-			}
-			OnOrbitNormalAction
-			{
-				actionGroup = None
-			}
-			OnOrbitAntinormalAction
-			{
-				actionGroup = None
-			}
-			OnOrbitRadialInAction
-			{
-				actionGroup = None
-			}
-			OnOrbitRadialOutAction
-			{
-				actionGroup = None
-			}
-			OnKillRotationAction
-			{
-				actionGroup = None
-			}
-			OnDeactivateSmartASSAction
-			{
-				actionGroup = None
-			}
-			OnLandsomewhereAction
-			{
-				actionGroup = None
-			}
-			OnLandTargetAction
-			{
-				actionGroup = None
-			}
-			OnPanicAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronOffAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronKeepVertAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronZeroSpeedAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronPlusOneSpeedAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronMinusOneSpeedAction
-			{
-				actionGroup = None
-			}
-			OnTranslatronToggleHSAction
-			{
-				actionGroup = None
-			}
-			OnAscentAPToggleAction
-			{
-				actionGroup = None
-			}
-		}
-		UPGRADESAPPLIED
-		{
-		}
-	}
-	RESOURCE
-	{
-		name = ElectricCharge
-		amount = 10
-		maxAmount = 10
-		flowState = True
-		isTweakable = True
-		hideFlow = False
-		isVisible = True
-		flowMode = Both
-	}
-}
-PART
-{
 	part = .Knes.Vesta.Parachute.03125_4293239644
 	partName = Part
 	persistentId = 3512314352
-	pos = 0,14.0552502,0
+	pos = 0,14.6802502,0
 	attPos = 0,0,0
-	attPos0 = 0,-0.46875,0
+	attPos0 = 0,-0.319749832,0
 	rot = 0,0,0,1
 	attRot = 0,0,0,1
 	attRot0 = 0,0,0,1
@@ -1159,7 +921,7 @@ PART
 	link = .Knes.Vesta.AirBrake_4293214278
 	link = .Knes.Vesta.AirBrake_4293214228
 	link = .Knes.Vesta.AirBrake_4293214178
-	attN = top,.Knes.Vesta.CatPod.03125_4293240520_0|0.15625|0_0|1|0_0|0.15625|0_0|1|0
+	attN = top,.Knes.Vesta.Avionic.03125_4293241400_0|0.15625|0_0|1|0_0|0.15625|0_0|1|0
 	attN = bottom,.Knes.Veronique.Decoupler.03125_4293224494_0|-0.15625|0_0|-1|0_0|-0.15625|0_0|-1|0
 	EVENTS
 	{
@@ -1264,7 +1026,7 @@ PART
 	part = .Knes.Veronique.Decoupler.03125_4293224494
 	partName = Part
 	persistentId = 2502872519
-	pos = 0,13.8677502,0
+	pos = 0,14.4927502,0
 	attPos = 0,0,0
 	attPos0 = 0,-0.1875,0
 	rot = 0,0,0,1
@@ -1381,7 +1143,7 @@ PART
 	part = .Knes.Veronique.FuelTank.03125_4293230478
 	partName = Part
 	persistentId = 3390555429
-	pos = 0,12.6100502,0
+	pos = 0,13.2350502,0
 	attPos = 0,0,0
 	attPos0 = 0,-1.25769997,0
 	rot = 0,0,0,1
@@ -1454,7 +1216,7 @@ PART
 	part = .Knes.Veronique.Engine.03125_4293218916
 	partName = Part
 	persistentId = 693899505
-	pos = 0,11.0036001,0
+	pos = 0,11.6286001,0
 	attPos = 0,0,0
 	attPos0 = 0,-1.60645008,0
 	rot = 0,0,0,1
@@ -1652,7 +1414,7 @@ PART
 	part = .Knes.Veronique.Aileron_4293216892
 	partName = Part
 	persistentId = 698970042
-	pos = -0.233214274,10.8663664,2.26192753E-08
+	pos = -0.233214274,11.4913664,2.26192753E-08
 	attPos = 0,0,0
 	attPos0 = -0.233214274,-0.137233734,2.26192753E-08
 	rot = 0,8.42937027E-08,0,1
@@ -1736,7 +1498,7 @@ PART
 	part = .Knes.Veronique.Aileron_4293216696
 	partName = Part
 	persistentId = 1591845484
-	pos = 8.7186196E-09,10.8663664,0.233214259
+	pos = 8.7186196E-09,11.4913664,0.233214259
 	attPos = 0,0,0
 	attPos0 = 8.7186196E-09,-0.137233734,0.233214259
 	rot = 0,0.707106829,0,0.707106709
@@ -1820,7 +1582,7 @@ PART
 	part = .Knes.Veronique.Aileron_4293216652
 	partName = Part
 	persistentId = 2162115182
-	pos = 0.233214274,10.8663664,-4.3007514E-08
+	pos = 0.233214274,11.4913664,-4.3007514E-08
 	attPos = 0,0,0
 	attPos0 = 0.233214274,-0.137233734,-4.3007514E-08
 	rot = 0,1,0,-1.28005098E-07
@@ -1904,7 +1666,7 @@ PART
 	part = .Knes.Veronique.Aileron_4293216608
 	partName = Part
 	persistentId = 3453784269
-	pos = -3.65199284E-08,10.8663664,-0.233214259
+	pos = -3.65199284E-08,11.4913664,-0.233214259
 	attPos = 0,0,0
 	attPos0 = -3.65199284E-08,-0.137233734,-0.233214259
 	rot = 0,0.707106709,0,-0.707106829
@@ -1988,7 +1750,7 @@ PART
 	part = .Knes.Vesta.AirBrake_4293214630
 	partName = Part
 	persistentId = 97515366
-	pos = -0.15498133,14.0497074,9.23760801E-09
+	pos = -0.15498133,14.6747074,9.23760801E-09
 	attPos = 0,0,0
 	attPos0 = -0.15498133,-0.00554275513,9.23760801E-09
 	rot = 0,0.707106829,0,0.707106709
@@ -2192,7 +1954,7 @@ PART
 	part = .Knes.Vesta.AirBrake_4293214278
 	partName = Part
 	persistentId = 1852669907
-	pos = 3.37574076E-16,14.0497074,0.154981315
+	pos = 3.37574076E-16,14.6747074,0.154981315
 	attPos = 0,0,0
 	attPos0 = 3.37574076E-16,-0.00554275513,0.154981315
 	rot = 0,1,0,-8.42937027E-08
@@ -2396,7 +2158,7 @@ PART
 	part = .Knes.Vesta.AirBrake_4293214228
 	partName = Part
 	persistentId = 95713755
-	pos = 0.15498133,14.0497074,-2.27865069E-08
+	pos = 0.15498133,14.6747074,-2.27865069E-08
 	attPos = 0,0,0
 	attPos0 = 0.15498133,-0.00554275513,-2.27865069E-08
 	rot = 0,0.70710665,0,-0.707106888
@@ -2600,7 +2362,7 @@ PART
 	part = .Knes.Vesta.AirBrake_4293214178
 	partName = Part
 	persistentId = 2552389812
-	pos = -1.84752142E-08,14.0497074,-0.154981315
+	pos = -1.84752142E-08,14.6747074,-0.154981315
 	attPos = 0,0,0
 	attPos0 = -1.84752142E-08,-0.00554275513,-0.154981315
 	rot = 0,-8.42937027E-08,0,-1
